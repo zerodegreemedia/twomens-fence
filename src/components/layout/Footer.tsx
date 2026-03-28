@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { COMPANY, NAV_LINKS, SERVICE_AREAS } from "@/lib/constants";
 
@@ -68,7 +68,7 @@ export function Footer() {
                   className="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
                   aria-label="Facebook"
                 >
-                  <Facebook size={18} />
+                  <ExternalLink size={18} />
                 </a>
                 <a
                   href={COMPANY.social.instagram}
@@ -77,7 +77,7 @@ export function Footer() {
                   className="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
                   aria-label="Instagram"
                 >
-                  <Instagram size={18} />
+                  <ExternalLink size={18} />
                 </a>
               </div>
             </div>
