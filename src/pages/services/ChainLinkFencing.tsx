@@ -141,7 +141,7 @@ export default function ChainLinkFencing() {
     <Layout>
       <SEO
         title="Chain Link Fence Installation Delaware"
-        description="Affordable galvanized and vinyl-coated chain link fence installation in Delaware for homes and businesses. Privacy slats, barbed wire, and commercial options. Free estimates from TWOMENS Fence."
+        description="Affordable chain link fence installation in Delaware. Galvanized, vinyl-coated, privacy slats. Residential & commercial. Free estimates from TWOMENS."
         canonicalUrl="https://twomensfence.com/services/chain-link-fencing"
         schema={[SERVICE_SCHEMA, {
           "@context": "https://schema.org",
@@ -154,6 +154,14 @@ export default function ChainLinkFencing() {
               "text": faq.a,
             },
           })),
+        }, {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://twomensfence.com" },
+            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://twomensfence.com/services" },
+            { "@type": "ListItem", "position": 3, "name": "Chain Link Fencing", "item": "https://twomensfence.com/services/chain-link-fencing" },
+          ],
         }]}
       />
 

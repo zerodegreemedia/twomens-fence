@@ -121,7 +121,7 @@ export default function Home() {
     <Layout>
       <SEO
         title="Professional Fence Installation in Delaware"
-        description="TWOMENS Fence & Construction — professional fence installation in New Castle, DE. Wood, vinyl, aluminum & chain link fencing. Free estimates. Licensed & insured."
+        description="Professional fence installation in New Castle, DE. Wood, vinyl, aluminum & chain link fencing. Free estimates. Licensed & insured. TWOMENS Fence."
         canonicalUrl="https://twomensfence.com"
         schema={LOCAL_BUSINESS_SCHEMA}
       />

@@ -84,6 +84,23 @@ export default function About() {
         title="About TWOMENS Fence"
         description="Licensed Delaware fence contractor serving DE, PA, and MD since 2008. Learn about our story, values, and commitment to quality."
         canonicalUrl="https://twomensfence.com/about"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": COMPANY.name,
+          "url": "https://twomensfence.com",
+          "telephone": COMPANY.phone,
+          "email": COMPANY.email,
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "New Castle",
+            "addressRegion": "DE",
+            "postalCode": "19808",
+            "addressCountry": "US",
+          },
+          "foundingDate": `${COMPANY.yearFounded}`,
+          "areaServed": ["Delaware", "Pennsylvania", "Maryland"],
+        }}
       />
 
       {/* ═══════════════════════════════════════

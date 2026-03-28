@@ -141,7 +141,7 @@ export default function WoodFencing() {
     <Layout>
       <SEO
         title="Wood Fence Installation Delaware"
-        description="Professional cedar, pine, and pressure-treated wood fence installation in Delaware. Privacy, picket, board-on-board, and split rail styles. Free estimates from TWOMENS Fence."
+        description="Cedar, pine & pressure-treated wood fence installation in Delaware. Privacy, picket, board-on-board styles. Free estimates from TWOMENS."
         canonicalUrl="https://twomensfence.com/services/wood-fencing"
         schema={[SERVICE_SCHEMA, {
           "@context": "https://schema.org",
@@ -154,6 +154,14 @@ export default function WoodFencing() {
               "text": faq.a,
             },
           })),
+        }, {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://twomensfence.com" },
+            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://twomensfence.com/services" },
+            { "@type": "ListItem", "position": 3, "name": "Wood Fencing", "item": "https://twomensfence.com/services/wood-fencing" },
+          ],
         }]}
       />
 

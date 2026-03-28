@@ -86,7 +86,15 @@ export default function ServiceArea() {
         title={`Fence Installation in ${area.city}, ${area.stateAbbr}`}
         description={`Professional fence installation in ${area.city}, ${area.state}. Wood, vinyl, aluminum & chain link fencing. Free estimates from ${COMPANY.name}.`}
         canonicalUrl={`https://twomensfence.com${area.href}`}
-        schema={serviceSchema}
+        schema={[serviceSchema, {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://twomensfence.com" },
+            { "@type": "ListItem", "position": 2, "name": "Service Areas" },
+            { "@type": "ListItem", "position": 3, "name": `${area.city}, ${area.stateAbbr}`, "item": `https://twomensfence.com${area.href}` },
+          ],
+        }]}
       />
 
       {/* ═══════════════════════════════════════

@@ -154,6 +154,14 @@ export default function AluminumFencing() {
               "text": faq.a,
             },
           })),
+        }, {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://twomensfence.com" },
+            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://twomensfence.com/services" },
+            { "@type": "ListItem", "position": 3, "name": "Aluminum Fencing", "item": "https://twomensfence.com/services/aluminum-fencing" },
+          ],
         }]}
       />
 
