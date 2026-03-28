@@ -140,10 +140,21 @@ export default function AluminumFencing() {
   return (
     <Layout>
       <SEO
-        title="Aluminum Fence Installation in Delaware | Ornamental & Pool Fencing"
+        title="Aluminum Fence Installation Delaware"
         description="Professional ornamental and pool-code-compliant aluminum fence installation in Delaware. Flat top, spear top, and puppy picket styles. Free estimates from TWOMENS Fence."
         canonicalUrl="https://twomensfence.com/services/aluminum-fencing"
-        schema={SERVICE_SCHEMA}
+        schema={[SERVICE_SCHEMA, {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": FAQS.map((faq) => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.a,
+            },
+          })),
+        }]}
       />
 
       {/* ═══════════════════════════════════════

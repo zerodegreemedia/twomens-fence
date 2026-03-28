@@ -141,10 +141,21 @@ export default function VinylFencing() {
   return (
     <Layout>
       <SEO
-        title="Vinyl Fence Installation in Delaware | Low-Maintenance Privacy & Picket"
+        title="Vinyl Fence Installation Delaware"
         description="Professional low-maintenance vinyl fence installation in Delaware. Privacy, semi-privacy, picket, and ranch rail options in multiple colors. Free estimates from TWOMENS Fence."
         canonicalUrl="https://twomensfence.com/services/vinyl-fencing"
-        schema={SERVICE_SCHEMA}
+        schema={[SERVICE_SCHEMA, {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": FAQS.map((faq) => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.a,
+            },
+          })),
+        }]}
       />
 
       {/* ═══════════════════════════════════════

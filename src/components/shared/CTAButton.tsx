@@ -24,7 +24,7 @@ export function CTAButton({
   const baseStyles =
     variant === "action"
       ? "bg-action hover:bg-action-glow text-foreground font-semibold shadow-lg shadow-action/25 transition-all duration-300 hover:scale-[1.02]"
-      : "bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold transition-all duration-300";
+      : "bg-white/10 hover:bg-white/20 text-white border border-white/30 font-semibold transition-all duration-300";
 
   if (tel) {
     return (

@@ -47,10 +47,8 @@ export function Header() {
 
       {/* Main Nav */}
       <header
-        className={`sticky top-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-authority shadow-lg shadow-black/10"
-            : "bg-transparent"
+        className={`sticky top-0 z-50 transition-all duration-300 bg-authority ${
+          scrolled ? "shadow-lg shadow-black/10" : ""
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 md:h-20">

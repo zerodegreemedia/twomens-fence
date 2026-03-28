@@ -194,6 +194,20 @@ export default function FAQ() {
         title="Fence Installation FAQ"
         description="Answers to common questions about fence installation in Delaware — permits, costs, materials, timelines, and more."
         canonicalUrl="https://twomensfence.com/faq"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": FAQ_CATEGORIES.flatMap((cat) =>
+            cat.items.map((item) => ({
+              "@type": "Question",
+              "name": item.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.answer,
+              },
+            }))
+          ),
+        }}
       />
 
       {/* ═══════════════════════════════════════

@@ -132,8 +132,8 @@ export default function Home() {
       <section className="relative bg-authority overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-authority via-authority-light/50 to-authority" />
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-trust/5 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-br from-authority via-authority-light/40 to-authority-light/20" />
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-trust/8 to-transparent" />
           <div
             className="absolute inset-0 opacity-[0.03]"
             style={{
@@ -192,7 +192,7 @@ export default function Home() {
               <motion.div
                 variants={fadeUp}
                 custom={4}
-                className="mt-10 flex flex-wrap gap-4"
+                className="mt-10 pt-8 border-t border-white/10 flex flex-wrap gap-4 md:border-0 md:pt-0"
               >
                 {TRUST_BADGES.map((b) => (
                   <div

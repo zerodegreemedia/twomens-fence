@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, ExternalLink } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { COMPANY, NAV_LINKS, SERVICE_AREAS } from "@/lib/constants";
+import { COMPANY, NAV_LINKS, SERVICES, SERVICE_AREAS } from "@/lib/constants";
 
 export function Footer() {
   return (
@@ -100,6 +100,16 @@ export function Footer() {
                       className="text-sm hover:text-white transition-colors"
                     >
                       {link.label}
+                    </Link>
+                  </li>
+                ))}
+                {SERVICES.map((service) => (
+                  <li key={service.href}>
+                    <Link
+                      to={service.href}
+                      className="text-sm hover:text-white transition-colors"
+                    >
+                      {service.label}
                     </Link>
                   </li>
                 ))}
