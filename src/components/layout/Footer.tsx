@@ -48,8 +48,11 @@ export function Footer() {
             {/* Column 1 — Brand */}
             <div>
               <Link to="/" className="inline-block mb-4">
-                <span className="text-2xl font-extrabold text-white">TWOMENS</span>
-                <span className="block text-sm text-white/50">Fence & Construction</span>
+                <img
+                  src="/img/logo/logo-white.svg"
+                  alt="TWOMENS Fence & Construction"
+                  className="h-12 w-auto"
+                />
               </Link>
               <p className="text-sm leading-relaxed mb-4">
                 Professional fence installation serving Delaware, Pennsylvania,

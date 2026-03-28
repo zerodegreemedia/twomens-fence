@@ -53,13 +53,12 @@ export function Header() {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-baseline gap-1.5 group">
-            <span className="text-xl md:text-2xl font-extrabold text-white tracking-tight">
-              TWOMENS
-            </span>
-            <span className="text-sm md:text-base font-medium text-white/60 group-hover:text-white/80 transition-colors">
-              Fence & Construction
-            </span>
+          <Link to="/" className="flex items-center gap-2 group">
+            <img
+              src="/img/logo/logo-white.svg"
+              alt="TWOMENS Fence & Construction"
+              className="h-10 md:h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}
