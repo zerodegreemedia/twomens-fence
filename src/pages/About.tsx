@@ -19,7 +19,6 @@ import {
   HardHat,
   Scale,
   Ruler,
-  MapPin,
   Fence,
 } from "lucide-react";
 import { COMPANY } from "@/lib/constants";
@@ -32,7 +31,7 @@ const fadeUp = {
   visible: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, delay: i * 0.1, ease: "easeOut" },
+    transition: { duration: 0.5, delay: i * 0.1, ease: "easeOut" as const },
   }),
 };
 

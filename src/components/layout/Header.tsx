@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { COMPANY, NAV_LINKS, SERVICE_AREAS } from "@/lib/constants";
 
@@ -128,21 +129,22 @@ export function Header() {
               <Phone size={16} />
               {COMPANY.phone}
             </a>
-            <Button
-              asChild
-              className="bg-action hover:bg-action-glow text-foreground font-semibold shadow-lg shadow-action/25 transition-all duration-300 hover:scale-[1.02]"
+            <Link
+              to="/contact"
+              className={cn(
+                buttonVariants(),
+                "bg-action hover:bg-action-glow text-foreground font-semibold shadow-lg shadow-action/25 transition-all duration-300 hover:scale-[1.02]"
+              )}
             >
-              <Link to="/contact">Get a Free Quote</Link>
-            </Button>
+              Get a Free Quote
+            </Link>
           </div>
 
           {/* Mobile Menu */}
           <div className="lg:hidden">
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-              <SheetTrigger asChild>
-                <button className="p-2 text-white">
-                  {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-                </button>
+              <SheetTrigger className="p-2 text-white">
+                {mobileOpen ? <X size={24} /> : <Menu size={24} />}
               </SheetTrigger>
               <SheetContent side="right" className="w-80 bg-authority border-authority-light p-0">
                 <div className="flex flex-col h-full pt-12">
@@ -179,12 +181,15 @@ export function Header() {
                       <Phone size={18} />
                       {COMPANY.phone}
                     </a>
-                    <Button
-                      asChild
-                      className="w-full bg-action hover:bg-action-glow text-foreground font-semibold"
+                    <Link
+                      to="/contact"
+                      className={cn(
+                        buttonVariants(),
+                        "w-full bg-action hover:bg-action-glow text-foreground font-semibold"
+                      )}
                     >
-                      <Link to="/contact">Get a Free Quote</Link>
-                    </Button>
+                      Get a Free Quote
+                    </Link>
                   </div>
                 </div>
               </SheetContent>

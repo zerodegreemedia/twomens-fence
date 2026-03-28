@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { COMPANY, NAV_LINKS, SERVICE_AREAS } from "@/lib/constants";
 
 export function Footer() {
@@ -18,20 +19,24 @@ export function Footer() {
             Castle County and beyond.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button
-              asChild
-              size="lg"
-              className="bg-action hover:bg-action-glow text-foreground font-semibold shadow-lg shadow-action/25 transition-all duration-300 hover:scale-[1.02]"
+            <a
+              href={COMPANY.phoneTel}
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "bg-action hover:bg-action-glow text-foreground font-semibold shadow-lg shadow-action/25 transition-all duration-300 hover:scale-[1.02]"
+              )}
             >
-              <a href={COMPANY.phoneTel}>Call Now</a>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              className="bg-action hover:bg-action-glow text-foreground font-semibold shadow-lg shadow-action/25 transition-all duration-300 hover:scale-[1.02]"
+              Call Now
+            </a>
+            <Link
+              to="/contact"
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "bg-action hover:bg-action-glow text-foreground font-semibold shadow-lg shadow-action/25 transition-all duration-300 hover:scale-[1.02]"
+              )}
             >
-              <Link to="/contact">Get Free Quote</Link>
-            </Button>
+              Get Free Quote
+            </Link>
           </div>
         </div>
       </section>

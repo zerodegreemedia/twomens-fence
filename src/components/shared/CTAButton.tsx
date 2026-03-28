@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface CTAButtonProps {
   children: React.ReactNode;
@@ -27,24 +28,24 @@ export function CTAButton({
 
   if (tel) {
     return (
-      <Button asChild size={size} className={`${baseStyles} ${className}`}>
-        <a href={tel}>{children}</a>
-      </Button>
+      <a href={tel} className={cn(buttonVariants({ size }), baseStyles, className)}>
+        {children}
+      </a>
     );
   }
 
   if (href) {
     return (
-      <Button asChild size={size} className={`${baseStyles} ${className}`}>
-        <Link to={href}>{children}</Link>
-      </Button>
+      <Link to={href} className={cn(buttonVariants({ size }), baseStyles, className)}>
+        {children}
+      </Link>
     );
   }
 
   return (
     <Button
       size={size}
-      className={`${baseStyles} ${className}`}
+      className={cn(baseStyles, className)}
       onClick={onClick}
     >
       {children}
