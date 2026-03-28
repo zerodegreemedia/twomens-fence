@@ -19,6 +19,7 @@ import {
   HelpCircle,
 } from "lucide-react";
 import { COMPANY } from "@/lib/constants";
+import { SERVICE_IMAGES } from "@/lib/images";
 
 /* ──────────────────────────────────────────────
    Animation helpers
@@ -170,7 +171,8 @@ export default function ChainLinkFencing() {
           ═══════════════════════════════════════ */}
       <section className="relative bg-authority overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-authority via-authority-light/50 to-authority" />
+          <img src={SERVICE_IMAGES.chainlink[0].path} alt={SERVICE_IMAGES.chainlink[0].alt} className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-br from-authority/95 via-authority/85 to-authority/80" />
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-trust/5 to-transparent" />
         </div>
 

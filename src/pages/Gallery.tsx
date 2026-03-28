@@ -7,6 +7,7 @@ import { CTAButton } from "@/components/shared/CTAButton";
 import { motion, AnimatePresence } from "framer-motion";
 import { Fence, Camera, Phone, ArrowRight } from "lucide-react";
 import { COMPANY } from "@/lib/constants";
+import { GALLERY_IMAGES } from "@/lib/images";
 
 /* ──────────────────────────────────────────────
    Animation helpers
@@ -25,29 +26,6 @@ const fadeUp = {
    ────────────────────────────────────────────── */
 const FILTER_TABS = ["All", "Wood", "Vinyl", "Aluminum", "Chain Link"] as const;
 
-type FenceType = "Wood" | "Vinyl" | "Aluminum" | "Chain Link";
-
-interface GalleryItem {
-  id: number;
-  alt: string;
-  type: FenceType;
-  aspect: string;
-}
-
-const GALLERY_ITEMS: GalleryItem[] = [
-  { id: 1, alt: "6-foot cedar privacy fence with lattice top in Wilmington DE", type: "Wood", aspect: "aspect-[4/3]" },
-  { id: 2, alt: "White vinyl privacy fence with scalloped gate in Newark DE", type: "Vinyl", aspect: "aspect-[4/3]" },
-  { id: 3, alt: "Black aluminum pool fence with self-closing gate in Bear DE", type: "Aluminum", aspect: "aspect-[3/4]" },
-  { id: 4, alt: "Commercial chain link fence with barbed wire in New Castle DE", type: "Chain Link", aspect: "aspect-[4/3]" },
-  { id: 5, alt: "Pressure-treated wood split rail fence in Hockessin DE", type: "Wood", aspect: "aspect-[3/4]" },
-  { id: 6, alt: "Tan vinyl semi-privacy fence in Middletown DE", type: "Vinyl", aspect: "aspect-[4/3]" },
-  { id: 7, alt: "Ornamental aluminum fence with puppy pickets in Smyrna DE", type: "Aluminum", aspect: "aspect-[4/3]" },
-  { id: 8, alt: "Residential chain link fence with vinyl coating in Dover DE", type: "Chain Link", aspect: "aspect-[4/3]" },
-  { id: 9, alt: "Custom cedar horizontal slat fence in West Chester PA", type: "Wood", aspect: "aspect-[4/3]" },
-  { id: 10, alt: "White vinyl picket fence along front yard in Kennett Square PA", type: "Vinyl", aspect: "aspect-[3/4]" },
-  { id: 11, alt: "Bronze aluminum estate fence in Elkton MD", type: "Aluminum", aspect: "aspect-[4/3]" },
-  { id: 12, alt: "6-foot chain link privacy fence with slats in Bear DE", type: "Chain Link", aspect: "aspect-[4/3]" },
-];
 
 /* ──────────────────────────────────────────────
    Page
@@ -57,8 +35,8 @@ export default function Gallery() {
 
   const filteredItems =
     activeFilter === "All"
-      ? GALLERY_ITEMS
-      : GALLERY_ITEMS.filter((item) => item.type === activeFilter);
+      ? GALLERY_IMAGES
+      : GALLERY_IMAGES.filter((item) => item.type === activeFilter);
 
   return (
     <Layout>
@@ -141,23 +119,23 @@ export default function Gallery() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             <AnimatePresence mode="popLayout">
-              {filteredItems.map((item, i) => (
+              {filteredItems.map((img, i) => (
                 <motion.div
-                  key={item.id}
+                  key={img.name}
                   layout
                   variants={fadeUp}
                   initial="hidden"
                   animate="visible"
                   exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.2 } }}
                   custom={i % 6}
-                  className={`${item.aspect} rounded-2xl bg-gradient-to-br from-trust/10 to-authority/10 border border-border overflow-hidden group cursor-pointer hover:shadow-xl hover:border-trust/30 transition-all duration-300`}
+                  className="aspect-[4/3] rounded-2xl border border-border overflow-hidden group cursor-pointer hover:shadow-xl hover:border-trust/30 transition-all duration-300"
                 >
-                  <div className="w-full h-full flex flex-col items-center justify-center gap-3 text-muted-foreground/40 group-hover:text-trust/60 transition-colors">
-                    <Fence size={48} />
-                    <span className="text-xs font-medium text-muted-foreground/30 group-hover:text-trust/40 transition-colors px-4 text-center">
-                      {item.alt}
-                    </span>
-                  </div>
+                  <img
+                    src={img.path}
+                    alt={img.alt}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
                 </motion.div>
               ))}
             </AnimatePresence>

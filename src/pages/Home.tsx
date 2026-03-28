@@ -26,6 +26,7 @@ import {
   Wrench,
 } from "lucide-react";
 import { COMPANY, SERVICES, SERVICE_AREAS, LOCAL_BUSINESS_SCHEMA } from "@/lib/constants";
+import { HERO_IMAGES, OG_IMAGE, GALLERY_IMAGES } from "@/lib/images";
 
 /* ──────────────────────────────────────────────
    Animation helpers
@@ -104,14 +105,6 @@ const PROCESS_STEPS = [
   { num: "04", title: "Final Walkthrough", desc: "We walk the fence line with you, make sure every detail is perfect, and answer any questions before we leave." },
 ];
 
-const GALLERY_IMAGES = [
-  { alt: "Cedar privacy fence installation in Wilmington DE", aspect: "aspect-[4/3]" },
-  { alt: "White vinyl fence with gate in Newark DE", aspect: "aspect-[3/4]" },
-  { alt: "Aluminum pool fence in Bear DE", aspect: "aspect-[4/3]" },
-  { alt: "Chain link fence for commercial property in New Castle DE", aspect: "aspect-[3/4]" },
-  { alt: "Custom wood gate installation in Hockessin DE", aspect: "aspect-[4/3]" },
-  { alt: "Vinyl privacy fence in Middletown DE", aspect: "aspect-[4/3]" },
-];
 
 /* ──────────────────────────────────────────────
    Page
@@ -124,6 +117,7 @@ export default function Home() {
         description="Professional fence installation in New Castle, DE. Wood, vinyl, aluminum & chain link fencing. Free estimates. Licensed & insured. TWOMENS Fence."
         canonicalUrl="https://twomensfence.com"
         schema={LOCAL_BUSINESS_SCHEMA}
+        ogImage={OG_IMAGE}
       />
 
       {/* ═══════════════════════════════════════
@@ -132,7 +126,12 @@ export default function Home() {
       <section className="relative bg-authority overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-authority via-authority-light/40 to-authority-light/20" />
+          <img
+            src={HERO_IMAGES[0].path}
+            alt={HERO_IMAGES[0].alt}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-authority/95 via-authority/85 to-authority/80" />
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-trust/8 to-transparent" />
           <div
             className="absolute inset-0 opacity-[0.03]"
@@ -467,9 +466,8 @@ export default function Home() {
             subtitle="Every project is different. Here's a look at some of our recent work across Delaware and the tri-state area."
           />
 
-          {/* Placeholder grid — swap for real images later */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {GALLERY_IMAGES.map((img, i) => (
+            {GALLERY_IMAGES.slice(0, 6).map((img, i) => (
               <motion.div
                 key={i}
                 variants={fadeUp}
@@ -477,11 +475,14 @@ export default function Home() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-40px" }}
                 custom={i}
-                className={`${img.aspect} rounded-xl bg-gradient-to-br from-trust/10 to-authority/10 border border-border overflow-hidden group cursor-pointer`}
+                className="aspect-[4/3] rounded-xl border border-border overflow-hidden group cursor-pointer"
               >
-                <div className="w-full h-full flex items-center justify-center text-muted-foreground/40 group-hover:text-trust/40 transition-colors">
-                  <Fence size={48} />
-                </div>
+                <img
+                  src={img.path}
+                  alt={img.alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
               </motion.div>
             ))}
           </div>

@@ -16,6 +16,7 @@ import {
   HelpCircle,
 } from "lucide-react";
 import { COMPANY, SERVICES } from "@/lib/constants";
+import { SERVICE_IMAGES } from "@/lib/images";
 
 /* ──────────────────────────────────────────────
    Animation helpers
@@ -66,6 +67,13 @@ const EXTRA_SERVICES = [
 /* ──────────────────────────────────────────────
    Page
    ────────────────────────────────────────────── */
+const serviceImageMap: Record<string, string> = {
+  "wood-fencing": SERVICE_IMAGES.wood[0]?.path || "",
+  "vinyl-fencing": SERVICE_IMAGES.vinyl[0]?.path || "",
+  "aluminum-fencing": SERVICE_IMAGES.aluminum[0]?.path || "",
+  "chain-link-fencing": SERVICE_IMAGES.chainlink[0]?.path || "",
+};
+
 export default function Services() {
   return (
     <Layout>
@@ -158,11 +166,13 @@ export default function Services() {
                   to={service.href}
                   className="group block rounded-2xl border border-border bg-white overflow-hidden hover:shadow-xl hover:border-trust/30 transition-all duration-300 h-full"
                 >
-                  {/* Image placeholder */}
-                  <div className="aspect-[16/10] bg-gradient-to-br from-trust/10 to-authority/10 flex items-center justify-center group-hover:from-trust/15 group-hover:to-authority/15 transition-all duration-300">
-                    <Fence
-                      size={56}
-                      className="text-muted-foreground/30 group-hover:text-trust/40 transition-colors"
+                  {/* Service image */}
+                  <div className="aspect-[16/9] overflow-hidden">
+                    <img
+                      src={serviceImageMap[service.slug] || ""}
+                      alt={service.description}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
                     />
                   </div>
 

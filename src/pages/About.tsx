@@ -19,9 +19,9 @@ import {
   HardHat,
   Scale,
   Ruler,
-  Fence,
 } from "lucide-react";
 import { COMPANY } from "@/lib/constants";
+import { CREW_IMAGES } from "@/lib/images";
 
 /* ──────────────────────────────────────────────
    Animation helpers
@@ -250,15 +250,14 @@ export default function About() {
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
               variants={fadeUp}
+              className="aspect-[4/3] rounded-2xl border border-border overflow-hidden"
             >
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-trust/10 to-authority/10 border border-border overflow-hidden flex items-center justify-center">
-                <div className="text-center">
-                  <Fence size={64} className="mx-auto text-muted-foreground/30" />
-                  <p className="mt-4 text-sm text-muted-foreground/50 font-medium">
-                    Team Photo Coming Soon
-                  </p>
-                </div>
-              </div>
+              <img
+                src={CREW_IMAGES[0]?.path || ""}
+                alt={CREW_IMAGES[0]?.alt || "TWOMENS Fence crew"}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </motion.div>
           </div>
         </div>
