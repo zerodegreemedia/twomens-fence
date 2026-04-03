@@ -13,7 +13,7 @@ export function SEO({
   title,
   description,
   canonicalUrl,
-  ogImage = "https://twomensfence.com/og-image.jpg",
+  ogImage = "https://twomensfence.com/img/hero/hero-cedar-privacy-fence-twomens-crew.webp",
   ogType = "website",
   schema,
 }: SEOProps) {

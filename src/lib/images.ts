@@ -31,125 +31,125 @@ export const HERO_IMAGES: SiteImage[] = [
   }
 ];
 
-export const OG_IMAGE = "/img/og-image.webp";
+export const OG_IMAGE = "/img/hero/hero-cedar-privacy-fence-twomens-crew.webp";
 
 export const GALLERY_IMAGES: (SiteImage & { type: string })[] = [
   {
-    "path": "/img/gallery/gallery-01-cedar-privacy-fence.webp",
+    "path": "/img/hero/hero-cedar-privacy-fence-twomens-crew.webp",
     "alt": "Cedar privacy fence installation by TWOMENS Fence in Delaware",
     "name": "gallery-01-cedar-privacy-fence",
     "type": "Wood"
   },
   {
-    "path": "/img/gallery/gallery-02-wood-fence-with-gate.webp",
+    "path": "/img/services/wood-privacy-fence-with-gate.webp",
     "alt": "Wood privacy fence with custom gate installation",
     "name": "gallery-02-wood-fence-with-gate",
     "type": "Wood"
   },
   {
-    "path": "/img/gallery/gallery-03-wood-privacy-backyard.webp",
+    "path": "/img/services/wood-privacy-fence-backyard.webp",
     "alt": "Wood privacy fence along residential backyard property",
     "name": "gallery-03-wood-privacy-backyard",
     "type": "Wood"
   },
   {
-    "path": "/img/gallery/gallery-04-porch-railing-complete.webp",
+    "path": "/img/services/wood-porch-railing-complete.webp",
     "alt": "Custom wood porch railing with fence in background",
     "name": "gallery-04-porch-railing-complete",
     "type": "Wood"
   },
   {
-    "path": "/img/gallery/gallery-05-porch-railing-front.webp",
+    "path": "/img/services/wood-porch-railing-front.webp",
     "alt": "Wood porch railing installation on Delaware home",
     "name": "gallery-05-porch-railing-front",
     "type": "Wood"
   },
   {
-    "path": "/img/gallery/gallery-06-vinyl-privacy-long.webp",
+    "path": "/img/hero/hero-vinyl-privacy-fence-long-run.webp",
     "alt": "White vinyl privacy fence long installation run",
     "name": "gallery-06-vinyl-privacy-long",
     "type": "Vinyl"
   },
   {
-    "path": "/img/gallery/gallery-07-vinyl-privacy-residential.webp",
+    "path": "/img/services/vinyl-white-privacy-fence-residential.webp",
     "alt": "White vinyl privacy fence on residential property",
     "name": "gallery-07-vinyl-privacy-residential",
     "type": "Vinyl"
   },
   {
-    "path": "/img/gallery/gallery-08-vinyl-privacy-house.webp",
+    "path": "/img/services/vinyl-white-privacy-fence-house.webp",
     "alt": "Vinyl privacy fence alongside Delaware home",
     "name": "gallery-08-vinyl-privacy-house",
     "type": "Vinyl"
   },
   {
-    "path": "/img/gallery/gallery-09-vinyl-picket-house.webp",
+    "path": "/img/services/vinyl-white-picket-fence-house.webp",
     "alt": "White vinyl picket fence around residential yard",
     "name": "gallery-09-vinyl-picket-house",
     "type": "Vinyl"
   },
   {
-    "path": "/img/gallery/gallery-10-chainlink-commercial-sports.webp",
+    "path": "/img/services/chainlink-black-commercial-sports.webp",
     "alt": "Black chain link fence at sports facility",
     "name": "gallery-10-chainlink-commercial-sports",
     "type": "Chain Link"
   },
   {
-    "path": "/img/gallery/gallery-11-chainlink-black-commercial.webp",
+    "path": "/img/services/chainlink-black-vinyl-coated-long.webp",
     "alt": "Black vinyl-coated chain link fence commercial installation",
     "name": "gallery-11-chainlink-black-commercial",
     "type": "Chain Link"
   },
   {
-    "path": "/img/gallery/gallery-12-chainlink-galvanized-field.webp",
+    "path": "/img/hero/hero-chain-link-fence-installation-field.webp",
     "alt": "Galvanized chain link fence installation on large property",
     "name": "gallery-12-chainlink-galvanized-field",
     "type": "Chain Link"
   },
   {
-    "path": "/img/gallery/gallery-13-chainlink-winter.webp",
+    "path": "/img/services/chainlink-black-winter-snow.webp",
     "alt": "Chain link fence in winter conditions",
     "name": "gallery-13-chainlink-winter",
     "type": "Chain Link"
   },
   {
-    "path": "/img/gallery/gallery-14-aluminum-ornamental.webp",
+    "path": "/img/services/aluminum-black-ornamental-spear-top.webp",
     "alt": "Black aluminum ornamental spear top fence",
     "name": "gallery-14-aluminum-ornamental",
     "type": "Aluminum"
   },
   {
-    "path": "/img/gallery/gallery-15-aluminum-landscape.webp",
+    "path": "/img/hero/hero-aluminum-ornamental-fence-green-lawn.webp",
     "alt": "Aluminum ornamental fence on landscaped property",
     "name": "gallery-15-aluminum-landscape",
     "type": "Aluminum"
   },
   {
-    "path": "/img/gallery/gallery-16-commercial-enclosure.webp",
+    "path": "/img/commercial/commercial-dumpster-enclosure-chainlink.webp",
     "alt": "Commercial dumpster enclosure installation",
     "name": "gallery-16-commercial-enclosure",
     "type": "Chain Link"
   },
   {
-    "path": "/img/gallery/gallery-17-commercial-enclosure-winter.webp",
+    "path": "/img/commercial/commercial-dumpster-enclosure-winter.webp",
     "alt": "Commercial chain link enclosure at business",
     "name": "gallery-17-commercial-enclosure-winter",
     "type": "Chain Link"
   },
   {
-    "path": "/img/gallery/gallery-18-commercial-enclosure-night.webp",
+    "path": "/img/commercial/commercial-chainlink-enclosure-nighttime.webp",
     "alt": "Completed commercial enclosure at night",
     "name": "gallery-18-commercial-enclosure-night",
     "type": "Chain Link"
   },
   {
-    "path": "/img/gallery/gallery-19-crew-building-railing.webp",
+    "path": "/img/services/wood-porch-railing-crew-working.webp",
     "alt": "TWOMENS crew building custom porch railing",
     "name": "gallery-19-crew-building-railing",
     "type": "Wood"
   },
   {
-    "path": "/img/gallery/gallery-20-crew-digging-posts.webp",
+    "path": "/img/crew/crew-digging-post-holes.webp",
     "alt": "Crew setting post holes for fence installation",
     "name": "gallery-20-crew-digging-posts",
     "type": "Wood"
@@ -159,7 +159,7 @@ export const GALLERY_IMAGES: (SiteImage & { type: string })[] = [
 export const SERVICE_IMAGES = {
   wood: [
   {
-    "path": "/img/services/wood-cedar-privacy-fence-tall.webp",
+    "path": "/img/hero/hero-cedar-privacy-fence-twomens-crew.webp",
     "alt": "Tall cedar privacy fence installation by TWOMENS Fence in Delaware",
     "name": "wood-cedar-privacy-fence-tall"
   },
@@ -192,16 +192,11 @@ export const SERVICE_IMAGES = {
     "path": "/img/services/wood-porch-railing-crew-action.webp",
     "alt": "Fence installation crew building wood railing on residential porch",
     "name": "wood-porch-railing-crew-action"
-  },
-  {
-    "path": "/img/services/wood-cedar-fence-perspective.webp",
-    "alt": "Cedar wood fence installation showing straight fence line and quality craftsmanship",
-    "name": "wood-cedar-fence-perspective"
   }
 ],
   vinyl: [
   {
-    "path": "/img/services/vinyl-white-privacy-fence-long.webp",
+    "path": "/img/hero/hero-vinyl-privacy-fence-long-run.webp",
     "alt": "Long white vinyl privacy fence installation on open property in Delaware",
     "name": "vinyl-white-privacy-fence-long"
   },
@@ -228,7 +223,7 @@ export const SERVICE_IMAGES = {
 ],
   chainlink: [
   {
-    "path": "/img/services/chainlink-galvanized-crew-install.webp",
+    "path": "/img/hero/hero-chain-link-fence-installation-field.webp",
     "alt": "Crew installing galvanized chain link fence on large property in Delaware",
     "name": "chainlink-galvanized-crew-install"
   },
@@ -275,7 +270,7 @@ export const SERVICE_IMAGES = {
     "name": "aluminum-black-ornamental-spear-top"
   },
   {
-    "path": "/img/services/aluminum-ornamental-fence-landscape.webp",
+    "path": "/img/hero/hero-aluminum-ornamental-fence-green-lawn.webp",
     "alt": "Black aluminum ornamental fence on beautifully landscaped property",
     "name": "aluminum-ornamental-fence-landscape"
   },
@@ -302,11 +297,6 @@ export const COMMERCIAL_IMAGES: SiteImage[] = [
     "path": "/img/commercial/commercial-chainlink-enclosure-nighttime.webp",
     "alt": "Completed commercial chain link enclosure at night",
     "name": "commercial-chainlink-enclosure-nighttime"
-  },
-  {
-    "path": "/img/commercial/commercial-chainlink-dumpster-gates.webp",
-    "alt": "Commercial chain link dumpster enclosure with swing gates",
-    "name": "commercial-chainlink-dumpster-gates"
   },
   {
     "path": "/img/commercial/commercial-fence-posts-concrete.webp",
@@ -337,12 +327,12 @@ export const CREW_IMAGES: SiteImage[] = [
     "name": "crew-digging-post-holes"
   },
   {
-    "path": "/img/crew/crew-building-porch-railing.webp",
+    "path": "/img/services/wood-porch-railing-crew-working.webp",
     "alt": "TWOMENS construction crew building custom porch railing",
     "name": "crew-building-porch-railing"
   },
   {
-    "path": "/img/crew/crew-working-railing.webp",
+    "path": "/img/services/wood-porch-railing-crew-action.webp",
     "alt": "Two crew members working together on porch railing installation",
     "name": "crew-working-railing"
   },

@@ -43,7 +43,6 @@ const IMAGE_MAP = {
     { src: "6401256356823858652.jpg", name: "wood-porch-railing-complete", alt: "Completed wood porch railing with wood privacy fence in background" },
     { src: "3600198914167457107.jpg", name: "wood-porch-railing-crew-working", alt: "TWOMENS crew installing custom wood porch railing on Delaware home" },
     { src: "5488201957738622866.jpg", name: "wood-porch-railing-crew-action", alt: "Fence installation crew building wood railing on residential porch" },
-    { src: "7219075925793801452-1.jpg", name: "wood-cedar-fence-perspective", alt: "Cedar wood fence installation showing straight fence line and quality craftsmanship" },
   ],
 
   // ═══ VINYL FENCE PROJECTS ═══
@@ -79,7 +78,6 @@ const IMAGE_MAP = {
     { src: "3317188126782189646.jpg", name: "commercial-dumpster-enclosure-chainlink", alt: "Commercial chain link dumpster enclosure installation in parking lot" },
     { src: "6823152521563684015.jpg", name: "commercial-dumpster-enclosure-winter", alt: "Commercial chain link enclosure installed at business property in winter" },
     { src: "195527111802850561.jpg", name: "commercial-chainlink-enclosure-nighttime", alt: "Completed commercial chain link enclosure at night" },
-    { src: "224739108043400563.jpg", name: "commercial-chainlink-dumpster-gates", alt: "Commercial chain link dumpster enclosure with swing gates" },
     { src: "4631260795907971000.jpg", name: "commercial-fence-posts-concrete", alt: "Commercial fence post installation with concrete footings along building" },
     { src: "8624906970442287421.jpg", name: "commercial-fence-posts-alley", alt: "Commercial fence post setting in alley with concrete base" },
     { src: "199305005927435005.jpg", name: "commercial-posts-bracing-alley", alt: "Commercial fence posts with bracing along brick building" },
@@ -139,6 +137,10 @@ async function processImages() {
   const manifest = {};
   let totalSaved = 0;
   let processed = 0;
+  let deduped = 0;
+
+  // Track already-processed source files → their webp path (keyed by "src+width")
+  const processedSources = new Map();
 
   // Process each category
   for (const [category, images] of Object.entries(IMAGE_MAP)) {
@@ -148,6 +150,29 @@ async function processImages() {
       const srcPath = path.join(SRC, img.src);
       if (!fs.existsSync(srcPath)) {
         console.warn(`  [SKIP] ${img.src} not found`);
+        continue;
+      }
+
+      // Determine resize width based on category
+      let width;
+      if (category === "hero" || category === "og") width = 1920;
+      else width = 1200;
+
+      // Dedup key: same source file produces identical output
+      // (withoutEnlargement means smaller sources won't upscale regardless of target width)
+      const dedupKey = img.src;
+
+      if (processedSources.has(dedupKey)) {
+        // Reuse the already-converted webp path instead of creating a duplicate
+        const existingPath = processedSources.get(dedupKey);
+        manifest[category].push({
+          path: existingPath,
+          alt: img.alt,
+          name: img.name,
+          type: img.type || category,
+        });
+        deduped++;
+        console.log(`  [DEDUP] ${img.src} → reusing ${existingPath}`);
         continue;
       }
 
@@ -164,12 +189,6 @@ async function processImages() {
       // Get original size
       const originalSize = fs.statSync(srcPath).size;
 
-      // Determine resize width based on category
-      let width;
-      if (category === "hero" || category === "og") width = 1920;
-      else if (category === "gallery") width = 1200;
-      else width = 1200;
-
       try {
         await sharp(srcPath)
           .resize({ width, withoutEnlargement: true })
@@ -182,6 +201,9 @@ async function processImages() {
         processed++;
 
         const webPath = folder ? `/img/${folder}/${outName}` : `/img/${outName}`;
+
+        // Register this source+width so future duplicates reuse it
+        processedSources.set(dedupKey, webPath);
 
         manifest[category].push({
           path: webPath,
@@ -200,14 +222,55 @@ async function processImages() {
     }
   }
 
+  // Clean up duplicate webp files that are no longer generated
+  cleanupOrphanedWebp(manifest);
+
   // Write manifest
   const manifestPath = path.join(ROOT, "src/lib/images.ts");
   const tsContent = generateImageTS(manifest);
   fs.writeFileSync(manifestPath, tsContent);
 
-  console.log(`\n[images] Done! ${processed} images processed.`);
+  console.log(`\n[images] Done! ${processed} images converted, ${deduped} duplicates eliminated.`);
   console.log(`[images] Total savings: ${(totalSaved / 1024 / 1024).toFixed(1)} MB`);
   console.log(`[images] Manifest written to src/lib/images.ts`);
+}
+
+function cleanupOrphanedWebp(manifest) {
+  // Collect all webp paths that are still in use
+  const usedPaths = new Set();
+  for (const images of Object.values(manifest)) {
+    for (const img of images) {
+      usedPaths.add(img.path);
+    }
+  }
+
+  // Scan output directories and remove any webp files not in the manifest
+  const dirs = ["hero", "services", "gallery", "crew", "commercial"];
+  let removed = 0;
+  for (const dir of dirs) {
+    const dirPath = path.join(DEST, dir);
+    if (!fs.existsSync(dirPath)) continue;
+    for (const file of fs.readdirSync(dirPath)) {
+      if (!file.endsWith(".webp")) continue;
+      const webPath = `/img/${dir}/${file}`;
+      if (!usedPaths.has(webPath)) {
+        fs.unlinkSync(path.join(dirPath, file));
+        console.log(`  [CLEANUP] Removed orphaned ${webPath}`);
+        removed++;
+      }
+    }
+  }
+  // Also check root-level webp (og-image)
+  for (const file of fs.readdirSync(DEST)) {
+    if (!file.endsWith(".webp")) continue;
+    const webPath = `/img/${file}`;
+    if (!usedPaths.has(webPath)) {
+      fs.unlinkSync(path.join(DEST, file));
+      console.log(`  [CLEANUP] Removed orphaned ${webPath}`);
+      removed++;
+    }
+  }
+  if (removed > 0) console.log(`  [CLEANUP] Removed ${removed} orphaned files.`);
 }
 
 function generateImageTS(manifest) {
