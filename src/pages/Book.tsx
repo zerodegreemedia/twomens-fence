@@ -4,8 +4,8 @@ import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/shared/SEO";
 import { SectionBadge } from "@/components/shared/SectionBadge";
 import { motion, AnimatePresence } from "framer-motion";
-import { fadeUp, VIEWPORT } from "@/lib/animations";
-import { COMPANY, RESEND_ENDPOINT } from "@/lib/constants";
+
+import { COMPANY, FORM_ENDPOINT } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -145,9 +145,9 @@ export default function Book() {
     });
 
     try {
-      await fetch(RESEND_ENDPOINT, {
+      await fetch(FORM_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           name: info.name,
           phone: info.phone,
@@ -512,15 +512,13 @@ export default function Book() {
                     >
                       Back to Home
                     </Button>
-                    <Button
-                      asChild
-                      className="bg-action hover:bg-action-glow text-foreground font-semibold"
+                    <a
+                      href={COMPANY.phoneTel}
+                      className="inline-flex items-center justify-center h-10 px-4 rounded-md bg-action hover:bg-action-glow text-foreground font-semibold transition-colors"
                     >
-                      <a href={COMPANY.phoneTel}>
-                        <Phone size={16} className="mr-2" />
-                        Call {COMPANY.phone}
-                      </a>
-                    </Button>
+                      <Phone size={16} className="mr-2" />
+                      Call {COMPANY.phone}
+                    </a>
                   </div>
                 </div>
               </motion.div>

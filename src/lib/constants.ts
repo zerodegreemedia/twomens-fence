@@ -31,8 +31,8 @@ export const COMPANY = {
   },
 } as const;
 
-// Resend — contact form sends via API route
-export const RESEND_ENDPOINT = "/api/contact";
+// Contact form — Formspree endpoint (no backend needed for static site)
+export const FORM_ENDPOINT = "https://formspree.io/f/xpqoyegv";
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -316,4 +316,37 @@ export const LOCAL_BUSINESS_SCHEMA = {
     reviewCount: COMPANY.reviewCount,
   },
   foundingDate: `${COMPANY.yearFounded}`,
+};
+
+export const AREA_INTROS: Record<string, string> = {
+  "new-castle-de":
+    "Based right here in New Castle near Battery Park and the Delaware River waterfront, TWOMENS is your neighbor. We know the historic homes, the tight lots near downtown, and the new builds off Route 9. When you need a fence that fits New Castle\u2019s character, we\u2019re minutes away.",
+  "wilmington-de":
+    "From Brandywine to Trolley Square to the Riverfront, we\u2019ve been building fences across Wilmington for over 18 years. Whether you need privacy fencing for a Rockford Park row home or a vinyl fence for a Westover Hills backyard, we know the terrain and the permitting process.",
+  "newark-de":
+    "Serving the University of Delaware area, Main Street corridor, and neighborhoods along Elkton Road, we handle everything from student rental properties to family homes. Newark homeowners trust TWOMENS for fences that hold up to Delaware weather and look great year-round.",
+  "bear-de":
+    "From the communities around Lums Pond to the developments along Route 40 and Governor\u2019s Square, Bear is one of our busiest service areas. We build fences for new construction, replace aging chain-link, and install privacy fencing for growing families throughout Bear.",
+  "hockessin-de":
+    "Hockessin\u2019s large lots and equestrian properties near Hockessin Corner call for fencing that matches the landscape. We install wood, vinyl, and aluminum fences designed for bigger yards, horse paddocks, and the rolling terrain that makes this area unique.",
+  "middletown-de":
+    "Middletown is growing fast \u2014 new developments in Westown and across the MOT area need fencing from day one. We work with builders and homeowners throughout Middletown, installing fences that meet HOA requirements and stand up to Delaware\u2019s coastal weather.",
+  "smyrna-de":
+    "From Smyrna\u2019s historic downtown to the neighborhoods along Duck Creek and Route 13, we bring the same quality craftsmanship that\u2019s earned us 120+ five-star reviews. Smyrna homeowners appreciate our honest pricing and reliable timelines \u2014 no runaround.",
+  "dover-de":
+    "As the state capital, Dover has a mix of historic neighborhoods, military housing near Dover Air Force Base, and growing suburbs across Kent County. We\u2019ve installed fences throughout the area and understand the local permitting requirements that come with each zone.",
+  "west-chester-pa":
+    "West Chester\u2019s tree-lined streets and historic Chester County charm deserve fencing that complements the architecture. From downtown row homes to the larger properties in Brandywine Valley, we build fences that add curb appeal and lasting value.",
+  "kennett-square-pa":
+    "Known as the mushroom capital of the world and home to Longwood Gardens, Kennett Square blends rural character with upscale living. We install fences for farmettes, estate properties, and in-town yards \u2014 always matching the craftsmanship to the community.",
+  "media-pa":
+    "Media \u2014 the Delaware County seat \u2014 is known for its vibrant State Street and the trails along Ridley Creek. We fence homes throughout Media\u2019s tight borough lots and larger properties in the surrounding townships, with designs that fit each neighborhood\u2019s character.",
+  "chester-pa":
+    "Serving Chester and the surrounding Delaware County waterfront communities along the I-95 corridor, we install durable fences built for high-traffic areas. Whether you need security fencing or a backyard upgrade, TWOMENS delivers quality work at a fair price.",
+  "downingtown-pa":
+    "Downingtown\u2019s Chester County location along Brandywine Creek and Route 30 offers a mix of historic homes and newer developments. We install wood, vinyl, and aluminum fences that handle the rolling terrain and meet local requirements \u2014 all backed by our warranty.",
+  "milford-de":
+    "Sitting at the Kent/Sussex border along the Mispillion River, Milford is experiencing a downtown revitalization that brings new homeowners and new fencing needs. We serve the entire Milford area with the same quality and warranty that\u2019s made us a trusted name across Delaware.",
+  "seaford-de":
+    "In western Sussex County along the Nanticoke River, Seaford homeowners count on TWOMENS for reliable fence installation without the long wait. We make the drive so you get the same licensed, insured, and warranted service that our New Castle neighbors receive.",
 };

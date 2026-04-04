@@ -52,7 +52,12 @@ const ROUTES = [
   "/service-areas/dover-de",
   "/service-areas/west-chester-pa",
   "/service-areas/kennett-square-pa",
-  "/service-areas/elkton-md",
+  "/service-areas/media-pa",
+  "/service-areas/chester-pa",
+  "/service-areas/downingtown-pa",
+  "/service-areas/milford-de",
+  "/service-areas/seaford-de",
+  "/book",
 ];
 
 // Simple MIME type lookup

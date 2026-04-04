@@ -119,18 +119,23 @@ export default function Home() {
         title="Fences, Decks & Tree Trimming in Delaware | TWOMENS"
         description="Oscar & Anna - 18+ years building fences, decks, and trimming trees in Delaware & PA. Licensed, insured, every job warranted. Free estimates."
         canonicalUrl="https://twomensfence.com"
-        schema={[LOCAL_BUSINESS_SCHEMA, {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": COMPANY.name,
-          "url": "https://twomensfence.com",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://twomensfence.com/services?q={search_term_string}",
-            "query-input": "required name=search_term_string",
-          },
+        schema={[{
+          ...LOCAL_BUSINESS_SCHEMA,
+          review: TESTIMONIALS.map((t) => ({
+            "@type": "Review",
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: t.rating,
+              bestRating: 5,
+            },
+            author: { "@type": "Person", name: t.name },
+            reviewBody: t.text,
+          })),
         }]}
         ogImage={OG_IMAGE}
+        geoRegion="US-DE"
+        geoPlacename="New Castle"
+        geoPosition="39.6582;-75.5666"
       />
 
       {/* ═══════════════════════════════════════

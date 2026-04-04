@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { RESEND_ENDPOINT, COMPANY } from "@/lib/constants";
+import { FORM_ENDPOINT, COMPANY } from "@/lib/constants";
 
 interface FormData {
   name: string;
@@ -47,12 +47,23 @@ export function ContactForm({ dark = false, redirectOnSuccess = true }: { dark?:
   const update = (field: keyof FormData, value: string) =>
     setData((prev) => ({ ...prev, [field]: value }));
 
+  const validateEmail = (email: string) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  const validatePhone = (phone: string) =>
+    /^[\d\s()+-]{7,}$/.test(phone.trim());
+
+  const canAdvance =
+    data.name.trim().length > 0 &&
+    validatePhone(data.phone) &&
+    validateEmail(data.email);
+
   const handleSubmit = async () => {
     setStatus("loading");
     try {
-      const res = await fetch(RESEND_ENDPOINT, {
+      const res = await fetch(FORM_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           name: data.name,
           phone: data.phone,
@@ -61,6 +72,7 @@ export function ContactForm({ dark = false, redirectOnSuccess = true }: { dark?:
           description: data.description,
           preferredContact: data.preferredContact,
           address: data.address,
+          _subject: `New estimate request — ${data.serviceType || "General"}`,
           sourcePage: window.location.pathname,
         }),
       });
@@ -156,7 +168,7 @@ export function ContactForm({ dark = false, redirectOnSuccess = true }: { dark?:
             </div>
             <Button
               onClick={() => setStep(2)}
-              disabled={!data.name || !data.phone || !data.email}
+              disabled={!canAdvance}
               className="w-full bg-action hover:bg-action-glow text-foreground font-semibold transition-all duration-300"
             >
               Next Step

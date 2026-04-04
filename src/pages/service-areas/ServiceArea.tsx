@@ -5,7 +5,8 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { SectionBadge } from "@/components/shared/SectionBadge";
 import { CTAButton } from "@/components/shared/CTAButton";
 import { ContactForm } from "@/components/shared/ContactForm";
-import { COMPANY, SERVICES, SERVICE_AREAS } from "@/lib/constants";
+import { COMPANY, SERVICES, SERVICE_AREAS, AREA_INTROS } from "@/lib/constants";
+import { fadeUp, stagger, VIEWPORT } from "@/lib/animations";
 import { motion } from "framer-motion";
 import {
   MapPin,
@@ -16,19 +17,6 @@ import {
   Shield,
   Wrench,
 } from "lucide-react";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, delay: i * 0.1, ease: "easeOut" as const },
-  }),
-};
-
-const stagger = {
-  visible: { transition: { staggerChildren: 0.1 } },
-};
 
 export default function ServiceArea() {
   const { slug } = useParams<{ slug: string }>();
@@ -67,7 +55,7 @@ export default function ServiceArea() {
     name: `Fence Installation in ${area.city}, ${area.stateAbbr}`,
     description: `Professional fencing, deck building, and tree trimming in ${area.city}, ${area.state}. Licensed, insured, every job warranted.`,
     provider: {
-      "@type": "FencingContractor",
+      "@type": "HomeAndConstructionBusiness",
       name: COMPANY.name,
       telephone: COMPANY.phone,
       email: COMPANY.email,
@@ -86,6 +74,8 @@ export default function ServiceArea() {
         title={`Fence Installation in ${area.city}, ${area.stateAbbr}`}
         description={`Fences, decks & tree trimming in ${area.city}, ${area.state}. 18+ years experience. Licensed, insured, every job warranted. Free estimates from ${COMPANY.name}.`}
         canonicalUrl={`https://twomensfence.com${area.href}`}
+        geoRegion={`US-${area.stateAbbr}`}
+        geoPlacename={area.city}
         schema={[serviceSchema, {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
@@ -137,9 +127,8 @@ export default function ServiceArea() {
               custom={2}
               className="mt-6 text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed"
             >
-              {driveLabel}. Serving {area.refs.join(", ")} and surrounding
-              neighborhoods with quality fence installation since{" "}
-              {COMPANY.yearFounded}.
+              {AREA_INTROS[area.slug] ||
+                `${driveLabel}. Serving ${area.refs.join(", ")} and surrounding neighborhoods with quality fence installation since ${COMPANY.yearFounded}.`}
             </motion.p>
 
             <motion.div
@@ -178,7 +167,7 @@ export default function ServiceArea() {
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-60px" }}
+                viewport={VIEWPORT}
                 custom={i}
               >
                 <Link
@@ -265,7 +254,7 @@ export default function ServiceArea() {
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-40px" }}
+                viewport={VIEWPORT}
                 custom={i * 0.5}
               >
                 <Link

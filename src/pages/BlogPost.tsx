@@ -35,11 +35,17 @@ export default function BlogPost() {
         schema={[
           {
             "@context": "https://schema.org",
-            "@type": "Article",
+            "@type": "BlogPosting",
             headline: post.title,
             description: post.description,
             image: `https://twomensfence.com${post.featuredImage}`,
             datePublished: post.date,
+            dateModified: post.date,
+            articleSection: post.category,
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://twomensfence.com/blog/${post.slug}`,
+            },
             author: {
               "@type": "Organization",
               name: post.author,
