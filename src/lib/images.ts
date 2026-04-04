@@ -59,12 +59,6 @@ export const GALLERY_IMAGES: (SiteImage & { type: string })[] = [
     "type": "Wood"
   },
   {
-    "path": "/img/gallery/gallery-05-porch-railing-front.webp",
-    "alt": "Wood porch railing installation on Delaware home",
-    "name": "gallery-05-porch-railing-front",
-    "type": "Wood"
-  },
-  {
     "path": "/img/gallery/gallery-06-vinyl-privacy-long.webp",
     "alt": "White vinyl privacy fence long installation run",
     "name": "gallery-06-vinyl-privacy-long",
@@ -266,11 +260,6 @@ export const SERVICE_IMAGES = {
     "path": "/img/gallery/gallery-03-wood-privacy-backyard.webp",
     "alt": "New wood privacy fence installed along residential backyard property line",
     "name": "wood-privacy-fence-backyard"
-  },
-  {
-    "path": "/img/gallery/gallery-05-porch-railing-front.webp",
-    "alt": "Custom wood porch railing installation on residential front porch",
-    "name": "wood-porch-railing-front"
   },
   {
     "path": "/img/gallery/gallery-04-porch-railing-complete.webp",
