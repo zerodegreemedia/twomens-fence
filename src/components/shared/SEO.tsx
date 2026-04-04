@@ -7,15 +7,17 @@ interface SEOProps {
   ogImage?: string;
   ogType?: string;
   schema?: object | object[];
+  noIndex?: boolean;
 }
 
 export function SEO({
   title,
   description,
   canonicalUrl,
-  ogImage = "https://twomensfence.com/og-image.jpg",
+  ogImage = "https://twomensfence.com/img/og-image.webp",
   ogType = "website",
   schema,
+  noIndex = false,
 }: SEOProps) {
   const fullTitle = `${title} | TWOMENS Fence & Construction`;
   const schemas = schema
@@ -28,7 +30,7 @@ export function SEO({
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
 
       {/* Open Graph */}

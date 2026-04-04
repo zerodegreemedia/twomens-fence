@@ -22,6 +22,7 @@ export default function NotFound() {
       <SEO
         title="Page Not Found"
         description="The page you're looking for doesn't exist or has been moved."
+        noIndex
       />
 
       <div className="min-h-[70vh] flex items-center justify-center">

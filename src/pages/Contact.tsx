@@ -6,6 +6,7 @@ import { CTAButton } from "@/components/shared/CTAButton";
 import { ContactForm } from "@/components/shared/ContactForm";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { fadeUp, VIEWPORT } from "@/lib/animations";
 import {
   Phone,
   Mail,
@@ -17,26 +18,21 @@ import {
 import { COMPANY, SERVICE_AREAS } from "@/lib/constants";
 
 /* ──────────────────────────────────────────────
-   Animation helpers
-   ────────────────────────────────────────────── */
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, delay: i * 0.1, ease: "easeOut" as const },
-  }),
-};
-
-/* ──────────────────────────────────────────────
    Data
    ────────────────────────────────────────────── */
 const CONTACT_CARDS = [
   {
     icon: Phone,
-    label: "Phone",
+    label: "Office",
     value: COMPANY.phone,
     href: COMPANY.phoneTel,
+    isLink: true,
+  },
+  {
+    icon: Phone,
+    label: COMPANY.phoneSecondaryLabel,
+    value: COMPANY.phoneSecondary,
+    href: COMPANY.phoneSecondaryTel,
     isLink: true,
   },
   {
@@ -77,8 +73,16 @@ export default function Contact() {
     <Layout>
       <SEO
         title="Get a Free Fence Estimate"
-        description="Contact TWOMENS Fence for a free, no-obligation fence estimate. Call (302) 555-0180 or fill out our online form."
+        description="Contact TWOMENS Fence for a free, no-obligation fence estimate. Call (610) 212-7123 or fill out our online form."
         canonicalUrl="https://twomensfence.com/contact"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://twomensfence.com" },
+            { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://twomensfence.com/contact" },
+          ],
+        }}
       />
 
       {/* ═══════════════════════════════════════
@@ -90,7 +94,7 @@ export default function Contact() {
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-trust/5 to-transparent" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 py-20 md:py-28 text-center">
+        <div className="relative max-w-7xl mx-auto px-6 py-14 md:py-20 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -131,7 +135,7 @@ export default function Contact() {
               <motion.div
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true }}
+                viewport={VIEWPORT}
                 variants={fadeUp}
               >
                 <SectionBadge icon={Phone} label="Get in Touch" />
@@ -152,7 +156,7 @@ export default function Contact() {
                     variants={fadeUp}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-40px" }}
+                    viewport={VIEWPORT}
                     custom={i}
                     className="flex items-start gap-4 rounded-xl bg-white border border-border p-4 hover:shadow-md hover:border-trust/30 transition-all duration-300"
                   >
@@ -185,7 +189,7 @@ export default function Contact() {
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true }}
+                viewport={VIEWPORT}
                 className="mt-10"
               >
                 <h3 className="text-lg font-bold text-foreground mb-4">
@@ -210,10 +214,9 @@ export default function Contact() {
 
             {/* Right — Contact form */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
               <ContactForm />
             </motion.div>
@@ -224,21 +227,21 @@ export default function Contact() {
       {/* ═══════════════════════════════════════
           MAP PLACEHOLDER — Section light
           ═══════════════════════════════════════ */}
-      <section className="py-16 md:py-20 bg-section-light">
+      <section className="py-16 md:py-20 bg-section-sage">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={VIEWPORT}
             transition={{ duration: 0.5 }}
             className="rounded-2xl bg-gradient-to-br from-trust/10 to-authority/10 border border-border overflow-hidden aspect-[16/6] flex flex-col items-center justify-center gap-3"
           >
             <MapPin size={48} className="text-muted-foreground/40" />
             <p className="text-muted-foreground font-medium">
-              Map — New Castle, DE 19808
+              Map — New Castle, DE 19720
             </p>
             <p className="text-sm text-muted-foreground/60">
-              Serving a 50-mile radius across DE, PA & MD
+              Serving a 2-hour radius across Delaware & Pennsylvania
             </p>
           </motion.div>
         </div>
@@ -252,7 +255,7 @@ export default function Contact() {
           <SectionHeading
             badge={{ icon: MapPin, label: "Areas We Serve" }}
             title="Fence Installation Near You"
-            subtitle="Based in New Castle, DE — proudly serving Delaware, southeast Pennsylvania, and northeast Maryland."
+            subtitle="Based in New Castle, DE — proudly serving Delaware and southeastern Pennsylvania within a 2-hour radius."
             light
           />
 
@@ -263,7 +266,7 @@ export default function Contact() {
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-40px" }}
+                viewport={VIEWPORT}
                 custom={i}
               >
                 <Link
@@ -300,7 +303,7 @@ export default function Contact() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={VIEWPORT}
             variants={fadeUp}
             className="mt-12 text-center"
           >

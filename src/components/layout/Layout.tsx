@@ -1,5 +1,7 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { MobileCTABar } from "@/components/shared/MobileCTABar";
+import { ExitIntentModal } from "@/components/shared/ExitIntentModal";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,6 +13,8 @@ export function Layout({ children }: LayoutProps) {
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />
+      <MobileCTABar />
+      <ExitIntentModal />
     </div>
   );
 }

@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, CheckCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { RESEND_ENDPOINT, COMPANY } from "@/lib/constants";
 
 interface FormData {
   name: string;
@@ -21,12 +23,15 @@ const SERVICE_OPTIONS = [
   "Vinyl Fencing",
   "Aluminum Fencing",
   "Chain Link Fencing",
+  "Deck Building",
+  "Tree Trimming",
   "Fence Repair",
   "Gate Installation",
   "Other",
 ];
 
-export function ContactForm({ dark = false }: { dark?: boolean }) {
+export function ContactForm({ dark = false, redirectOnSuccess = true }: { dark?: boolean; redirectOnSuccess?: boolean }) {
+  const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [data, setData] = useState<FormData>({
@@ -44,14 +49,29 @@ export function ContactForm({ dark = false }: { dark?: boolean }) {
 
   const handleSubmit = async () => {
     setStatus("loading");
-    // Formspree integration — placeholder for now
-    console.log("Form submitted:", {
-      ...data,
-      source_page: window.location.pathname,
-      timestamp: new Date().toISOString(),
-    });
-    await new Promise((r) => setTimeout(r, 1000));
-    setStatus("success");
+    try {
+      const res = await fetch(RESEND_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.name,
+          phone: data.phone,
+          email: data.email,
+          serviceType: data.serviceType,
+          description: data.description,
+          preferredContact: data.preferredContact,
+          address: data.address,
+          sourcePage: window.location.pathname,
+        }),
+      });
+      if (!res.ok) throw new Error("Submit failed");
+      setStatus("success");
+      if (redirectOnSuccess) {
+        navigate("/thank-you");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   const cardBg = dark
@@ -118,7 +138,7 @@ export function ContactForm({ dark = false }: { dark?: boolean }) {
             <div>
               <Label className={labelColor}>Phone *</Label>
               <Input
-                placeholder="(302) 555-0180"
+                placeholder="(610) 212-7123"
                 value={data.phone}
                 onChange={(e) => update("phone", e.target.value)}
                 className={`mt-1 ${inputBg}`}
@@ -165,9 +185,9 @@ export function ContactForm({ dark = false }: { dark?: boolean }) {
                     : "bg-background border-input"
                 }`}
               >
-                <option value="">Select a service...</option>
+                <option value="" className="bg-neutral-800 text-white">Select a service...</option>
                 {SERVICE_OPTIONS.map((opt) => (
-                  <option key={opt} value={opt}>
+                  <option key={opt} value={opt} className="bg-neutral-800 text-white">
                     {opt}
                   </option>
                 ))}
@@ -238,8 +258,8 @@ export function ContactForm({ dark = false }: { dark?: boolean }) {
       {status === "error" && (
         <p className="mt-4 text-sm text-destructive text-center">
           Something went wrong. Call{" "}
-          <a href="tel:+13025550180" className="underline">
-            (302) 555-0180
+          <a href={COMPANY.phoneTel} className="underline">
+            {COMPANY.phone}
           </a>{" "}
           instead.
         </p>

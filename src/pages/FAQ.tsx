@@ -17,18 +17,6 @@ import {
 import { COMPANY, SERVICE_AREAS } from "@/lib/constants";
 
 /* ──────────────────────────────────────────────
-   Animation helpers
-   ────────────────────────────────────────────── */
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, delay: i * 0.1, ease: "easeOut" as const },
-  }),
-};
-
-/* ──────────────────────────────────────────────
    Data
    ────────────────────────────────────────────── */
 interface FAQItem {
@@ -52,16 +40,16 @@ const FAQ_CATEGORIES: FAQCategory[] = [
       {
         question: "How long have you been in business?",
         answer:
-          "TWOMENS Fence & Construction has been serving Delaware and the surrounding tri-state area since 2008. That's 17+ years of professional fence installation experience. We've installed over 2,500 fences and built our reputation on quality work and honest service.",
+          "TWOMENS Fence & Construction is owned by Oscar and Anna — a husband-and-wife team with over 18 years of experience. They've completed over 2,500 projects including fences, decks, and tree trimming, and built their reputation on quality work and honest service.",
       },
       {
         question: "Are you licensed and insured?",
         answer:
-          "Yes, we are fully licensed and insured. We carry both general liability insurance and workers' compensation coverage. We're happy to provide proof of insurance upon request — many homeowners and HOAs require this before work begins.",
+          "Yes, we are fully licensed and insured. We carry both general liability insurance and workers' compensation coverage. Plus, every job comes with a warranty. We're happy to provide proof of insurance upon request — many homeowners and HOAs require this before work begins.",
       },
       {
         question: "What areas do you serve?",
-        answer: `We serve a 50-mile radius from our home base in New Castle, DE. This includes ${SERVICE_AREAS.map((a) => a.label).join(", ")}, and surrounding communities. If you're not sure whether we cover your area, give us a call and we'll let you know.`,
+        answer: `We serve a 2-hour radius from our home base in New Castle, DE (19720). This includes ${SERVICE_AREAS.map((a) => a.label).join(", ")}, and surrounding communities across Delaware and Pennsylvania. If you're not sure whether we cover your area, give us a call and we'll let you know.`,
       },
       {
         question: "Do you offer free estimates?",
@@ -73,7 +61,7 @@ const FAQ_CATEGORIES: FAQCategory[] = [
   {
     title: "Installation",
     icon: Wrench,
-    bg: "bg-section-light",
+    bg: "bg-section-warm",
     items: [
       {
         question: "How long does installation take?",
@@ -81,9 +69,9 @@ const FAQ_CATEGORIES: FAQCategory[] = [
           "Most residential fence installations take 1 to 3 days, depending on the size of the property, the type of fence, and terrain conditions. We'll give you a clear timeline during your estimate so you know exactly what to expect.",
       },
       {
-        question: "Do I need a permit for my fence?",
+        question: "Do I need a permit for my fence or deck?",
         answer:
-          "It depends on your municipality. Some areas in Delaware, Pennsylvania, and Maryland require permits for fence installation, while others don't. We help guide you through the permit process — including what's needed, where to apply, and any setback or height restrictions that may apply.",
+          "It depends on your municipality. Some areas in Delaware and Pennsylvania require permits for fence and deck installation, while others don't. We help guide you through the permit process — including what's needed, where to apply, and any setback or height restrictions that may apply.",
       },
       {
         question: "Do you remove old fencing?",
@@ -120,7 +108,7 @@ const FAQ_CATEGORIES: FAQCategory[] = [
       {
         question: "Do you warranty your work?",
         answer:
-          "Yes. We stand behind every fence we build with a workmanship warranty on all installations. If there's ever an issue with how your fence was installed, we'll come back and make it right. Many of our materials also carry their own manufacturer warranties.",
+          "Absolutely — every single job comes with a warranty. We stand behind every fence, deck, and tree job we do. If there's ever an issue, we'll come back and make it right. Many of our materials also carry their own manufacturer warranties.",
       },
     ],
   },
@@ -137,13 +125,8 @@ function FAQAccordion({ items }: { items: FAQItem[] }) {
       {items.map((item, i) => {
         const isOpen = openIndex === i;
         return (
-          <motion.div
+          <div
             key={i}
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-40px" }}
-            custom={i}
             className="rounded-xl bg-white border border-border overflow-hidden"
           >
             <button
@@ -177,7 +160,7 @@ function FAQAccordion({ items }: { items: FAQItem[] }) {
                 </motion.div>
               )}
             </AnimatePresence>
-          </motion.div>
+          </div>
         );
       })}
     </div>
@@ -194,7 +177,7 @@ export default function FAQ() {
         title="Fence Installation FAQ"
         description="Answers to common questions about fence installation in Delaware — permits, costs, materials, timelines, and more."
         canonicalUrl="https://twomensfence.com/faq"
-        schema={{
+        schema={[{
           "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": FAQ_CATEGORIES.flatMap((cat) =>
@@ -207,7 +190,14 @@ export default function FAQ() {
               },
             }))
           ),
-        }}
+        }, {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://twomensfence.com" },
+            { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://twomensfence.com/faq" },
+          ],
+        }]}
       />
 
       {/* ═══════════════════════════════════════
@@ -219,7 +209,7 @@ export default function FAQ() {
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-trust/5 to-transparent" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 py-20 md:py-28 text-center">
+        <div className="relative max-w-7xl mx-auto px-6 py-14 md:py-20 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

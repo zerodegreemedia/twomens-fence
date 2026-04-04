@@ -9,6 +9,11 @@ const WoodFencing = lazy(() => import("@/pages/services/WoodFencing"));
 const VinylFencing = lazy(() => import("@/pages/services/VinylFencing"));
 const AluminumFencing = lazy(() => import("@/pages/services/AluminumFencing"));
 const ChainLinkFencing = lazy(() => import("@/pages/services/ChainLinkFencing"));
+const FenceRepair = lazy(() => import("@/pages/services/FenceRepair"));
+const GateInstallation = lazy(() => import("@/pages/services/GateInstallation"));
+const DeckBuilding = lazy(() => import("@/pages/services/DeckBuilding"));
+const TreeTrimming = lazy(() => import("@/pages/services/TreeTrimming"));
+const ThankYou = lazy(() => import("@/pages/ThankYou"));
 const Gallery = lazy(() => import("@/pages/Gallery"));
 const FAQ = lazy(() => import("@/pages/FAQ"));
 const Contact = lazy(() => import("@/pages/Contact"));
@@ -48,9 +53,14 @@ export default function App() {
             <Route path="/services/vinyl-fencing" element={<VinylFencing />} />
             <Route path="/services/aluminum-fencing" element={<AluminumFencing />} />
             <Route path="/services/chain-link-fencing" element={<ChainLinkFencing />} />
+            <Route path="/services/fence-repair" element={<FenceRepair />} />
+            <Route path="/services/gate-installation" element={<GateInstallation />} />
+            <Route path="/services/deck-building" element={<DeckBuilding />} />
+            <Route path="/services/tree-trimming" element={<TreeTrimming />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/thank-you" element={<ThankYou />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/sitemap" element={<SitemapPage />} />

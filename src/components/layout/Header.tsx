@@ -30,11 +30,18 @@ export function Header() {
       <div className="bg-authority text-white/70 text-xs py-1.5 hidden md:block">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <span>Licensed & Insured</span>
+            <span>Licensed & Insured — Every Job Warranted</span>
             <span className="text-white/30">·</span>
-            <span>Locally Owned — New Castle, DE</span>
+            <span>Serving {SERVICE_AREAS.length} Areas in DE & PA</span>
             <span className="text-white/30">·</span>
-            <span>Free Estimates</span>
+            <a
+              href={COMPANY.social.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-action hover:text-action-glow transition-colors font-medium"
+            >
+              {COMPANY.rating} ★ · {COMPANY.reviewCount}+ Reviews
+            </a>
           </div>
           <a
             href={COMPANY.phoneTel}
@@ -57,6 +64,8 @@ export function Header() {
             <img
               src="/img/logo/logo-white.svg"
               alt="TWOMENS Fence & Construction"
+              width={192}
+              height={48}
               className="h-10 md:h-12 w-auto"
             />
           </Link>

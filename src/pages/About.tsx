@@ -6,6 +6,7 @@ import { CTAButton } from "@/components/shared/CTAButton";
 import { StatCounter } from "@/components/shared/StatCounter";
 import { ContactForm } from "@/components/shared/ContactForm";
 import { motion } from "framer-motion";
+import { fadeUp, VIEWPORT } from "@/lib/animations";
 import {
   Shield,
   Heart,
@@ -26,15 +27,6 @@ import { CREW_IMAGES } from "@/lib/images";
 /* ──────────────────────────────────────────────
    Animation helpers
    ────────────────────────────────────────────── */
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, delay: i * 0.1, ease: "easeOut" as const },
-  }),
-};
-
 const stagger = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
@@ -60,8 +52,8 @@ const VALUES = [
   },
   {
     icon: Heart,
-    title: "Community",
-    desc: "We live where we work. Our kids play in the same neighborhoods. That's why we treat every yard like it's our own.",
+    title: "Family First",
+    desc: "Oscar and Anna run this business together — as a family. They live where they work and treat every property like it's their own.",
   },
 ];
 
@@ -81,10 +73,10 @@ export default function About() {
   return (
     <Layout>
       <SEO
-        title="About TWOMENS Fence"
-        description="Licensed Delaware fence contractor serving DE, PA, and MD since 2008. Learn about our story, values, and commitment to quality."
+        title="About TWOMENS Fence — Oscar & Anna"
+        description="Husband-and-wife team with 18+ years building fences, decks, and trimming trees across Delaware & PA. Licensed, insured, and every job warranted."
         canonicalUrl="https://twomensfence.com/about"
-        schema={{
+        schema={[{
           "@context": "https://schema.org",
           "@type": "Organization",
           "name": COMPANY.name,
@@ -99,8 +91,15 @@ export default function About() {
             "addressCountry": "US",
           },
           "foundingDate": `${COMPANY.yearFounded}`,
-          "areaServed": ["Delaware", "Pennsylvania", "Maryland"],
-        }}
+          "areaServed": ["Delaware", "Pennsylvania"],
+        }, {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://twomensfence.com" },
+            { "@type": "ListItem", "position": 2, "name": "About", "item": "https://twomensfence.com/about" },
+          ],
+        }]}
       />
 
       {/* ═══════════════════════════════════════
@@ -118,7 +117,7 @@ export default function About() {
           />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 py-20 md:py-28 lg:py-32 text-center">
+        <div className="relative max-w-7xl mx-auto px-6 py-14 md:py-20 text-center">
           <motion.div initial="hidden" animate="visible" variants={stagger}>
             <motion.div variants={fadeUp} custom={0}>
               <SectionBadge icon={Users} label="About TWOMENS" />
@@ -138,9 +137,9 @@ export default function About() {
               custom={2}
               className="mt-6 text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed"
             >
-              Family-owned and locally operated since {COMPANY.yearFounded}. We
-              build fences the right way — and our neighbors can tell you that
-              themselves.
+              Oscar &amp; Anna — husband and wife, 18+ years of experience.
+              Fences, decks, and tree trimming done right, with a warranty on
+              every job.
             </motion.p>
 
             <motion.div
@@ -164,17 +163,13 @@ export default function About() {
       {/* ═══════════════════════════════════════
           STATS BAR
           ═══════════════════════════════════════ */}
-      <section className="bg-authority-light border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6 py-14">
+      <section className="relative bg-section-sage border-y border-border">
+        <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <StatCounter
-              value={COMPANY.yearFounded === 2008 ? 17 : new Date().getFullYear() - COMPANY.yearFounded}
-              suffix="+"
-              label="Years of Experience"
-            />
-            <StatCounter value={2500} suffix="+" label="Fences Installed" />
-            <StatCounter value={COMPANY.reviewCount} suffix="+" label="5-Star Reviews" />
-            <StatCounter value={11} label="Cities Served" />
+            <StatCounter value={COMPANY.yearsExperience} suffix="+" label="Years of Experience" light={false} />
+            <StatCounter value={2500} suffix="+" label="Projects Completed" light={false} />
+            <StatCounter value={COMPANY.reviewCount} suffix="+" label="5-Star Reviews" light={false} />
+            <StatCounter value={15} label="Cities Served" light={false} />
           </div>
         </div>
       </section>
@@ -190,7 +185,7 @@ export default function About() {
               <motion.div
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-80px" }}
+                viewport={VIEWPORT}
                 variants={stagger}
               >
                 <motion.div variants={fadeUp} custom={0}>
@@ -202,7 +197,7 @@ export default function About() {
                   custom={1}
                   className="mt-6 text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-foreground leading-tight"
                 >
-                  Two Guys Who Decided to Do Things the Right Way
+                  A Husband &amp; Wife Team That Does Things the Right Way
                 </motion.h2>
 
                 <motion.p
@@ -210,11 +205,12 @@ export default function About() {
                   custom={2}
                   className="mt-6 text-muted-foreground leading-relaxed"
                 >
-                  Back in 2008, two guys with a truck, a post-hole digger, and a
-                  simple belief — that customers deserve honest work at fair
-                  prices — started building fences in New Castle County. No
-                  fancy office, no sales team. Just hard work, straight talk, and
-                  fences that were built to last.
+                  TWOMENS Fence &amp; Construction was built by Oscar and Anna — a
+                  husband-and-wife team with a simple belief: customers deserve
+                  honest work at fair prices. Over 18 years ago they picked up
+                  their tools, loaded the truck, and started building fences in
+                  New Castle County. No fancy office, no sales team. Just hard
+                  work, straight talk, and projects built to last.
                 </motion.p>
 
                 <motion.p
@@ -223,10 +219,11 @@ export default function About() {
                   className="mt-4 text-muted-foreground leading-relaxed"
                 >
                   Word got around. One neighbor told another, one referral turned
-                  into ten, and before long we had more work than we could
-                  handle. We grew — but we never lost sight of what got us here.
-                  Every fence still gets the same care and attention as that
-                  very first one.
+                  into ten, and before long they had more work than they could
+                  handle. What started as fencing grew into deck building and
+                  tree trimming — because customers kept asking and Oscar and
+                  Anna kept delivering quality work. They grew, but never lost
+                  sight of what got them here.
                 </motion.p>
 
                 <motion.p
@@ -234,12 +231,13 @@ export default function About() {
                   custom={4}
                   className="mt-4 text-muted-foreground leading-relaxed"
                 >
-                  Today, the owners are still on the job site. We still answer
-                  our own phone. We still measure twice, cut once, and clean up
-                  before we leave. That's not a marketing promise — it's how
-                  we've done business for 17 years, and it's why we have over{" "}
-                  {COMPANY.reviewCount} five-star reviews from real homeowners
-                  across Delaware, Pennsylvania, and Maryland.
+                  Today, Oscar and Anna are still on the job site. They still
+                  answer their own phone. They still measure twice, cut once, and
+                  clean up before they leave. Every job is licensed, insured, and
+                  comes with a warranty. That's not a marketing promise — it's
+                  how they've done business for 18+ years, and it's why they have
+                  over {COMPANY.reviewCount} five-star reviews from real
+                  homeowners across Delaware and Pennsylvania.
                 </motion.p>
               </motion.div>
             </div>
@@ -248,13 +246,15 @@ export default function About() {
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
+              viewport={VIEWPORT}
               variants={fadeUp}
               className="aspect-[4/3] rounded-2xl border border-border overflow-hidden"
             >
               <img
                 src={CREW_IMAGES[0]?.path || ""}
                 alt={CREW_IMAGES[0]?.alt || "TWOMENS Fence crew"}
+                width={800}
+                height={600}
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -266,7 +266,7 @@ export default function About() {
       {/* ═══════════════════════════════════════
           VALUES — bg-section-light
           ═══════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-section-light">
+      <section className="py-20 md:py-28 bg-section-warm">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: Target, label: "Our Values" }}
@@ -281,7 +281,7 @@ export default function About() {
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-60px" }}
+                viewport={VIEWPORT}
                 custom={i}
                 className="rounded-2xl border border-border bg-white p-6 hover:shadow-xl hover:border-trust/30 transition-all duration-300"
               >
@@ -320,7 +320,7 @@ export default function About() {
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-60px" }}
+                viewport={VIEWPORT}
                 custom={i}
                 className="flex items-center gap-3 rounded-2xl bg-white/5 border border-white/10 p-5 hover:bg-white/[0.08] transition-all duration-300"
               >
@@ -339,7 +339,7 @@ export default function About() {
       {/* ═══════════════════════════════════════
           BOTTOM CTA — Light with form
           ═══════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-section-light">
+      <section className="py-20 md:py-28 bg-section-sage">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -357,7 +357,7 @@ export default function About() {
                   "Free on-site estimates",
                   "Owners on every job",
                   "Written quotes — no surprises",
-                  "Serving DE, PA & MD since 2008",
+                  "Serving DE & PA — 18+ years experience",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-foreground">
                     <CheckCircle size={18} className="text-trust shrink-0" />

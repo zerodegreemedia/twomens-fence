@@ -24,29 +24,31 @@ import {
   Users,
   ThumbsUp,
   Wrench,
+  Columns3,
+  DoorOpen,
+  Axe,
+  Link2,
+  type LucideIcon,
 } from "lucide-react";
 import { COMPANY, SERVICES, SERVICE_AREAS, LOCAL_BUSINESS_SCHEMA } from "@/lib/constants";
 import { HERO_IMAGES, OG_IMAGE, GALLERY_IMAGES } from "@/lib/images";
-
-/* ──────────────────────────────────────────────
-   Animation helpers
-   ────────────────────────────────────────────── */
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, delay: i * 0.1, ease: "easeOut" as const },
-  }),
-};
-
-const stagger = {
-  visible: { transition: { staggerChildren: 0.1 } },
-};
+import { fadeUp, stagger, VIEWPORT } from "@/lib/animations";
 
 /* ──────────────────────────────────────────────
    Data
    ────────────────────────────────────────────── */
+/* Icon map — unique icon per service slug */
+const SERVICE_ICON_MAP: Record<string, LucideIcon> = {
+  "wood-fencing": TreePine,
+  "vinyl-fencing": Columns3,
+  "aluminum-fencing": Fence,
+  "chain-link-fencing": Link2,
+  "deck-building": Hammer,
+  "tree-trimming": Axe,
+  "fence-repair": Wrench,
+  "gate-installation": DoorOpen,
+};
+
 const TRUST_BADGES = [
   { icon: Shield, label: "Licensed & Insured" },
   { icon: Award, label: "5-Star Rated" },
@@ -57,18 +59,18 @@ const TRUST_BADGES = [
 const WHY_US = [
   {
     icon: ThumbsUp,
-    title: "Quality Craftsmanship",
-    desc: "Every fence is built plumb, level, and square — no shortcuts. We use premium materials and proven techniques that stand up to Mid-Atlantic weather.",
+    title: "18+ Years of Experience",
+    desc: "With over 18 years in the business, we've seen it all and built it all — fences, decks, tree trimming, and more.",
   },
   {
     icon: Users,
-    title: "Family-Owned Service",
-    desc: "When you call, you talk to the owners. No sales reps, no runaround. Just honest people who care about doing the job right.",
+    title: "Husband & Wife Team",
+    desc: "When you call, you talk to the owners — Oscar or Anna. No sales reps, no runaround. Just honest people who care about doing the job right.",
   },
   {
-    icon: Wrench,
-    title: "Full-Service Installation",
-    desc: "From permit guidance to final walkthrough, we handle every step. You approve the design — we take care of the rest.",
+    icon: Shield,
+    title: "Licensed, Insured & Warranted",
+    desc: "Every job is fully licensed and insured. And every project comes with a warranty — because we stand behind our work, period.",
   },
   {
     icon: Clock,
@@ -81,26 +83,26 @@ const TESTIMONIALS = [
   {
     name: "Sarah M.",
     location: "Wilmington, DE",
-    text: "TWOMENS installed a beautiful cedar fence in our backyard. The crew was professional, clean, and finished ahead of schedule. Couldn't be happier!",
+    text: "Oscar and Anna built a beautiful cedar fence in our backyard. They were professional, clean, and finished ahead of schedule. Couldn't be happier!",
     rating: 5,
   },
   {
     name: "James R.",
     location: "Bear, DE",
-    text: "We got quotes from four companies and TWOMENS was the most honest and transparent. The vinyl fence looks incredible and the price was fair.",
+    text: "We got quotes from four companies and TWOMENS was the most honest and transparent. The vinyl fence looks incredible and the price was fair. Plus everything comes with a warranty.",
     rating: 5,
   },
   {
     name: "Maria L.",
     location: "Newark, DE",
-    text: "They replaced our old chain link with an aluminum fence around the pool. Looks amazing and passed inspection the first time. Highly recommend!",
+    text: "They built our deck and trimmed three big trees in the same week. Oscar and Anna run a tight operation — on time, clean, and great work. Highly recommend!",
     rating: 5,
   },
 ];
 
 const PROCESS_STEPS = [
   { num: "01", title: "Free Estimate", desc: "Call or fill out our form. We'll visit your property, measure, and give you an honest quote — no surprises." },
-  { num: "02", title: "Choose Your Fence", desc: "Pick from wood, vinyl, aluminum, or chain link. We'll help you choose the best fit for your property and budget." },
+  { num: "02", title: "Choose Your Project", desc: "Fence, deck, or tree work — we'll help you choose the best fit for your property and budget." },
   { num: "03", title: "Professional Install", desc: "Our crew shows up on time, builds it right, and leaves your property clean. Most jobs done in 1–3 days." },
   { num: "04", title: "Final Walkthrough", desc: "We walk the fence line with you, make sure every detail is perfect, and answer any questions before we leave." },
 ];
@@ -113,10 +115,20 @@ export default function Home() {
   return (
     <Layout>
       <SEO
-        title="Professional Fence Installation in Delaware"
-        description="Professional fence installation in New Castle, DE. Wood, vinyl, aluminum & chain link fencing. Free estimates. Licensed & insured. TWOMENS Fence."
+        title="Fences, Decks & Tree Trimming in Delaware | TWOMENS"
+        description="Oscar & Anna — 18+ years building fences, decks, and trimming trees in Delaware & PA. Licensed, insured, every job warranted. Free estimates."
         canonicalUrl="https://twomensfence.com"
-        schema={LOCAL_BUSINESS_SCHEMA}
+        schema={[LOCAL_BUSINESS_SCHEMA, {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": COMPANY.name,
+          "url": "https://twomensfence.com",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://twomensfence.com/services?q={search_term_string}",
+            "query-input": "required name=search_term_string",
+          },
+        }]}
         ogImage={OG_IMAGE}
       />
 
@@ -129,6 +141,9 @@ export default function Home() {
           <img
             src={HERO_IMAGES[0].path}
             alt={HERO_IMAGES[0].alt}
+            width={1920}
+            height={1080}
+            fetchPriority="high"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-authority/95 via-authority/85 to-authority/80" />
@@ -150,7 +165,7 @@ export default function Home() {
               variants={stagger}
             >
               <motion.div variants={fadeUp} custom={0}>
-                <SectionBadge icon={MapPin} label="Serving Delaware, PA & MD" />
+                <SectionBadge icon={MapPin} label="Serving Delaware & Pennsylvania" />
               </motion.div>
 
               <motion.h1
@@ -158,8 +173,8 @@ export default function Home() {
                 custom={1}
                 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight"
               >
-                Fences Built Right.{" "}
-                <span className="text-action">Guaranteed.</span>
+                Fences, Decks & Trees.{" "}
+                <span className="text-action">Done Right.</span>
               </motion.h1>
 
               <motion.p
@@ -167,9 +182,9 @@ export default function Home() {
                 custom={2}
                 className="mt-6 text-lg md:text-xl text-white/60 max-w-xl leading-relaxed"
               >
-                Professional fence installation from a locally owned crew that
-                shows up on time, does the job right, and treats your property
-                like our own. Serving New Castle County and beyond.
+                Oscar &amp; Anna have been building fences, decks, and trimming
+                trees for over 18 years. Husband-and-wife owned, licensed,
+                insured, and every job comes with a warranty.
               </motion.p>
 
               {/* CTA Row */}
@@ -227,15 +242,15 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════
-          TRUST BAR — Stats
+          TRUST BAR — Stats (visually distinct)
           ═══════════════════════════════════════ */}
-      <section className="bg-authority-light border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6 py-14">
+      <section className="relative bg-section-sage border-y border-border">
+        <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <StatCounter value={COMPANY.yearFounded === 2008 ? 17 : new Date().getFullYear() - COMPANY.yearFounded} suffix="+" label="Years of Experience" />
-            <StatCounter value={2500} suffix="+" label="Fences Installed" />
-            <StatCounter value={COMPANY.reviewCount} suffix="+" label="5-Star Reviews" />
-            <StatCounter value={11} label="Cities Served" />
+            <StatCounter value={COMPANY.yearsExperience} suffix="+" label="Years of Experience" light={false} />
+            <StatCounter value={2500} suffix="+" label="Projects Completed" light={false} />
+            <StatCounter value={COMPANY.reviewCount} suffix="+" label="5-Star Reviews" light={false} />
+            <StatCounter value={15} label="Cities Served" light={false} />
           </div>
         </div>
       </section>
@@ -247,54 +262,57 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: Hammer, label: "Our Services" }}
-            title="Fencing Solutions for Every Property"
-            subtitle="From classic wood privacy fences to modern vinyl and ornamental aluminum — we install it all with the same attention to detail."
+            title="Fences, Decks & Tree Trimming"
+            subtitle="From classic wood privacy fences to custom decks and professional tree trimming — we handle it all with 18+ years of hands-on experience."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {SERVICES.map((service, i) => (
-              <motion.div
-                key={service.slug}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-60px" }}
-                custom={i}
-              >
-                <Link
-                  to={service.href}
-                  className="group block rounded-2xl border border-border bg-white p-6 hover:shadow-xl hover:border-trust/30 transition-all duration-300 h-full"
+            {SERVICES.map((service, i) => {
+              const Icon = SERVICE_ICON_MAP[service.slug] || Fence;
+              return (
+                <motion.div
+                  key={service.slug}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={VIEWPORT}
+                  custom={i}
                 >
-                  <div className="w-12 h-12 rounded-xl bg-trust/10 flex items-center justify-center mb-4 group-hover:bg-trust/20 transition-colors">
-                    <Fence size={24} className="text-trust" />
-                  </div>
-                  <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-trust transition-colors">
-                    {service.label}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    {service.description}
-                  </p>
-                  <span className="inline-flex items-center text-sm font-medium text-trust group-hover:gap-2 transition-all">
-                    Learn More
-                    <ArrowRight size={14} className="ml-1" />
-                  </span>
-                </Link>
-              </motion.div>
-            ))}
+                  <Link
+                    to={service.href}
+                    className="group block rounded-2xl border border-border bg-white p-6 hover:shadow-xl hover:border-trust/30 transition-all duration-300 h-full"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-trust/10 flex items-center justify-center mb-4 group-hover:bg-trust/20 transition-colors">
+                      <Icon size={24} className="text-trust" />
+                    </div>
+                    <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-trust transition-colors">
+                      {service.label}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      {service.description}
+                    </p>
+                    <span className="inline-flex items-center text-sm font-medium text-trust group-hover:gap-2 transition-all">
+                      Learn More
+                      <ArrowRight size={14} className="ml-1" />
+                    </span>
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* Extra services callout */}
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={VIEWPORT}
             variants={fadeUp}
             className="mt-10 text-center"
           >
             <p className="text-muted-foreground">
               We also offer{" "}
-              <span className="font-semibold text-foreground">fence repair</span> and{" "}
-              <span className="font-semibold text-foreground">gate installation</span>.{" "}
+              <span className="font-semibold text-foreground">fence repair</span>,{" "}
+              <span className="font-semibold text-foreground">gate installation</span>, and more.{" "}
               <Link
                 to="/contact"
                 className="text-trust font-semibold hover:text-trust-glow transition-colors"
@@ -310,12 +328,13 @@ export default function Home() {
           WHY US — Dark section
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-authority relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-authority via-authority-light/30 to-authority" />
+        <div className="absolute inset-0 bg-gradient-to-br from-authority via-authority-light/40 to-authority" />
+        <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-trust/5 to-transparent" />
         <div className="relative max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: Star, label: "Why Choose Us" }}
             title="The TWOMENS Difference"
-            subtitle="We're not a franchise. We're not a call center. We're a local crew that builds fences the way they should be built."
+            subtitle="We're not a franchise. We're not a call center. We're Oscar and Anna — a husband-and-wife team with 18 years of experience and a reputation built on doing things right."
             light
           />
 
@@ -326,17 +345,17 @@ export default function Home() {
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-60px" }}
+                viewport={VIEWPORT}
                 custom={i}
-                className="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/[0.08] transition-all duration-300"
+                className="rounded-2xl bg-white/[0.06] border border-white/10 p-6 hover:bg-white/[0.10] hover:border-white/20 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-action/10 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-action/15 flex items-center justify-center mb-4">
                   <item.icon size={24} className="text-action" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-white/50 leading-relaxed">
+                <p className="text-sm text-white/55 leading-relaxed">
                   {item.desc}
                 </p>
               </motion.div>
@@ -346,9 +365,9 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════
-          PROCESS — Light section (green tint)
+          PROCESS — Warm tinted section
           ═══════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-section-light">
+      <section className="py-20 md:py-28 bg-section-warm">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: CheckCircle, label: "Our Process" }}
@@ -363,7 +382,7 @@ export default function Home() {
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-60px" }}
+                viewport={VIEWPORT}
                 custom={i}
                 className="relative"
               >
@@ -387,7 +406,7 @@ export default function Home() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={VIEWPORT}
             variants={fadeUp}
             className="mt-12 text-center"
           >
@@ -400,10 +419,11 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════
-          TESTIMONIALS — Dark section
+          TESTIMONIALS — Dark section (different gradient)
           ═══════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-authority">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 md:py-28 bg-authority relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-tl from-authority-light/20 via-transparent to-authority" />
+        <div className="relative max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: Quote, label: "What Customers Say" }}
             title="Trusted by Homeowners Across Delaware"
@@ -417,9 +437,9 @@ export default function Home() {
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-60px" }}
+                viewport={VIEWPORT}
                 custom={i}
-                className="rounded-2xl bg-white/5 border border-white/10 p-6"
+                className="rounded-2xl bg-white/[0.06] border border-white/10 p-6 hover:bg-white/[0.09] transition-colors duration-300"
               >
                 <div className="flex gap-0.5 mb-4">
                   {Array.from({ length: t.rating }).map((_, j) => (
@@ -444,7 +464,7 @@ export default function Home() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={VIEWPORT}
             variants={fadeUp}
             className="mt-10 text-center"
           >
@@ -462,8 +482,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: Award, label: "Our Work" }}
-            title="Recent Fence Installations"
-            subtitle="Every project is different. Here's a look at some of our recent work across Delaware and the tri-state area."
+            title="Recent Projects"
+            subtitle="Fences, decks, tree work — every project is different. Here's a look at some of our recent work across Delaware and Pennsylvania."
           />
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -473,13 +493,15 @@ export default function Home() {
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-40px" }}
+                viewport={VIEWPORT}
                 custom={i}
                 className="aspect-[4/3] rounded-xl border border-border overflow-hidden group cursor-pointer"
               >
                 <img
                   src={img.path}
                   alt={img.alt}
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
@@ -490,7 +512,7 @@ export default function Home() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={VIEWPORT}
             variants={fadeUp}
             className="mt-10 text-center"
           >
@@ -503,14 +525,14 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════
-          SERVICE AREAS — Dark
+          SERVICE AREAS — Dark (authority-light base)
           ═══════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-authority">
+      <section className="py-20 md:py-28 bg-authority-light">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: MapPin, label: "Areas We Serve" }}
-            title="Fence Installation Near You"
-            subtitle="Based in New Castle, DE — serving an area within 50 miles including Delaware, southeast Pennsylvania, and northeast Maryland."
+            title="Serving a 2-Hour Radius"
+            subtitle="Based in New Castle, DE (19720) — serving Delaware and southeastern Pennsylvania within a 2-hour drive."
             light
           />
 
@@ -521,7 +543,7 @@ export default function Home() {
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-40px" }}
+                viewport={VIEWPORT}
                 custom={i}
               >
                 <Link
@@ -558,9 +580,9 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════
-          BOTTOM CTA — Light with form
+          BOTTOM CTA — Sage tinted with form
           ═══════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-section-light">
+      <section className="py-20 md:py-28 bg-section-sage">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>

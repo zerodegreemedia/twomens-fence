@@ -1,10 +1,15 @@
 export const COMPANY = {
   name: "TWOMENS Fence & Construction",
   shortName: "TWOMENS",
-  phone: "(302) 555-0180",
-  phoneTel: "tel:+13025550180",
-  email: "info@twomensfence.com",
-  address: "New Castle, DE 19808",
+  owners: "Oscar & Anna",
+  phone: "(610) 212-7123",
+  phoneTel: "tel:+16102127123",
+  phoneLabel: "Oscar",
+  phoneSecondary: "(302) 803-0790",
+  phoneSecondaryTel: "tel:+13028030790",
+  phoneSecondaryLabel: "Anna",
+  email: "twomensfence512@gmail.com",
+  address: "New Castle, DE 19720",
   hours: "Mon–Fri 7am–6pm, Sat 8am–4pm, Sun Closed",
   hoursStructured: [
     { day: "Monday", open: "07:00", close: "18:00" },
@@ -17,6 +22,7 @@ export const COMPANY = {
   geo: { lat: 39.6582, lng: -75.5666 },
   priceRange: "$$",
   yearFounded: 2008,
+  yearsExperience: 18,
   reviewCount: 120,
   rating: 5.0,
   social: {
@@ -24,6 +30,9 @@ export const COMPANY = {
     instagram: "https://instagram.com/twomensfence",
   },
 } as const;
+
+// Resend — contact form sends via API route
+export const RESEND_ENDPOINT = "/api/contact";
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -63,7 +72,47 @@ export const SERVICES = [
     description: "Affordable, durable chain link for residential and commercial properties.",
     href: "/services/chain-link-fencing",
   },
+  {
+    slug: "deck-building",
+    label: "Deck Building",
+    shortLabel: "Decks",
+    description: "Custom wood and composite decks — from small patios to full outdoor living spaces.",
+    href: "/services/deck-building",
+  },
+  {
+    slug: "tree-trimming",
+    label: "Tree Trimming",
+    shortLabel: "Trees",
+    description: "Professional tree trimming and removal to keep your property safe and looking great.",
+    href: "/services/tree-trimming",
+  },
+  {
+    slug: "fence-repair",
+    label: "Fence Repair",
+    shortLabel: "Repair",
+    description: "Fast, affordable fence repair — storm damage, leaning posts, broken boards.",
+    href: "/services/fence-repair",
+  },
+  {
+    slug: "gate-installation",
+    label: "Gate Installation",
+    shortLabel: "Gates",
+    description: "Custom driveway, walk-through, and pool code gate installation.",
+    href: "/services/gate-installation",
+  },
 ] as const;
+
+/** Map of service slugs to Lucide icon names (resolved to components at usage site) */
+export const SERVICE_ICON_NAMES: Record<string, string> = {
+  "wood-fencing": "TreePine",
+  "vinyl-fencing": "Columns3",
+  "aluminum-fencing": "Fence",
+  "chain-link-fencing": "Link2",
+  "deck-building": "Hammer",
+  "tree-trimming": "Axe",
+  "fence-repair": "Wrench",
+  "gate-installation": "DoorOpen",
+};
 
 export interface ServiceArea {
   slug: string;
@@ -178,22 +227,62 @@ export const SERVICE_AREAS: ServiceArea[] = [
     refs: ["Longwood Gardens", "mushroom capital"],
   },
   {
-    slug: "elkton-md",
-    city: "Elkton",
-    state: "Maryland",
-    stateAbbr: "MD",
-    label: "Elkton, MD",
-    href: "/service-areas/elkton-md",
+    slug: "media-pa",
+    city: "Media",
+    state: "Pennsylvania",
+    stateAbbr: "PA",
+    label: "Media, PA",
+    href: "/service-areas/media-pa",
+    driveTime: "~40 min",
+    refs: ["Delaware County seat", "State Street", "Ridley Creek"],
+  },
+  {
+    slug: "chester-pa",
+    city: "Chester",
+    state: "Pennsylvania",
+    stateAbbr: "PA",
+    label: "Chester, PA",
+    href: "/service-areas/chester-pa",
     driveTime: "~25 min",
-    refs: ["Cecil County", "Fair Hill", "I-95 corridor"],
+    refs: ["Delaware County", "waterfront", "I-95 corridor"],
+  },
+  {
+    slug: "downingtown-pa",
+    city: "Downingtown",
+    state: "Pennsylvania",
+    stateAbbr: "PA",
+    label: "Downingtown, PA",
+    href: "/service-areas/downingtown-pa",
+    driveTime: "~45 min",
+    refs: ["Chester County", "Brandywine Creek", "Route 30"],
+  },
+  {
+    slug: "milford-de",
+    city: "Milford",
+    state: "Delaware",
+    stateAbbr: "DE",
+    label: "Milford, DE",
+    href: "/service-areas/milford-de",
+    driveTime: "~1 hr",
+    refs: ["Mispillion River", "Kent/Sussex border", "downtown revitalization"],
+  },
+  {
+    slug: "seaford-de",
+    city: "Seaford",
+    state: "Delaware",
+    stateAbbr: "DE",
+    label: "Seaford, DE",
+    href: "/service-areas/seaford-de",
+    driveTime: "~1 hr 30 min",
+    refs: ["Nanticoke River", "western Sussex County"],
   },
 ];
 
 export const LOCAL_BUSINESS_SCHEMA = {
   "@context": "https://schema.org",
-  "@type": "FencingContractor",
+  "@type": "HomeAndConstructionBusiness",
   name: COMPANY.name,
-  image: "https://twomensfence.com/og-image.jpg",
+  image: "https://twomensfence.com/img/og-image.webp",
   telephone: COMPANY.phone,
   email: COMPANY.email,
   url: "https://twomensfence.com",
@@ -201,7 +290,7 @@ export const LOCAL_BUSINESS_SCHEMA = {
     "@type": "PostalAddress",
     addressLocality: "New Castle",
     addressRegion: "DE",
-    postalCode: "19808",
+    postalCode: "19720",
     addressCountry: "US",
   },
   geo: {

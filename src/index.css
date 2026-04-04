@@ -10,24 +10,31 @@
 
 @theme {
   --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-heading: "DM Sans", system-ui, sans-serif;
 
-  /* Authority — dark forest green */
+  /* Authority — dark forest green (primary dark palette) */
   --color-authority: hsl(150 30% 12%);
   --color-authority-light: hsl(150 20% 18%);
+  --color-authority-muted: hsl(150 15% 22%);
 
-  /* Trust — sage/moss green */
+  /* Trust — sage/moss green (secondary) */
   --color-trust: hsl(145 25% 45%);
   --color-trust-glow: hsl(145 30% 52%);
+  --color-trust-muted: hsl(145 15% 35%);
 
-  /* Action — warm amber/gold */
+  /* Action — warm amber/gold (CTAs) */
   --color-action: hsl(38 92% 50%);
   --color-action-glow: hsl(38 92% 58%);
+  --color-action-dim: hsl(38 60% 42%);
 
   /* Accent earth — wood/brown */
   --color-accent-earth: hsl(25 35% 35%);
+  --color-accent-earth-light: hsl(25 25% 50%);
 
-  /* Section backgrounds */
+  /* Section backgrounds — distinct tones for visual rhythm */
   --color-section-light: hsl(80 15% 97%);
+  --color-section-warm: hsl(38 20% 96%);
+  --color-section-sage: hsl(145 12% 95%);
 }
 
 @theme inline {
@@ -140,6 +147,43 @@
   background-clip: text;
 }
 
+@utility bg-authority-muted {
+  background-color: var(--color-authority-muted);
+}
+
+@utility bg-section-warm {
+  background-color: var(--color-section-warm);
+}
+
+@utility bg-section-sage {
+  background-color: var(--color-section-sage);
+}
+
+@utility text-action-dim {
+  color: var(--color-action-dim);
+}
+
+@utility text-accent-earth {
+  color: var(--color-accent-earth);
+}
+
+@utility text-accent-earth-light {
+  color: var(--color-accent-earth-light);
+}
+
 @utility text-muted-fg {
   color: var(--color-muted-foreground);
+}
+
+@utility safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Reduced motion: ensure content is always visible */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

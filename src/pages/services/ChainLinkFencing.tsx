@@ -17,25 +17,15 @@ import {
   ChevronDown,
   Fence,
   HelpCircle,
+  ArrowRight,
+  Columns3,
+  Wrench,
+  DoorOpen,
 } from "lucide-react";
-import { COMPANY } from "@/lib/constants";
+import { Link } from "react-router-dom";
+import { COMPANY, SERVICES } from "@/lib/constants";
 import { SERVICE_IMAGES } from "@/lib/images";
-
-/* ──────────────────────────────────────────────
-   Animation helpers
-   ────────────────────────────────────────────── */
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, delay: i * 0.1, ease: "easeOut" as const },
-  }),
-};
-
-const stagger = {
-  visible: { transition: { staggerChildren: 0.1 } },
-};
+import { fadeUp, stagger, VIEWPORT } from "@/lib/animations";
 
 /* ──────────────────────────────────────────────
    Data
@@ -69,6 +59,13 @@ const STYLES = [
   { name: "Privacy Slats", desc: "Vertical or diagonal slats woven into the mesh for added privacy and wind reduction" },
   { name: "Barbed Wire (Commercial)", desc: "Security topping for commercial, industrial, and storage properties" },
   { name: "Heights: 4ft / 5ft / 6ft / 8ft", desc: "Residential heights from 4ft up to 8ft commercial and security applications" },
+];
+
+const RELATED_SERVICES = [
+  { slug: "aluminum-fencing", label: "Aluminum Fencing", icon: Fence, desc: "Elegant ornamental fencing" },
+  { slug: "gate-installation", label: "Gate Installation", icon: DoorOpen, desc: "Custom gates for your property" },
+  { slug: "fence-repair", label: "Fence Repair", icon: Wrench, desc: "Fix storm damage & leaning posts" },
+  { slug: "vinyl-fencing", label: "Vinyl Fencing", icon: Columns3, desc: "Low-maintenance privacy fencing" },
 ];
 
 const FAQS = [
@@ -171,7 +168,7 @@ export default function ChainLinkFencing() {
           ═══════════════════════════════════════ */}
       <section className="relative bg-authority overflow-hidden">
         <div className="absolute inset-0">
-          <img src={SERVICE_IMAGES.chainlink[0].path} alt={SERVICE_IMAGES.chainlink[0].alt} className="absolute inset-0 w-full h-full object-cover" />
+          <img src={SERVICE_IMAGES.chainlink[0].path} alt={SERVICE_IMAGES.chainlink[0].alt} width={1920} height={1080} fetchPriority="high" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-br from-authority/95 via-authority/85 to-authority/80" />
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-trust/5 to-transparent" />
         </div>
@@ -236,7 +233,7 @@ export default function ChainLinkFencing() {
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-60px" }}
+                viewport={VIEWPORT}
                 custom={i}
                 className="rounded-2xl border border-border bg-white p-6 hover:shadow-xl hover:border-trust/30 transition-all duration-300"
               >
@@ -273,7 +270,7 @@ export default function ChainLinkFencing() {
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-60px" }}
+                viewport={VIEWPORT}
                 custom={i}
                 className="flex items-start gap-4 rounded-xl border border-border bg-white p-5 hover:shadow-md transition-all duration-300"
               >
@@ -284,6 +281,45 @@ export default function ChainLinkFencing() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════
+          PHOTO GALLERY
+          ═══════════════════════════════════════ */}
+      <section className="py-20 md:py-28 bg-background">
+        <div className="max-w-7xl mx-auto px-6">
+          <SectionHeading badge={{ icon: Eye, label: "Our Work" }} title="Chain Link Fence Projects" subtitle="Browse recent chain link fence installations across Delaware and Pennsylvania." />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {SERVICE_IMAGES.chainlink.slice(0, 8).map((img, i) => (
+              <motion.div key={img.name} variants={fadeUp} initial="hidden" whileInView="visible" viewport={VIEWPORT} custom={i} className="aspect-[4/3] rounded-xl border border-border overflow-hidden group">
+                <img src={img.path} alt={img.alt} width={800} height={600} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════
+          RELATED SERVICES
+          ═══════════════════════════════════════ */}
+      <section className="py-16 md:py-20 bg-section-sage">
+        <div className="max-w-7xl mx-auto px-6">
+          <SectionHeading badge={{ icon: Fence, label: "Related Services" }} title="You Might Also Need" subtitle="Explore other services that pair well with chain link fencing." />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {RELATED_SERVICES.map((svc, i) => {
+              const href = SERVICES.find((s) => s.slug === svc.slug)?.href || `/services/${svc.slug}`;
+              return (
+                <motion.div key={svc.slug} variants={fadeUp} initial="hidden" whileInView="visible" viewport={VIEWPORT} custom={i}>
+                  <Link to={href} className="group flex items-center gap-4 rounded-xl border border-border bg-white p-4 hover:shadow-lg hover:border-trust/30 transition-all duration-300">
+                    <div className="w-10 h-10 rounded-lg bg-trust/10 flex items-center justify-center shrink-0 group-hover:bg-trust/20 transition-colors"><svc.icon size={20} className="text-trust" /></div>
+                    <div className="min-w-0"><h3 className="text-sm font-bold text-foreground group-hover:text-trust transition-colors">{svc.label}</h3><p className="text-xs text-muted-foreground truncate">{svc.desc}</p></div>
+                    <ArrowRight size={14} className="text-trust/40 shrink-0 ml-auto group-hover:text-trust transition-colors" />
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -308,7 +344,7 @@ export default function ChainLinkFencing() {
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-40px" }}
+                viewport={VIEWPORT}
                 custom={i}
               >
                 <FAQItem q={faq.q} a={faq.a} />
@@ -319,9 +355,9 @@ export default function ChainLinkFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          BOTTOM CTA — Light with form
+          BOTTOM CTA — Warm with form
           ═══════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-section-light">
+      <section className="py-20 md:py-28 bg-section-warm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>

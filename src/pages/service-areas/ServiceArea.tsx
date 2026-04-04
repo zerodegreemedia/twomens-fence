@@ -65,7 +65,7 @@ export default function ServiceArea() {
     "@context": "https://schema.org",
     "@type": "Service",
     name: `Fence Installation in ${area.city}, ${area.stateAbbr}`,
-    description: `Professional fence installation services in ${area.city}, ${area.state}. Wood, vinyl, aluminum & chain link fencing.`,
+    description: `Professional fencing, deck building, and tree trimming in ${area.city}, ${area.state}. Licensed, insured, every job warranted.`,
     provider: {
       "@type": "FencingContractor",
       name: COMPANY.name,
@@ -84,7 +84,7 @@ export default function ServiceArea() {
     <Layout>
       <SEO
         title={`Fence Installation in ${area.city}, ${area.stateAbbr}`}
-        description={`Professional fence installation in ${area.city}, ${area.state}. Wood, vinyl, aluminum & chain link fencing. Free estimates from ${COMPANY.name}.`}
+        description={`Fences, decks & tree trimming in ${area.city}, ${area.state}. 18+ years experience. Licensed, insured, every job warranted. Free estimates from ${COMPANY.name}.`}
         canonicalUrl={`https://twomensfence.com${area.href}`}
         schema={[serviceSchema, {
           "@context": "https://schema.org",
@@ -254,7 +254,7 @@ export default function ServiceArea() {
           <SectionHeading
             badge={{ icon: MapPin, label: "Service Areas" }}
             title="Other Areas We Serve"
-            subtitle="We install fences across Delaware, southeastern Pennsylvania, and northeastern Maryland."
+            subtitle="We serve a 2-hour radius from New Castle, DE — across Delaware and southeastern Pennsylvania."
             light
           />
 

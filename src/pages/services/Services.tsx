@@ -14,25 +14,27 @@ import {
   Wrench,
   DoorOpen,
   HelpCircle,
+  TreePine,
+  Columns3,
+  Link2,
+  Axe,
+  type LucideIcon,
 } from "lucide-react";
 import { COMPANY, SERVICES } from "@/lib/constants";
+
+/* Icon map — unique icon per service slug */
+const SERVICE_ICON_MAP: Record<string, LucideIcon> = {
+  "wood-fencing": TreePine,
+  "vinyl-fencing": Columns3,
+  "aluminum-fencing": Fence,
+  "chain-link-fencing": Link2,
+  "deck-building": Hammer,
+  "tree-trimming": Axe,
+  "fence-repair": Wrench,
+  "gate-installation": DoorOpen,
+};
 import { SERVICE_IMAGES } from "@/lib/images";
-
-/* ──────────────────────────────────────────────
-   Animation helpers
-   ────────────────────────────────────────────── */
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, delay: i * 0.1, ease: "easeOut" as const },
-  }),
-};
-
-const stagger = {
-  visible: { transition: { staggerChildren: 0.1 } },
-};
+import { fadeUp, stagger, VIEWPORT } from "@/lib/animations";
 
 /* ──────────────────────────────────────────────
    Data
@@ -78,9 +80,17 @@ export default function Services() {
   return (
     <Layout>
       <SEO
-        title="Fence Installation Services"
-        description="Professional wood, vinyl, aluminum, and chain link fence installation in Delaware, Pennsylvania, and Maryland. Plus fence repair and gate installation."
+        title="Fences, Decks & Tree Trimming Services"
+        description="Professional fencing, deck building, and tree trimming in Delaware & Pennsylvania. 18+ years experience. Licensed, insured, every job warranted."
         canonicalUrl="https://twomensfence.com/services"
+        schema={[{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://twomensfence.com" },
+            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://twomensfence.com/services" },
+          ],
+        }]}
       />
 
       {/* ═══════════════════════════════════════
@@ -109,8 +119,8 @@ export default function Services() {
               custom={1}
               className="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight max-w-4xl mx-auto"
             >
-              Fencing Solutions for{" "}
-              <span className="text-action">Every Property</span>
+              Fences, Decks &amp;{" "}
+              <span className="text-action">Tree Trimming</span>
             </motion.h1>
 
             <motion.p
@@ -118,9 +128,9 @@ export default function Services() {
               custom={2}
               className="mt-6 text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed"
             >
-              From classic wood privacy fences to low-maintenance vinyl and
-              elegant aluminum — we install it all with the same attention to
-              detail and craftsmanship.
+              Oscar and Anna bring 18+ years of experience to every project —
+              from classic wood privacy fences and custom decks to professional
+              tree trimming. Licensed, insured, and every job warranted.
             </motion.p>
 
             <motion.div
@@ -148,50 +158,65 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: Fence, label: "Fence Types" }}
-            title="Professional Installation for Every Style"
-            subtitle="Each fence type is installed by experienced crews using premium materials. Pick the style that fits your property — we handle the rest."
+            title="Professional Work for Every Property"
+            subtitle="Each project is handled by Oscar and Anna's experienced crew using premium materials. Pick what fits your property — we handle the rest."
           />
 
           <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {SERVICES.map((service, i) => (
-              <motion.div
-                key={service.slug}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-60px" }}
-                custom={i}
-              >
-                <Link
-                  to={service.href}
-                  className="group block rounded-2xl border border-border bg-white overflow-hidden hover:shadow-xl hover:border-trust/30 transition-all duration-300 h-full"
+            {SERVICES.map((service, i) => {
+              const Icon = SERVICE_ICON_MAP[service.slug] || Fence;
+              const hasImage = !!serviceImageMap[service.slug];
+              return (
+                <motion.div
+                  key={service.slug}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={VIEWPORT}
+                  custom={i}
                 >
-                  {/* Service image */}
-                  <div className="aspect-[16/9] overflow-hidden">
-                    <img
-                      src={serviceImageMap[service.slug] || ""}
-                      alt={service.description}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                  </div>
+                  <Link
+                    to={service.href}
+                    className="group block rounded-2xl border border-border bg-white overflow-hidden hover:shadow-xl hover:border-trust/30 transition-all duration-300 h-full"
+                  >
+                    {/* Service image or icon fallback */}
+                    {hasImage ? (
+                      <div className="aspect-[16/9] overflow-hidden relative">
+                        <img
+                          src={serviceImageMap[service.slug]}
+                          alt={service.description}
+                          width={800}
+                          height={450}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                        />
+                        <div className="absolute top-3 left-3 w-10 h-10 rounded-lg bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-sm">
+                          <Icon size={20} className="text-trust" />
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="aspect-[16/9] bg-section-sage flex items-center justify-center">
+                        <Icon size={48} className="text-trust/40" />
+                      </div>
+                    )}
 
-                  {/* Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-trust transition-colors">
-                      {service.label}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                      {service.description}
-                    </p>
-                    <span className="inline-flex items-center text-sm font-semibold text-trust group-hover:gap-2 transition-all">
-                      Learn More & Get Quote
-                      <ArrowRight size={14} className="ml-1" />
-                    </span>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
+                    {/* Content */}
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-trust transition-colors">
+                        {service.label}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                        {service.description}
+                      </p>
+                      <span className="inline-flex items-center text-sm font-semibold text-trust group-hover:gap-2 transition-all">
+                        Learn More & Get Quote
+                        <ArrowRight size={14} className="ml-1" />
+                      </span>
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -199,7 +224,7 @@ export default function Services() {
       {/* ═══════════════════════════════════════
           EXTRA SERVICES — bg-section-light
           ═══════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-section-light">
+      <section className="py-20 md:py-28 bg-section-warm">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: Wrench, label: "Additional Services" }}
@@ -214,7 +239,7 @@ export default function Services() {
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-60px" }}
+                viewport={VIEWPORT}
                 custom={i}
                 className="rounded-2xl border border-border bg-white p-6 md:p-8 hover:shadow-xl hover:border-trust/30 transition-all duration-300"
               >
@@ -256,7 +281,7 @@ export default function Services() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={VIEWPORT}
             variants={stagger}
           >
             <motion.div variants={fadeUp} custom={0}>
