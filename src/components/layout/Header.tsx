@@ -131,7 +131,7 @@ export function Header() {
               {COMPANY.phone}
             </a>
             <Link
-              to="/contact"
+              to="/book"
               className={cn(
                 buttonVariants(),
                 "bg-action hover:bg-action-glow text-foreground font-semibold shadow-lg shadow-action/25 transition-all duration-300 hover:scale-[1.02]"
@@ -183,7 +183,7 @@ export function Header() {
                       {COMPANY.phone}
                     </a>
                     <Link
-                      to="/contact"
+                      to="/book"
                       className={cn(
                         buttonVariants(),
                         "w-full bg-action hover:bg-action-glow text-foreground font-semibold"

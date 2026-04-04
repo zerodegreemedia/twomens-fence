@@ -91,7 +91,7 @@ export function ExitIntentModal() {
 
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link
-                    to="/contact"
+                    to="/book"
                     onClick={dismiss}
                     className={cn(
                       buttonVariants({ size: "lg" }),

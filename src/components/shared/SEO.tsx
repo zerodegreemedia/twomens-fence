@@ -14,7 +14,7 @@ export function SEO({
   title,
   description,
   canonicalUrl,
-  ogImage = "https://twomensfence.com/img/hero/hero-cedar-privacy-fence-twomens-crew.webp",
+  ogImage = "https://twomensfence.com/img/og-image.png",
   ogType = "website",
   schema,
   noIndex = false,
@@ -38,6 +38,8 @@ export function SEO({
       <meta property="og:description" content={description} />
       <meta property="og:type" content={ogType} />
       <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
 
       {/* Twitter */}

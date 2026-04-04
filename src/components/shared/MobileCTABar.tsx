@@ -22,7 +22,7 @@ export function MobileCTABar() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-authority/95 backdrop-blur-md border-t border-white/10 px-4 py-3 safe-bottom">
       <Link
-        to="/contact"
+        to="/book"
         className={cn(
           buttonVariants({ size: "lg" }),
           "w-full bg-action hover:bg-action-glow text-foreground font-semibold shadow-lg shadow-action/25 transition-all duration-300"

@@ -23,6 +23,7 @@ const SitemapPage = lazy(() => import("@/pages/Sitemap"));
 const ServiceArea = lazy(() => import("@/pages/service-areas/ServiceArea"));
 const Blog = lazy(() => import("@/pages/Blog"));
 const BlogPost = lazy(() => import("@/pages/BlogPost"));
+const Book = lazy(() => import("@/pages/Book"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 
 function Loading() {
@@ -62,6 +63,7 @@ export default function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/book" element={<Book />} />
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />

@@ -12,6 +12,7 @@ import {
   Mail,
   MapPin,
   Clock,
+  Calendar,
   MessageSquare,
   ArrowRight,
 } from "lucide-react";
@@ -48,6 +49,13 @@ const CONTACT_CARDS = [
     value: COMPANY.address,
     href: undefined,
     isLink: false,
+  },
+  {
+    icon: Calendar,
+    label: "Book Online",
+    value: "Schedule a call or estimate",
+    href: "/book",
+    isLink: true,
   },
   {
     icon: Clock,

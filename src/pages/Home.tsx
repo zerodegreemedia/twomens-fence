@@ -28,6 +28,7 @@ import {
   DoorOpen,
   Axe,
   Link2,
+  Calendar,
   type LucideIcon,
 } from "lucide-react";
 import { COMPANY, SERVICES, SERVICE_AREAS, LOCAL_BUSINESS_SCHEMA } from "@/lib/constants";
@@ -193,7 +194,7 @@ export default function Home() {
                 custom={3}
                 className="mt-8 flex flex-col sm:flex-row gap-4"
               >
-                <CTAButton href="/contact" size="lg">
+                <CTAButton href="/book" size="lg">
                   Get Your Free Estimate
                 </CTAButton>
                 <CTAButton tel={COMPANY.phoneTel} size="lg" variant="ghost">
@@ -575,6 +576,136 @@ export default function Home() {
                 </Link>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════
+          SCHEDULE ESTIMATE - Book online
+          ═══════════════════════════════════════ */}
+      <section className="py-20 md:py-28 bg-authority overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left — Copy */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={VIEWPORT}
+              variants={stagger}
+            >
+              <motion.div variants={fadeUp} custom={0}>
+                <SectionBadge icon={Calendar} label="Book Online" />
+              </motion.div>
+              <motion.h2
+                variants={fadeUp}
+                custom={1}
+                className="mt-6 text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight"
+              >
+                Schedule Your{" "}
+                <span className="text-action">Free Estimate</span>
+              </motion.h2>
+              <motion.p
+                variants={fadeUp}
+                custom={2}
+                className="mt-5 text-lg text-white/55 leading-relaxed max-w-lg"
+              >
+                Skip the phone tag. Pick a date and time that works for you, and
+                we&apos;ll confirm within the hour. No obligation, no pressure.
+              </motion.p>
+              <motion.ul
+                variants={fadeUp}
+                custom={3}
+                className="mt-8 space-y-4"
+              >
+                {[
+                  { icon: Phone, text: "Phone Consultation — 15 min quick call" },
+                  { icon: MapPin, text: "In-Home Estimate — we come to you, free" },
+                  { icon: Clock, text: "Same-week availability, Mon–Sat" },
+                ].map((item) => (
+                  <li key={item.text} className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-trust/15 flex items-center justify-center shrink-0">
+                      <item.icon size={16} className="text-trust" />
+                    </div>
+                    <span className="text-sm font-medium text-white/70">{item.text}</span>
+                  </li>
+                ))}
+              </motion.ul>
+              <motion.div
+                variants={fadeUp}
+                custom={4}
+                className="mt-10 flex flex-col sm:flex-row gap-4"
+              >
+                <CTAButton href="/book" size="lg">
+                  <Calendar size={18} className="mr-2" />
+                  Book Your Estimate
+                </CTAButton>
+                <CTAButton tel={COMPANY.phoneTel} size="lg" variant="ghost">
+                  <Phone size={18} className="mr-2" />
+                  {COMPANY.phone}
+                </CTAButton>
+              </motion.div>
+            </motion.div>
+
+            {/* Right — Visual calendar preview */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={VIEWPORT}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="hidden lg:block"
+            >
+              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 shadow-2xl">
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-white font-bold text-lg">Pick a Date</h3>
+                  <span className="text-sm text-white/40">April 2026</span>
+                </div>
+                <div className="grid grid-cols-7 gap-2 text-center text-xs font-semibold text-white/30 mb-3">
+                  {["Su","Mo","Tu","We","Th","Fr","Sa"].map((d) => <div key={d}>{d}</div>)}
+                </div>
+                <div className="grid grid-cols-7 gap-2 text-center">
+                  {Array.from({ length: 2 }, (_, i) => (
+                    <div key={`e${i}`} />
+                  ))}
+                  {Array.from({ length: 30 }, (_, i) => {
+                    const day = i + 1;
+                    const col = (i + 2) % 7; // 0=Sun
+                    const isSunday = col === 0;
+                    const isHighlighted = day === 9 || day === 15 || day === 22;
+                    return (
+                      <div
+                        key={day}
+                        className={`py-2 rounded-lg text-sm font-medium transition-colors ${
+                          isSunday
+                            ? "text-white/15"
+                            : isHighlighted
+                            ? "bg-action text-foreground font-bold"
+                            : "text-white/60 hover:bg-white/10"
+                        }`}
+                      >
+                        {day}
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="mt-6 pt-6 border-t border-white/10">
+                  <p className="text-xs text-white/30 mb-3">Available times — Wed, Apr 9</p>
+                  <div className="flex flex-wrap gap-2">
+                    {["8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "1:00 PM", "2:00 PM"].map((t, i) => (
+                      <span
+                        key={t}
+                        className={`px-3 py-1.5 rounded-md text-xs font-semibold ${
+                          i === 1
+                            ? "bg-action text-foreground"
+                            : "bg-white/10 text-white/50"
+                        }`}
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

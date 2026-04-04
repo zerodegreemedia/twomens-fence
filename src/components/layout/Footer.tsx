@@ -20,7 +20,7 @@ export function Footer() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              to="/contact"
+              to="/book"
               className={cn(
                 buttonVariants({ size: "lg" }),
                 "bg-action hover:bg-action-glow text-foreground font-semibold shadow-lg shadow-action/25 transition-all duration-300 hover:scale-[1.02]"
