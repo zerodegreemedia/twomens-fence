@@ -26,6 +26,7 @@ import {
 import { Link } from "react-router-dom";
 import { COMPANY, SERVICES } from "@/lib/constants";
 import { SERVICE_IMAGES } from "@/lib/images";
+import { RecentProjects } from "@/components/shared/RecentProjects";
 import { fadeUp, stagger, VIEWPORT } from "@/lib/animations";
 
 /* ──────────────────────────────────────────────
@@ -302,6 +303,18 @@ export default function DeckBuilding() {
           </div>
         </div>
       </section>
+
+      <RecentProjects
+        serviceType="Deck"
+        title="Recent Deck Projects"
+        subtitle="See our latest deck building projects across Delaware."
+        limit={6}
+        captions={{
+          "gallery-05-wood-deck-framing": "Cedar deck framing — new construction, Hockessin, DE",
+          "gallery-18-deck-boards-progress": "Deck board installation in progress — residential project",
+          "gallery-20-deck-complete-backyard": "Completed backyard deck with railing — Bear, DE",
+        }}
+      />
 
       {/* ═══════════════════════════════════════
           RELATED SERVICES

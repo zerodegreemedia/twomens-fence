@@ -25,6 +25,7 @@ import {
 import { Link } from "react-router-dom";
 import { COMPANY, SERVICES } from "@/lib/constants";
 import { SERVICE_IMAGES } from "@/lib/images";
+import { RecentProjects } from "@/components/shared/RecentProjects";
 import { fadeUp, stagger, VIEWPORT } from "@/lib/animations";
 
 /* ──────────────────────────────────────────────
@@ -300,6 +301,19 @@ export default function ChainLinkFencing() {
           </div>
         </div>
       </section>
+
+      <RecentProjects
+        serviceType="Chain Link"
+        title="Recent Chain Link Fence Projects"
+        subtitle="See our latest chain link fence installations across Delaware and Pennsylvania."
+        limit={6}
+        captions={{
+          "gallery-12-chainlink-galvanized-field": "Galvanized chain link fence — large commercial property, New Castle County",
+          "gallery-10-chainlink-commercial-sports": "Black vinyl-coated chain link — sports facility, Delaware",
+          "gallery-11-chainlink-black-commercial": "Black chain link fence — commercial perimeter, Bear, DE",
+          "gallery-13-chainlink-dumpster-enclosure": "Chain link dumpster enclosure — commercial property, Wilmington",
+        }}
+      />
 
       {/* ═══════════════════════════════════════
           RELATED SERVICES

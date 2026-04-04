@@ -26,6 +26,7 @@ import {
 import { Link } from "react-router-dom";
 import { COMPANY, SERVICES } from "@/lib/constants";
 import { SERVICE_IMAGES } from "@/lib/images";
+import { RecentProjects } from "@/components/shared/RecentProjects";
 import { fadeUp, stagger, VIEWPORT } from "@/lib/animations";
 
 /* ──────────────────────────────────────────────
@@ -322,6 +323,22 @@ export default function VinylFencing() {
           </div>
         </div>
       </section>
+
+      {/* ═══════════════════════════════════════
+          RECENT PROJECTS - Light
+          ═══════════════════════════════════════ */}
+      <RecentProjects
+        serviceType="Vinyl"
+        title="Recent Vinyl Fence Projects"
+        subtitle="See our latest vinyl fence installations across Delaware and Pennsylvania."
+        limit={6}
+        captions={{
+          "gallery-06-vinyl-privacy-long": "White vinyl privacy fence — long property line run in Sussex County",
+          "gallery-07-vinyl-privacy-residential": "6ft vinyl privacy fence — residential installation, Bear, DE",
+          "gallery-08-vinyl-privacy-house": "Vinyl privacy fence alongside home — New Castle County",
+          "gallery-09-vinyl-picket-house": "White vinyl picket fence — front yard curb appeal, Newark, DE",
+        }}
+      />
 
       {/* ═══════════════════════════════════════
           RELATED SERVICES - Sage

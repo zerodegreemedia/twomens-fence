@@ -24,6 +24,7 @@ import {
 import { Link } from "react-router-dom";
 import { COMPANY, SERVICES } from "@/lib/constants";
 import { SERVICE_IMAGES } from "@/lib/images";
+import { RecentProjects } from "@/components/shared/RecentProjects";
 import { fadeUp, stagger, VIEWPORT } from "@/lib/animations";
 
 /* ──────────────────────────────────────────────
@@ -321,6 +322,24 @@ export default function WoodFencing() {
           </div>
         </div>
       </section>
+
+      {/* ═══════════════════════════════════════
+          RECENT PROJECTS - Light
+          ═══════════════════════════════════════ */}
+      <RecentProjects
+        serviceType="Wood"
+        title="Recent Wood Fence Projects"
+        subtitle="See our latest wood fence installations across Delaware and Pennsylvania."
+        limit={6}
+        captions={{
+          "gallery-01-cedar-privacy-fence": "Cedar privacy fence — 6ft tall, full backyard enclosure in New Castle County",
+          "gallery-02-wood-fence-with-gate": "Pressure-treated pine fence with custom gate — Newark, DE",
+          "gallery-03-wood-privacy-backyard": "Board-on-board privacy fence along property line — Bear, DE",
+          "gallery-04-porch-railing-complete": "Custom wood porch railing with matching privacy fence — Wilmington",
+          "gallery-05-wood-deck-framing": "Cedar deck framing and railing project — Hockessin, DE",
+          "gallery-19-crew-building-railing": "TWOMENS crew building custom porch railing — residential project",
+        }}
+      />
 
       {/* ═══════════════════════════════════════
           RELATED SERVICES - Sage

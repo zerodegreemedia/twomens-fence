@@ -25,6 +25,7 @@ import {
 import { Link } from "react-router-dom";
 import { COMPANY, SERVICES } from "@/lib/constants";
 import { SERVICE_IMAGES } from "@/lib/images";
+import { RecentProjects } from "@/components/shared/RecentProjects";
 import { fadeUp, stagger, VIEWPORT } from "@/lib/animations";
 
 const BENEFITS = [
@@ -277,6 +278,16 @@ export default function GateInstallation() {
           </div>
         </div>
       </section>
+
+      {/* ═══════════════════════════════════════
+          RECENT PROJECTS
+          ═══════════════════════════════════════ */}
+      <RecentProjects
+        serviceType="Wood"
+        title="Recent Gate & Fence Projects"
+        subtitle="See our latest gate installations and fence projects across Delaware."
+        limit={4}
+      />
 
       {/* RELATED SERVICES */}
       <section className="py-16 md:py-20 bg-section-sage">

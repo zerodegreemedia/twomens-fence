@@ -26,6 +26,7 @@ import {
 import { Link } from "react-router-dom";
 import { COMPANY, SERVICES } from "@/lib/constants";
 import { SERVICE_IMAGES } from "@/lib/images";
+import { RecentProjects } from "@/components/shared/RecentProjects";
 import { fadeUp, stagger, VIEWPORT } from "@/lib/animations";
 
 /* ──────────────────────────────────────────────
@@ -286,6 +287,13 @@ export default function TreeTrimming() {
           </div>
         </div>
       </section>
+
+      <RecentProjects
+        serviceType="Tree"
+        title="Recent Tree Service Projects"
+        subtitle="See our latest tree trimming and removal work across Delaware."
+        limit={6}
+      />
 
       {/* ═══════════════════════════════════════
           RELATED SERVICES - Sage

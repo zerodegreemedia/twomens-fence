@@ -25,6 +25,7 @@ import {
 import { Link } from "react-router-dom";
 import { COMPANY, SERVICES } from "@/lib/constants";
 import { SERVICE_IMAGES } from "@/lib/images";
+import { RecentProjects } from "@/components/shared/RecentProjects";
 import { fadeUp, stagger, VIEWPORT } from "@/lib/animations";
 
 /* ──────────────────────────────────────────────
@@ -300,6 +301,18 @@ export default function AluminumFencing() {
           </div>
         </div>
       </section>
+
+      <RecentProjects
+        serviceType="Aluminum"
+        title="Recent Aluminum Fence Projects"
+        subtitle="See our latest aluminum fence installations across Delaware."
+        limit={6}
+        captions={{
+          "gallery-15-aluminum-landscape": "Black aluminum ornamental fence — landscaped property, Hockessin, DE",
+          "gallery-16-aluminum-black-classic": "Classic black aluminum fence — front yard installation, Wilmington",
+          "gallery-17-aluminum-residential-front": "Aluminum ornamental fence — residential front yard, Newark, DE",
+        }}
+      />
 
       {/* ═══════════════════════════════════════
           RELATED SERVICES - Sage
