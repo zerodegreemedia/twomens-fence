@@ -28,7 +28,15 @@ export function CTAButton({
 
   if (tel) {
     return (
-      <a href={tel} className={cn(buttonVariants({ size }), baseStyles, className)}>
+      <a
+        href={tel}
+        onClick={() => {
+          if (typeof gtag === "function") {
+            gtag("event", "phone_click", { event_category: "contact", event_label: "cta_button" });
+          }
+        }}
+        className={cn(buttonVariants({ size }), baseStyles, className)}
+      >
         {children}
       </a>
     );

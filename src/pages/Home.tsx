@@ -447,12 +447,13 @@ export default function Home() {
                 custom={i}
                 className="rounded-2xl bg-white/[0.06] border border-white/10 p-6 hover:bg-white/[0.09] transition-colors duration-300"
               >
-                <div className="flex gap-0.5 mb-4">
+                <div className="flex gap-0.5 mb-4" role="img" aria-label={`${t.rating} out of 5 stars`}>
                   {Array.from({ length: t.rating }).map((_, j) => (
                     <Star
                       key={j}
                       size={16}
                       className="text-action fill-action"
+                      aria-hidden="true"
                     />
                   ))}
                 </div>
@@ -501,16 +502,20 @@ export default function Home() {
                 whileInView="visible"
                 viewport={VIEWPORT}
                 custom={i}
-                className="aspect-[4/3] rounded-xl border border-border overflow-hidden group cursor-pointer"
               >
-                <img
-                  src={img.path}
-                  alt={img.alt}
-                  width={800}
-                  height={600}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
+                <Link
+                  to="/gallery"
+                  className="block aspect-[4/3] rounded-xl border border-border overflow-hidden group"
+                >
+                  <img
+                    src={img.path}
+                    alt={img.alt}
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </Link>
               </motion.div>
             ))}
           </div>

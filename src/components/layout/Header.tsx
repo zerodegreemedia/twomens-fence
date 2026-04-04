@@ -40,6 +40,11 @@ export function Header() {
           </div>
           <a
             href={COMPANY.phoneTel}
+            onClick={() => {
+              if (typeof gtag === "function") {
+                gtag("event", "phone_click", { event_category: "contact", event_label: "utility_bar" });
+              }
+            }}
             className="text-white/90 hover:text-white transition-colors font-medium"
           >
             {COMPANY.phone}
@@ -90,6 +95,9 @@ export function Header() {
               <button
                 className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-white/80 hover:text-white rounded-md transition-colors"
                 onClick={() => setAreasOpen(!areasOpen)}
+                aria-expanded={areasOpen}
+                aria-haspopup="true"
+                aria-label="Service areas menu"
               >
                 Service Areas
                 <ChevronDown
@@ -104,15 +112,27 @@ export function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute top-full left-0 mt-1 w-56 bg-white rounded-xl shadow-xl border border-border p-2"
+                    className="absolute top-full left-0 mt-1 w-56 bg-white rounded-xl shadow-xl border border-border p-2 max-h-[70vh] overflow-y-auto"
                   >
-                    {SERVICE_AREAS.map((area) => (
+                    <p className="px-3 py-1.5 text-[11px] font-semibold text-muted-foreground/60 uppercase tracking-wider">Delaware</p>
+                    {SERVICE_AREAS.filter((a) => a.state === "Delaware").map((area) => (
                       <Link
                         key={area.slug}
                         to={area.href}
                         className="block px-3 py-2 text-sm text-foreground hover:bg-section-light rounded-lg transition-colors"
                       >
-                        {area.label}
+                        {area.city}
+                      </Link>
+                    ))}
+                    <div className="my-1 border-t border-border" />
+                    <p className="px-3 py-1.5 text-[11px] font-semibold text-muted-foreground/60 uppercase tracking-wider">Pennsylvania</p>
+                    {SERVICE_AREAS.filter((a) => a.state === "Pennsylvania").map((area) => (
+                      <Link
+                        key={area.slug}
+                        to={area.href}
+                        className="block px-3 py-2 text-sm text-foreground hover:bg-section-light rounded-lg transition-colors"
+                      >
+                        {area.city}
                       </Link>
                     ))}
                   </motion.div>
@@ -125,6 +145,11 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-3">
             <a
               href={COMPANY.phoneTel}
+              onClick={() => {
+                if (typeof gtag === "function") {
+                  gtag("event", "phone_click", { event_category: "contact", event_label: "desktop_nav" });
+                }
+              }}
               className="flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors"
             >
               <Phone size={16} />
@@ -144,7 +169,7 @@ export function Header() {
           {/* Mobile Menu */}
           <div className="lg:hidden">
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-              <SheetTrigger className="p-2 text-white">
+              <SheetTrigger className="p-2 text-white" aria-label="Open navigation menu">
                 {mobileOpen ? <X size={24} /> : <Menu size={24} />}
               </SheetTrigger>
               <SheetContent side="right" className="w-80 bg-authority border-authority-light p-0">
@@ -161,15 +186,27 @@ export function Header() {
                     ))}
                     <div className="py-2">
                       <p className="px-4 py-2 text-xs font-semibold text-white/40 uppercase tracking-wider">
-                        Service Areas
+                        Delaware
                       </p>
-                      {SERVICE_AREAS.map((area) => (
+                      {SERVICE_AREAS.filter((a) => a.state === "Delaware").map((area) => (
                         <Link
                           key={area.slug}
                           to={area.href}
                           className="block px-4 py-2 text-sm text-white/60 hover:text-white transition-colors"
                         >
-                          {area.label}
+                          {area.city}
+                        </Link>
+                      ))}
+                      <p className="px-4 py-2 text-xs font-semibold text-white/40 uppercase tracking-wider mt-1">
+                        Pennsylvania
+                      </p>
+                      {SERVICE_AREAS.filter((a) => a.state === "Pennsylvania").map((area) => (
+                        <Link
+                          key={area.slug}
+                          to={area.href}
+                          className="block px-4 py-2 text-sm text-white/60 hover:text-white transition-colors"
+                        >
+                          {area.city}
                         </Link>
                       ))}
                     </div>
@@ -177,6 +214,11 @@ export function Header() {
                   <div className="mt-auto p-6 space-y-3 border-t border-white/10">
                     <a
                       href={COMPANY.phoneTel}
+                      onClick={() => {
+                        if (typeof gtag === "function") {
+                          gtag("event", "phone_click", { event_category: "contact", event_label: "mobile_nav" });
+                        }
+                      }}
                       className="flex items-center justify-center gap-2 py-3 text-white font-medium"
                     >
                       <Phone size={18} />

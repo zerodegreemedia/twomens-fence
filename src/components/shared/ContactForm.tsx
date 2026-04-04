@@ -77,6 +77,12 @@ export function ContactForm({ dark = false, redirectOnSuccess = true }: { dark?:
         }),
       });
       if (!res.ok) throw new Error("Submit failed");
+      if (typeof gtag === "function") {
+        gtag("event", "form_submission", {
+          event_category: "contact",
+          event_label: data.serviceType || "General",
+        });
+      }
       setStatus("success");
       if (redirectOnSuccess) {
         navigate("/thank-you");
@@ -193,13 +199,13 @@ export function ContactForm({ dark = false, redirectOnSuccess = true }: { dark?:
                 onChange={(e) => update("serviceType", e.target.value)}
                 className={`mt-1 flex h-10 w-full rounded-md border px-3 py-2 text-sm ${
                   dark
-                    ? "bg-white/10 border-white/20 text-white"
-                    : "bg-background border-input"
+                    ? "bg-white/10 border-white/20 text-white [&>option]:bg-neutral-900 [&>option]:text-white"
+                    : "bg-background border-input text-foreground [&>option]:bg-white [&>option]:text-foreground"
                 }`}
               >
-                <option value="" className="bg-neutral-800 text-white">Select a service...</option>
+                <option value="">Select a service...</option>
                 {SERVICE_OPTIONS.map((opt) => (
-                  <option key={opt} value={opt} className="bg-neutral-800 text-white">
+                  <option key={opt} value={opt}>
                     {opt}
                   </option>
                 ))}
