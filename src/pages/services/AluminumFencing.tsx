@@ -39,7 +39,7 @@ const BENEFITS = [
   {
     icon: ShieldCheck,
     title: "Rust-Proof",
-    desc: "Powder-coated aluminum will never rust, corrode, or flake — even in Delaware's humid summers and salty coastal air.",
+    desc: "Powder-coated aluminum will never rust, corrode, or flake - even in Delaware's humid summers and salty coastal air.",
   },
   {
     icon: Waves,
@@ -54,7 +54,7 @@ const BENEFITS = [
 ];
 
 const STYLES = [
-  { name: "Flat Top", desc: "Clean, modern profile with level horizontal rails — the most popular residential style" },
+  { name: "Flat Top", desc: "Clean, modern profile with level horizontal rails - the most popular residential style" },
   { name: "Spear Top", desc: "Traditional pointed pickets for an elegant, classic wrought-iron look" },
   { name: "Puppy Picket", desc: "Closer picket spacing at the bottom to keep small dogs and pets contained" },
   { name: "Pool Code Panels", desc: "Meets local pool safety requirements with proper spacing and self-closing gates" },
@@ -80,7 +80,7 @@ const FAQS = [
   },
   {
     q: "Does aluminum fencing meet pool code requirements?",
-    a: "Yes — we install aluminum pool fencing that meets Delaware and local municipal pool safety codes. This includes proper picket spacing (no more than 4 inches), minimum height requirements, and self-closing/self-latching gate hardware. We know the local codes and make sure your fence passes inspection.",
+    a: "Yes - we install aluminum pool fencing that meets Delaware and local municipal pool safety codes. This includes proper picket spacing (no more than 4 inches), minimum height requirements, and self-closing/self-latching gate hardware. We know the local codes and make sure your fence passes inspection.",
   },
   {
     q: "Can aluminum fencing be installed on sloped ground?",
@@ -165,7 +165,7 @@ export default function AluminumFencing() {
       />
 
       {/* ═══════════════════════════════════════
-          HERO — Dark
+          HERO - Dark
           ═══════════════════════════════════════ */}
       <section className="relative bg-authority overflow-hidden">
         <div className="absolute inset-0">
@@ -195,8 +195,7 @@ export default function AluminumFencing() {
               className="mt-6 text-lg md:text-xl text-white/60 max-w-xl leading-relaxed"
             >
               The classic look of wrought iron without the rust, weight, or
-              maintenance. Aluminum fencing adds curb appeal and security —
-              installed by a local Delaware crew.
+              maintenance. Aluminum fencing adds curb appeal and security -               installed by a local Delaware crew.
             </motion.p>
 
             <motion.div
@@ -217,14 +216,14 @@ export default function AluminumFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          WHY CHOOSE ALUMINUM — Light
+          WHY CHOOSE ALUMINUM - Light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: CheckCircle, label: "Benefits" }}
             title="Why Choose Aluminum Fencing?"
-            subtitle="Aluminum gives you the ornamental look of wrought iron with none of the drawbacks — no rust, no painting, no hassle."
+            subtitle="Aluminum gives you the ornamental look of wrought iron with none of the drawbacks - no rust, no painting, no hassle."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -254,14 +253,14 @@ export default function AluminumFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          STYLES & OPTIONS — Section Light
+          STYLES & OPTIONS - Section Light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-section-light">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: Fence, label: "Options" }}
             title="Styles & Options"
-            subtitle="From classic spear tops to puppy picket and pool-code panels — we have an aluminum fence style for every need."
+            subtitle="From classic spear tops to puppy picket and pool-code panels - we have an aluminum fence style for every need."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -287,7 +286,7 @@ export default function AluminumFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          PHOTO GALLERY — Light
+          PHOTO GALLERY - Light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="max-w-7xl mx-auto px-6">
@@ -303,7 +302,7 @@ export default function AluminumFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          RELATED SERVICES — Sage
+          RELATED SERVICES - Sage
           ═══════════════════════════════════════ */}
       <section className="py-16 md:py-20 bg-section-sage">
         <div className="max-w-7xl mx-auto px-6">
@@ -326,7 +325,7 @@ export default function AluminumFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          FAQ — Dark
+          FAQ - Dark
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-authority relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-authority via-authority-light/30 to-authority" />
@@ -356,7 +355,7 @@ export default function AluminumFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          BOTTOM CTA — Warm with form
+          BOTTOM CTA - Warm with form
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-section-warm">
         <div className="max-w-7xl mx-auto px-6">
@@ -369,7 +368,7 @@ export default function AluminumFencing() {
               </h2>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                 Tell us about your project and we&apos;ll come out for a free
-                on-site estimate. No pressure, no gimmicks — just an honest
+                on-site estimate. No pressure, no gimmicks - just an honest
                 quote from a local crew.
               </p>
               <ul className="mt-6 space-y-3">

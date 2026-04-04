@@ -35,7 +35,7 @@ const BENEFITS = [
   {
     icon: LayoutGrid,
     title: "Expand Your Living Space",
-    desc: "A deck extends your home into the outdoors — perfect for grilling, entertaining, or just relaxing on a warm evening.",
+    desc: "A deck extends your home into the outdoors - perfect for grilling, entertaining, or just relaxing on a warm evening.",
   },
   {
     icon: TrendingUp,
@@ -45,22 +45,22 @@ const BENEFITS = [
   {
     icon: Paintbrush,
     title: "Fully Customizable",
-    desc: "Choose from pressure-treated wood, cedar, or low-maintenance composite. Multi-level, wrap-around, built-in benches — we build it all.",
+    desc: "Choose from pressure-treated wood, cedar, or low-maintenance composite. Multi-level, wrap-around, built-in benches - we build it all.",
   },
   {
     icon: Shield,
     title: "Warranted Work",
-    desc: "Every deck we build comes with a warranty. Oscar and Anna stand behind their work — if there's ever an issue, they'll make it right.",
+    desc: "Every deck we build comes with a warranty. Oscar and Anna stand behind their work - if there's ever an issue, they'll make it right.",
   },
 ];
 
 const STYLES = [
-  { name: "Pressure-Treated Wood Deck", desc: "The most affordable option — durable, versatile, and ready to stain or paint" },
-  { name: "Cedar Deck", desc: "Naturally rot-resistant with beautiful grain — ages gracefully with minimal maintenance" },
+  { name: "Pressure-Treated Wood Deck", desc: "The most affordable option - durable, versatile, and ready to stain or paint" },
+  { name: "Cedar Deck", desc: "Naturally rot-resistant with beautiful grain - ages gracefully with minimal maintenance" },
   { name: "Composite / Trex Deck", desc: "Zero maintenance, won't rot or splinter. Available in dozens of colors and textures" },
   { name: "Multi-Level Deck", desc: "Step-down designs that work with sloped yards and create distinct outdoor zones" },
-  { name: "Screened-In Deck", desc: "Enjoy the outdoors bug-free — screened enclosures for ultimate comfort" },
-  { name: "Deck with Built-In Features", desc: "Benches, planters, lighting, pergolas — custom features that make your deck unique" },
+  { name: "Screened-In Deck", desc: "Enjoy the outdoors bug-free - screened enclosures for ultimate comfort" },
+  { name: "Deck with Built-In Features", desc: "Benches, planters, lighting, pergolas - custom features that make your deck unique" },
 ];
 
 const RELATED_SERVICES = [
@@ -77,11 +77,11 @@ const FAQS = [
   },
   {
     q: "Do I need a permit for a deck?",
-    a: "In most Delaware municipalities, yes — decks typically require a building permit. We help guide you through the permit process, including what's needed and where to apply. Permits ensure your deck is built to code and safe for your family.",
+    a: "In most Delaware municipalities, yes - decks typically require a building permit. We help guide you through the permit process, including what's needed and where to apply. Permits ensure your deck is built to code and safe for your family.",
   },
   {
     q: "What's the best deck material?",
-    a: "It depends on your budget and maintenance preferences. Pressure-treated wood is the most affordable. Cedar looks beautiful naturally. Composite (Trex) costs more upfront but requires zero maintenance — no staining, no sealing, no splinters. We'll help you choose the best fit.",
+    a: "It depends on your budget and maintenance preferences. Pressure-treated wood is the most affordable. Cedar looks beautiful naturally. Composite (Trex) costs more upfront but requires zero maintenance - no staining, no sealing, no splinters. We'll help you choose the best fit.",
   },
   {
     q: "Do you build decks with railings?",
@@ -166,7 +166,7 @@ export default function DeckBuilding() {
       />
 
       {/* ═══════════════════════════════════════
-          HERO — Dark
+          HERO - Dark
           ═══════════════════════════════════════ */}
       <section className="relative bg-authority overflow-hidden">
         <div className="absolute inset-0">
@@ -195,7 +195,7 @@ export default function DeckBuilding() {
               custom={2}
               className="mt-6 text-lg md:text-xl text-white/60 max-w-xl leading-relaxed"
             >
-              From simple backyard patios to multi-level composite decks — we
+              From simple backyard patios to multi-level composite decks - we
               build decks that look great and hold up to Delaware weather.
               Every project comes with a warranty.
             </motion.p>
@@ -218,14 +218,14 @@ export default function DeckBuilding() {
       </section>
 
       {/* ═══════════════════════════════════════
-          WHY CHOOSE DECK — Light
+          WHY CHOOSE DECK - Light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: CheckCircle, label: "Benefits" }}
             title="Why Build a Deck?"
-            subtitle="A custom deck is one of the best investments you can make in your home — it adds space, value, and enjoyment year-round."
+            subtitle="A custom deck is one of the best investments you can make in your home - it adds space, value, and enjoyment year-round."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -255,14 +255,14 @@ export default function DeckBuilding() {
       </section>
 
       {/* ═══════════════════════════════════════
-          STYLES & OPTIONS — Section Light
+          STYLES & OPTIONS - Section Light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-section-light">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: LayoutGrid, label: "Options" }}
             title="Styles & Options"
-            subtitle="We build every major deck style — choose the one that fits your property, lifestyle, and budget."
+            subtitle="We build every major deck style - choose the one that fits your property, lifestyle, and budget."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -327,7 +327,7 @@ export default function DeckBuilding() {
       </section>
 
       {/* ═══════════════════════════════════════
-          FAQ — Dark
+          FAQ - Dark
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-authority relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-authority via-authority-light/30 to-authority" />
@@ -357,7 +357,7 @@ export default function DeckBuilding() {
       </section>
 
       {/* ═══════════════════════════════════════
-          BOTTOM CTA — Warm with form
+          BOTTOM CTA - Warm with form
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-section-warm">
         <div className="max-w-7xl mx-auto px-6">
@@ -369,7 +369,7 @@ export default function DeckBuilding() {
               </h2>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                 Tell us about your project and we&apos;ll come out for a free
-                on-site estimate. No pressure, no gimmicks — just an honest
+                on-site estimate. No pressure, no gimmicks - just an honest
                 quote from a local crew.
               </p>
               <ul className="mt-6 space-y-3">

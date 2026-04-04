@@ -34,7 +34,7 @@ const BENEFITS = [
   {
     icon: DollarSign,
     title: "Most Affordable Option",
-    desc: "Chain link delivers the lowest cost per linear foot of any fencing material — ideal for large properties and tight budgets.",
+    desc: "Chain link delivers the lowest cost per linear foot of any fencing material - ideal for large properties and tight budgets.",
   },
   {
     icon: Shield,
@@ -44,7 +44,7 @@ const BENEFITS = [
   {
     icon: Eye,
     title: "See-Through Security",
-    desc: "Chain link provides a clear sightline across your property — great for keeping an eye on kids, pets, and equipment.",
+    desc: "Chain link provides a clear sightline across your property - great for keeping an eye on kids, pets, and equipment.",
   },
   {
     icon: Zap,
@@ -54,7 +54,7 @@ const BENEFITS = [
 ];
 
 const STYLES = [
-  { name: "Galvanized Standard", desc: "Classic silver chain link — the most economical and widely used option" },
+  { name: "Galvanized Standard", desc: "Classic silver chain link - the most economical and widely used option" },
   { name: "Vinyl-Coated (Black / Green / Brown)", desc: "Color-coated mesh that blends with landscaping and looks more refined" },
   { name: "Privacy Slats", desc: "Vertical or diagonal slats woven into the mesh for added privacy and wind reduction" },
   { name: "Barbed Wire (Commercial)", desc: "Security topping for commercial, industrial, and storage properties" },
@@ -164,7 +164,7 @@ export default function ChainLinkFencing() {
       />
 
       {/* ═══════════════════════════════════════
-          HERO — Dark
+          HERO - Dark
           ═══════════════════════════════════════ */}
       <section className="relative bg-authority overflow-hidden">
         <div className="absolute inset-0">
@@ -195,7 +195,7 @@ export default function ChainLinkFencing() {
             >
               The most cost-effective way to secure your property. Galvanized or
               vinyl-coated chain link for homes, businesses, and everything in
-              between — installed fast by a local Delaware crew.
+              between - installed fast by a local Delaware crew.
             </motion.p>
 
             <motion.div
@@ -216,14 +216,14 @@ export default function ChainLinkFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          WHY CHOOSE CHAIN LINK — Light
+          WHY CHOOSE CHAIN LINK - Light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: CheckCircle, label: "Benefits" }}
             title="Why Choose Chain Link Fencing?"
-            subtitle="Chain link is the workhorse of the fencing world — affordable, durable, and fast to install."
+            subtitle="Chain link is the workhorse of the fencing world - affordable, durable, and fast to install."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -253,14 +253,14 @@ export default function ChainLinkFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          STYLES & OPTIONS — Section Light
+          STYLES & OPTIONS - Section Light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-section-light">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: Fence, label: "Options" }}
             title="Styles & Options"
-            subtitle="Chain link is more versatile than most people think — from basic galvanized to color-coated with privacy slats."
+            subtitle="Chain link is more versatile than most people think - from basic galvanized to color-coated with privacy slats."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -325,7 +325,7 @@ export default function ChainLinkFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          FAQ — Dark
+          FAQ - Dark
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-authority relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-authority via-authority-light/30 to-authority" />
@@ -355,7 +355,7 @@ export default function ChainLinkFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          BOTTOM CTA — Warm with form
+          BOTTOM CTA - Warm with form
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-section-warm">
         <div className="max-w-7xl mx-auto px-6">
@@ -368,7 +368,7 @@ export default function ChainLinkFencing() {
               </h2>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                 Tell us about your project and we&apos;ll come out for a free
-                on-site estimate. Residential or commercial — we handle it all.
+                on-site estimate. Residential or commercial - we handle it all.
               </p>
               <ul className="mt-6 space-y-3">
                 {[

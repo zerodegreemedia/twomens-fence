@@ -60,22 +60,22 @@ const WHY_US = [
   {
     icon: ThumbsUp,
     title: "18+ Years of Experience",
-    desc: "With over 18 years in the business, we've seen it all and built it all — fences, decks, tree trimming, and more.",
+    desc: "With over 18 years in the business, we've seen it all and built it all - fences, decks, tree trimming, and more.",
   },
   {
     icon: Users,
     title: "Husband & Wife Team",
-    desc: "When you call, you talk to the owners — Oscar or Anna. No sales reps, no runaround. Just honest people who care about doing the job right.",
+    desc: "When you call, you talk to the owners - Oscar or Anna. No sales reps, no runaround. Just honest people who care about doing the job right.",
   },
   {
     icon: Shield,
     title: "Licensed, Insured & Warranted",
-    desc: "Every job is fully licensed and insured. And every project comes with a warranty — because we stand behind our work, period.",
+    desc: "Every job is fully licensed and insured. And every project comes with a warranty - because we stand behind our work, period.",
   },
   {
     icon: Clock,
     title: "On-Time, Every Time",
-    desc: "We show up when we say we will. Your project gets a clear timeline and we stick to it — because your time matters.",
+    desc: "We show up when we say we will. Your project gets a clear timeline and we stick to it - because your time matters.",
   },
 ];
 
@@ -95,14 +95,14 @@ const TESTIMONIALS = [
   {
     name: "Maria L.",
     location: "Newark, DE",
-    text: "They built our deck and trimmed three big trees in the same week. Oscar and Anna run a tight operation — on time, clean, and great work. Highly recommend!",
+    text: "They built our deck and trimmed three big trees in the same week. Oscar and Anna run a tight operation - on time, clean, and great work. Highly recommend!",
     rating: 5,
   },
 ];
 
 const PROCESS_STEPS = [
-  { num: "01", title: "Free Estimate", desc: "Call or fill out our form. We'll visit your property, measure, and give you an honest quote — no surprises." },
-  { num: "02", title: "Choose Your Project", desc: "Fence, deck, or tree work — we'll help you choose the best fit for your property and budget." },
+  { num: "01", title: "Free Estimate", desc: "Call or fill out our form. We'll visit your property, measure, and give you an honest quote - no surprises." },
+  { num: "02", title: "Choose Your Project", desc: "Fence, deck, or tree work - we'll help you choose the best fit for your property and budget." },
   { num: "03", title: "Professional Install", desc: "Our crew shows up on time, builds it right, and leaves your property clean. Most jobs done in 1–3 days." },
   { num: "04", title: "Final Walkthrough", desc: "We walk the fence line with you, make sure every detail is perfect, and answer any questions before we leave." },
 ];
@@ -116,7 +116,7 @@ export default function Home() {
     <Layout>
       <SEO
         title="Fences, Decks & Tree Trimming in Delaware | TWOMENS"
-        description="Oscar & Anna — 18+ years building fences, decks, and trimming trees in Delaware & PA. Licensed, insured, every job warranted. Free estimates."
+        description="Oscar & Anna - 18+ years building fences, decks, and trimming trees in Delaware & PA. Licensed, insured, every job warranted. Free estimates."
         canonicalUrl="https://twomensfence.com"
         schema={[LOCAL_BUSINESS_SCHEMA, {
           "@context": "https://schema.org",
@@ -133,7 +133,7 @@ export default function Home() {
       />
 
       {/* ═══════════════════════════════════════
-          HERO — Asymmetric with embedded form
+          HERO - Asymmetric with embedded form
           ═══════════════════════════════════════ */}
       <section className="relative bg-authority overflow-hidden">
         {/* Background pattern */}
@@ -232,7 +232,7 @@ export default function Home() {
                   Get Your Free Estimate
                 </h2>
                 <p className="text-white/50 text-sm">
-                  We respond within 24 hours — usually same day.
+                  We respond within 24 hours - usually same day.
                 </p>
               </div>
               <ContactForm dark />
@@ -242,7 +242,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════
-          TRUST BAR — Stats (visually distinct)
+          TRUST BAR - Stats (visually distinct)
           ═══════════════════════════════════════ */}
       <section className="relative bg-section-sage border-y border-border">
         <div className="max-w-7xl mx-auto px-6 py-16">
@@ -256,14 +256,14 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════
-          SERVICES — Light section
+          SERVICES - Light section
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: Hammer, label: "Our Services" }}
             title="Fences, Decks & Tree Trimming"
-            subtitle="From classic wood privacy fences to custom decks and professional tree trimming — we handle it all with 18+ years of hands-on experience."
+            subtitle="From classic wood privacy fences to custom decks and professional tree trimming - we handle it all with 18+ years of hands-on experience."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -325,7 +325,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════
-          WHY US — Dark section
+          WHY US - Dark section
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-authority relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-authority via-authority-light/40 to-authority" />
@@ -334,7 +334,7 @@ export default function Home() {
           <SectionHeading
             badge={{ icon: Star, label: "Why Choose Us" }}
             title="The TWOMENS Difference"
-            subtitle="We're not a franchise. We're not a call center. We're Oscar and Anna — a husband-and-wife team with 18 years of experience and a reputation built on doing things right."
+            subtitle="We're not a franchise. We're not a call center. We're Oscar and Anna - a husband-and-wife team with 18 years of experience and a reputation built on doing things right."
             light
           />
 
@@ -365,14 +365,14 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════
-          PROCESS — Warm tinted section
+          PROCESS - Warm tinted section
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-section-warm">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: CheckCircle, label: "Our Process" }}
             title="How It Works"
-            subtitle="From first call to final walkthrough — we keep it simple, transparent, and stress-free."
+            subtitle="From first call to final walkthrough - we keep it simple, transparent, and stress-free."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -419,7 +419,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════
-          TESTIMONIALS — Dark section (different gradient)
+          TESTIMONIALS - Dark section (different gradient)
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-authority relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-tl from-authority-light/20 via-transparent to-authority" />
@@ -476,14 +476,14 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════
-          GALLERY PREVIEW — Light
+          GALLERY PREVIEW - Light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: Award, label: "Our Work" }}
             title="Recent Projects"
-            subtitle="Fences, decks, tree work — every project is different. Here's a look at some of our recent work across Delaware and Pennsylvania."
+            subtitle="Fences, decks, tree work - every project is different. Here's a look at some of our recent work across Delaware and Pennsylvania."
           />
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -525,14 +525,14 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════
-          SERVICE AREAS — Dark (authority-light base)
+          SERVICE AREAS - Dark (authority-light base)
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-authority-light">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: MapPin, label: "Areas We Serve" }}
             title="Serving a 2-Hour Radius"
-            subtitle="Based in New Castle, DE (19720) — serving Delaware and southeastern Pennsylvania within a 2-hour drive."
+            subtitle="Based in New Castle, DE (19720) - serving Delaware and southeastern Pennsylvania within a 2-hour drive."
             light
           />
 
@@ -580,7 +580,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════
-          BOTTOM CTA — Sage tinted with form
+          BOTTOM CTA - Sage tinted with form
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-section-sage">
         <div className="max-w-7xl mx-auto px-6">
@@ -591,7 +591,7 @@ export default function Home() {
                 Your New Fence Is One Call Away
               </h2>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                Fill out the form or call us directly — we&apos;ll come to your
+                Fill out the form or call us directly - we&apos;ll come to your
                 property, measure everything, and give you an honest quote with
                 no hidden fees.
               </p>
@@ -599,7 +599,7 @@ export default function Home() {
                 {[
                   "Free on-site estimates",
                   "No high-pressure sales",
-                  "Written quotes — no surprises",
+                  "Written quotes - no surprises",
                   "Most projects done in 1–3 days",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-foreground">

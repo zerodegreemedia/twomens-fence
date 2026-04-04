@@ -43,7 +43,7 @@ export default function SitemapPage() {
       />
 
       {/* ═══════════════════════════════════════
-          HERO — Dark
+          HERO - Dark
           ═══════════════════════════════════════ */}
       <section className="relative bg-authority overflow-hidden">
         <div className="absolute inset-0">
@@ -68,7 +68,7 @@ export default function SitemapPage() {
       </section>
 
       {/* ═══════════════════════════════════════
-          CONTENT — Light
+          CONTENT - Light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-section-light">
         <div className="max-w-5xl mx-auto px-6">

@@ -40,6 +40,7 @@ export const NAV_LINKS = [
   { label: "Services", href: "/services" },
   { label: "Gallery", href: "/gallery" },
   { label: "FAQ", href: "/faq" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
@@ -282,7 +283,7 @@ export const LOCAL_BUSINESS_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
   name: COMPANY.name,
-  image: "https://twomensfence.com/img/og-image.webp",
+  image: "https://twomensfence.com/img/hero/hero-cedar-privacy-fence-twomens-crew.webp",
   telephone: COMPANY.phone,
   email: COMPANY.email,
   url: "https://twomensfence.com",

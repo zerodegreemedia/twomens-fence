@@ -21,6 +21,8 @@ const Privacy = lazy(() => import("@/pages/Privacy"));
 const Terms = lazy(() => import("@/pages/Terms"));
 const SitemapPage = lazy(() => import("@/pages/Sitemap"));
 const ServiceArea = lazy(() => import("@/pages/service-areas/ServiceArea"));
+const Blog = lazy(() => import("@/pages/Blog"));
+const BlogPost = lazy(() => import("@/pages/BlogPost"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 
 function Loading() {
@@ -64,6 +66,8 @@ export default function App() {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/sitemap" element={<SitemapPage />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/service-areas/:slug" element={<ServiceArea />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

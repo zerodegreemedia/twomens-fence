@@ -14,7 +14,7 @@ export function SEO({
   title,
   description,
   canonicalUrl,
-  ogImage = "https://twomensfence.com/img/og-image.webp",
+  ogImage = "https://twomensfence.com/img/hero/hero-cedar-privacy-fence-twomens-crew.webp",
   ogType = "website",
   schema,
   noIndex = false,

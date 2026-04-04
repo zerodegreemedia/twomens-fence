@@ -40,12 +40,12 @@ const FAQ_CATEGORIES: FAQCategory[] = [
       {
         question: "How long have you been in business?",
         answer:
-          "TWOMENS Fence & Construction is owned by Oscar and Anna — a husband-and-wife team with over 18 years of experience. They've completed over 2,500 projects including fences, decks, and tree trimming, and built their reputation on quality work and honest service.",
+          "TWOMENS Fence & Construction is owned by Oscar and Anna - a husband-and-wife team with over 18 years of experience. They've completed over 2,500 projects including fences, decks, and tree trimming, and built their reputation on quality work and honest service.",
       },
       {
         question: "Are you licensed and insured?",
         answer:
-          "Yes, we are fully licensed and insured. We carry both general liability insurance and workers' compensation coverage. Plus, every job comes with a warranty. We're happy to provide proof of insurance upon request — many homeowners and HOAs require this before work begins.",
+          "Yes, we are fully licensed and insured. We carry both general liability insurance and workers' compensation coverage. Plus, every job comes with a warranty. We're happy to provide proof of insurance upon request - many homeowners and HOAs require this before work begins.",
       },
       {
         question: "What areas do you serve?",
@@ -54,7 +54,7 @@ const FAQ_CATEGORIES: FAQCategory[] = [
       {
         question: "Do you offer free estimates?",
         answer:
-          "Absolutely. Every estimate is 100% free with no obligation. We'll come to your property, take measurements, discuss your needs and preferences, and provide a detailed written quote — no hidden fees, no surprises, no pressure.",
+          "Absolutely. Every estimate is 100% free with no obligation. We'll come to your property, take measurements, discuss your needs and preferences, and provide a detailed written quote - no hidden fees, no surprises, no pressure.",
       },
     ],
   },
@@ -71,7 +71,7 @@ const FAQ_CATEGORIES: FAQCategory[] = [
       {
         question: "Do I need a permit for my fence or deck?",
         answer:
-          "It depends on your municipality. Some areas in Delaware and Pennsylvania require permits for fence and deck installation, while others don't. We help guide you through the permit process — including what's needed, where to apply, and any setback or height restrictions that may apply.",
+          "It depends on your municipality. Some areas in Delaware and Pennsylvania require permits for fence and deck installation, while others don't. We help guide you through the permit process - including what's needed, where to apply, and any setback or height restrictions that may apply.",
       },
       {
         question: "Do you remove old fencing?",
@@ -81,7 +81,7 @@ const FAQ_CATEGORIES: FAQCategory[] = [
       {
         question: "What about underground utilities?",
         answer:
-          "Safety first — we call 811 (Call Before You Dig) before every single job. This free service marks underground utility lines so we know exactly where it's safe to dig. We never skip this step, and neither should any contractor you hire.",
+          "Safety first - we call 811 (Call Before You Dig) before every single job. This free service marks underground utility lines so we know exactly where it's safe to dig. We never skip this step, and neither should any contractor you hire.",
       },
     ],
   },
@@ -103,12 +103,12 @@ const FAQ_CATEGORIES: FAQCategory[] = [
       {
         question: "Do you offer financing?",
         answer:
-          "We don't currently offer financing, but we do offer very competitive pricing and work with you to find a solution that fits your budget. We're upfront about costs from the start — what you see on your written quote is what you pay.",
+          "We don't currently offer financing, but we do offer very competitive pricing and work with you to find a solution that fits your budget. We're upfront about costs from the start - what you see on your written quote is what you pay.",
       },
       {
         question: "Do you warranty your work?",
         answer:
-          "Absolutely — every single job comes with a warranty. We stand behind every fence, deck, and tree job we do. If there's ever an issue, we'll come back and make it right. Many of our materials also carry their own manufacturer warranties.",
+          "Absolutely - every single job comes with a warranty. We stand behind every fence, deck, and tree job we do. If there's ever an issue, we'll come back and make it right. Many of our materials also carry their own manufacturer warranties.",
       },
     ],
   },
@@ -175,7 +175,7 @@ export default function FAQ() {
     <Layout>
       <SEO
         title="Fence Installation FAQ"
-        description="Answers to common questions about fence installation in Delaware — permits, costs, materials, timelines, and more."
+        description="Answers to common questions about fence installation in Delaware - permits, costs, materials, timelines, and more."
         canonicalUrl="https://twomensfence.com/faq"
         schema={[{
           "@context": "https://schema.org",
@@ -201,7 +201,7 @@ export default function FAQ() {
       />
 
       {/* ═══════════════════════════════════════
-          HERO — Dark
+          HERO - Dark
           ═══════════════════════════════════════ */}
       <section className="relative bg-authority overflow-hidden">
         <div className="absolute inset-0">
@@ -258,14 +258,14 @@ export default function FAQ() {
       ))}
 
       {/* ═══════════════════════════════════════
-          BOTTOM CTA — Dark
+          BOTTOM CTA - Dark
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-authority">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <SectionHeading
             badge={{ icon: HelpCircle, label: "Need More Help?" }}
             title="Still Have Questions?"
-            subtitle="We're always happy to help. Call us or send a message — we typically respond within 24 hours."
+            subtitle="We're always happy to help. Call us or send a message - we typically respond within 24 hours."
             light
           />
 

@@ -35,7 +35,7 @@ const BENEFITS = [
   {
     icon: Shield,
     title: "Safety First",
-    desc: "Dead branches and overgrown trees are a hazard — especially during storms. Regular trimming keeps your family and property safe.",
+    desc: "Dead branches and overgrown trees are a hazard - especially during storms. Regular trimming keeps your family and property safe.",
   },
   {
     icon: Eye,
@@ -56,7 +56,7 @@ const BENEFITS = [
 
 const SERVICES_LIST = [
   { name: "Tree Trimming & Pruning", desc: "Routine trimming to keep trees healthy, safe, and looking their best year-round" },
-  { name: "Tree Removal", desc: "Full tree removal for dead, damaged, or unwanted trees — including cleanup and haul-away" },
+  { name: "Tree Removal", desc: "Full tree removal for dead, damaged, or unwanted trees - including cleanup and haul-away" },
   { name: "Stump Grinding", desc: "Complete stump removal below grade so you can reclaim your yard space" },
   { name: "Storm Damage Cleanup", desc: "Emergency response for fallen trees and broken branches after storms" },
   { name: "Hedge & Shrub Trimming", desc: "Shape and maintain hedges, bushes, and ornamental shrubs for a clean landscape" },
@@ -73,19 +73,19 @@ const RELATED_SERVICES = [
 const FAQS = [
   {
     q: "How often should trees be trimmed?",
-    a: "Most trees benefit from trimming every 2-3 years, but it depends on the species and growth rate. Fast-growing trees like maples and oaks may need attention more frequently. Dead or hazardous branches should be removed as soon as they're noticed — don't wait for a storm to do it for you.",
+    a: "Most trees benefit from trimming every 2-3 years, but it depends on the species and growth rate. Fast-growing trees like maples and oaks may need attention more frequently. Dead or hazardous branches should be removed as soon as they're noticed - don't wait for a storm to do it for you.",
   },
   {
     q: "Do you handle emergency tree removal?",
-    a: "Yes. If a tree comes down during a storm or a branch is threatening your home, call us. We respond as quickly as possible for emergency situations. Safety is our top priority — we'll assess the situation, make it safe, and handle the full cleanup.",
+    a: "Yes. If a tree comes down during a storm or a branch is threatening your home, call us. We respond as quickly as possible for emergency situations. Safety is our top priority - we'll assess the situation, make it safe, and handle the full cleanup.",
   },
   {
     q: "Do you remove the stump too?",
-    a: "We offer stump grinding as an add-on service. We grind the stump below grade so you can fill the area with soil and grass seed. It's the cleanest way to remove a stump — no digging, no mess.",
+    a: "We offer stump grinding as an add-on service. We grind the stump below grade so you can fill the area with soil and grass seed. It's the cleanest way to remove a stump - no digging, no mess.",
   },
   {
     q: "Are you insured for tree work?",
-    a: "Absolutely. We carry full general liability insurance and workers' compensation. Tree work can be dangerous, so insurance isn't optional — it's essential. We're happy to provide proof of insurance before any job.",
+    a: "Absolutely. We carry full general liability insurance and workers' compensation. Tree work can be dangerous, so insurance isn't optional - it's essential. We're happy to provide proof of insurance before any job.",
   },
 ];
 
@@ -166,7 +166,7 @@ export default function TreeTrimming() {
       />
 
       {/* ═══════════════════════════════════════
-          HERO — Dark
+          HERO - Dark
           ═══════════════════════════════════════ */}
       <section className="relative bg-authority overflow-hidden">
         <div className="absolute inset-0">
@@ -218,14 +218,14 @@ export default function TreeTrimming() {
       </section>
 
       {/* ═══════════════════════════════════════
-          WHY TREE TRIMMING — Light
+          WHY TREE TRIMMING - Light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: CheckCircle, label: "Benefits" }}
             title="Why Regular Tree Trimming?"
-            subtitle="Healthy trees don't just look better — they protect your property, increase your home's value, and prevent costly storm damage."
+            subtitle="Healthy trees don't just look better - they protect your property, increase your home's value, and prevent costly storm damage."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -255,14 +255,14 @@ export default function TreeTrimming() {
       </section>
 
       {/* ═══════════════════════════════════════
-          SERVICES LIST — Section Light
+          SERVICES LIST - Section Light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-section-light">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: Trees, label: "Services" }}
             title="What We Do"
-            subtitle="From routine pruning to emergency storm cleanup — we handle every aspect of tree care for residential and commercial properties."
+            subtitle="From routine pruning to emergency storm cleanup - we handle every aspect of tree care for residential and commercial properties."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -288,7 +288,7 @@ export default function TreeTrimming() {
       </section>
 
       {/* ═══════════════════════════════════════
-          RELATED SERVICES — Sage
+          RELATED SERVICES - Sage
           ═══════════════════════════════════════ */}
       <section className="py-16 md:py-20 bg-section-sage">
         <div className="max-w-7xl mx-auto px-6">
@@ -311,7 +311,7 @@ export default function TreeTrimming() {
       </section>
 
       {/* ═══════════════════════════════════════
-          FAQ — Dark
+          FAQ - Dark
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-authority relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-authority via-authority-light/30 to-authority" />
@@ -341,7 +341,7 @@ export default function TreeTrimming() {
       </section>
 
       {/* ═══════════════════════════════════════
-          BOTTOM CTA — Warm with form
+          BOTTOM CTA - Warm with form
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-section-warm">
         <div className="max-w-7xl mx-auto px-6">
@@ -353,7 +353,7 @@ export default function TreeTrimming() {
               </h2>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                 Tell us about your project and we&apos;ll come out for a free
-                on-site estimate. No pressure, no gimmicks — just an honest
+                on-site estimate. No pressure, no gimmicks - just an honest
                 quote from a local crew.
               </p>
               <ul className="mt-6 space-y-3">

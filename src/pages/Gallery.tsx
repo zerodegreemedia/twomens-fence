@@ -69,7 +69,7 @@ export default function Gallery() {
   return (
     <Layout>
       <SEO
-        title="Project Gallery — Fences, Decks & Trees"
+        title="Project Gallery - Fences, Decks & Trees"
         description="Browse our fence, deck, and tree projects across Delaware and Pennsylvania. Wood, vinyl, aluminum, chain link, and more."
         canonicalUrl="https://twomensfence.com/gallery"
         schema={{

@@ -30,18 +30,13 @@ export function Header() {
       <div className="bg-authority text-white/70 text-xs py-1.5 hidden md:block">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <span>Licensed & Insured — Every Job Warranted</span>
+            <span>Licensed & Insured - Every Job Warranted</span>
             <span className="text-white/30">·</span>
             <span>Serving {SERVICE_AREAS.length} Areas in DE & PA</span>
             <span className="text-white/30">·</span>
-            <a
-              href={COMPANY.social.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-action hover:text-action-glow transition-colors font-medium"
-            >
+            <span className="text-action font-medium">
               {COMPANY.rating} ★ · {COMPANY.reviewCount}+ Reviews
-            </a>
+            </span>
           </div>
           <a
             href={COMPANY.phoneTel}

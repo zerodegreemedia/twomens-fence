@@ -23,7 +23,7 @@ const STEPS = [
   {
     icon: Phone,
     title: "We Call You Within 24 Hours",
-    desc: "A real person — not a robot — will call to discuss your project and schedule a visit.",
+    desc: "A real person - not a robot - will call to discuss your project and schedule a visit.",
   },
   {
     icon: Hammer,
@@ -36,7 +36,7 @@ export default function ThankYou() {
   return (
     <Layout>
       <SEO
-        title="Thank You — Request Received"
+        title="Thank You - Request Received"
         description="Your free fence estimate request has been received. TWOMENS Fence will contact you within 24 hours."
         canonicalUrl="https://twomensfence.com/thank-you"
         noIndex

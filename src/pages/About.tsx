@@ -38,7 +38,7 @@ const VALUES = [
   {
     icon: Handshake,
     title: "Integrity",
-    desc: "Honest quotes, honest timelines, honest work. If we say it, we mean it — no hidden fees, no bait-and-switch pricing.",
+    desc: "Honest quotes, honest timelines, honest work. If we say it, we mean it - no hidden fees, no bait-and-switch pricing.",
   },
   {
     icon: Ruler,
@@ -53,7 +53,7 @@ const VALUES = [
   {
     icon: Heart,
     title: "Family First",
-    desc: "Oscar and Anna run this business together — as a family. They live where they work and treat every property like it's their own.",
+    desc: "Oscar and Anna run this business together - as a family. They live where they work and treat every property like it's their own.",
   },
 ];
 
@@ -73,7 +73,7 @@ export default function About() {
   return (
     <Layout>
       <SEO
-        title="About TWOMENS Fence — Oscar & Anna"
+        title="About TWOMENS Fence - Oscar & Anna"
         description="Husband-and-wife team with 18+ years building fences, decks, and trimming trees across Delaware & PA. Licensed, insured, and every job warranted."
         canonicalUrl="https://twomensfence.com/about"
         schema={[{
@@ -103,7 +103,7 @@ export default function About() {
       />
 
       {/* ═══════════════════════════════════════
-          HERO — Dark
+          HERO - Dark
           ═══════════════════════════════════════ */}
       <section className="relative bg-authority overflow-hidden">
         <div className="absolute inset-0">
@@ -137,7 +137,7 @@ export default function About() {
               custom={2}
               className="mt-6 text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed"
             >
-              Oscar &amp; Anna — husband and wife, 18+ years of experience.
+              Oscar &amp; Anna - husband and wife, 18+ years of experience.
               Fences, decks, and tree trimming done right, with a warranty on
               every job.
             </motion.p>
@@ -175,7 +175,7 @@ export default function About() {
       </section>
 
       {/* ═══════════════════════════════════════
-          OUR STORY — Light
+          OUR STORY - Light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="max-w-7xl mx-auto px-6">
@@ -205,7 +205,7 @@ export default function About() {
                   custom={2}
                   className="mt-6 text-muted-foreground leading-relaxed"
                 >
-                  TWOMENS Fence &amp; Construction was built by Oscar and Anna — a
+                  TWOMENS Fence &amp; Construction was built by Oscar and Anna - a
                   husband-and-wife team with a simple belief: customers deserve
                   honest work at fair prices. Over 18 years ago they picked up
                   their tools, loaded the truck, and started building fences in
@@ -221,7 +221,7 @@ export default function About() {
                   Word got around. One neighbor told another, one referral turned
                   into ten, and before long they had more work than they could
                   handle. What started as fencing grew into deck building and
-                  tree trimming — because customers kept asking and Oscar and
+                  tree trimming - because customers kept asking and Oscar and
                   Anna kept delivering quality work. They grew, but never lost
                   sight of what got them here.
                 </motion.p>
@@ -234,7 +234,7 @@ export default function About() {
                   Today, Oscar and Anna are still on the job site. They still
                   answer their own phone. They still measure twice, cut once, and
                   clean up before they leave. Every job is licensed, insured, and
-                  comes with a warranty. That's not a marketing promise — it's
+                  comes with a warranty. That's not a marketing promise - it's
                   how they've done business for 18+ years, and it's why they have
                   over {COMPANY.reviewCount} five-star reviews from real
                   homeowners across Delaware and Pennsylvania.
@@ -251,8 +251,8 @@ export default function About() {
               className="aspect-[4/3] rounded-2xl border border-border overflow-hidden"
             >
               <img
-                src={CREW_IMAGES[0]?.path || ""}
-                alt={CREW_IMAGES[0]?.alt || "TWOMENS Fence crew"}
+                src={CREW_IMAGES[1]?.path || ""}
+                alt={CREW_IMAGES[1]?.alt || "TWOMENS Fence crew"}
                 width={800}
                 height={600}
                 className="w-full h-full object-cover"
@@ -264,14 +264,14 @@ export default function About() {
       </section>
 
       {/* ═══════════════════════════════════════
-          VALUES — bg-section-light
+          VALUES - bg-section-light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-section-warm">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: Target, label: "Our Values" }}
             title="What We Stand For"
-            subtitle="These aren't just words on a wall. They're the principles we built this company on — and the standards we hold ourselves to on every single job."
+            subtitle="These aren't just words on a wall. They're the principles we built this company on - and the standards we hold ourselves to on every single job."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -301,7 +301,7 @@ export default function About() {
       </section>
 
       {/* ═══════════════════════════════════════
-          LICENSE & INSURANCE — Dark
+          LICENSE & INSURANCE - Dark
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-authority relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-authority via-authority-light/30 to-authority" />
@@ -337,7 +337,7 @@ export default function About() {
       </section>
 
       {/* ═══════════════════════════════════════
-          BOTTOM CTA — Light with form
+          BOTTOM CTA - Light with form
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-section-sage">
         <div className="max-w-7xl mx-auto px-6">
@@ -349,15 +349,15 @@ export default function About() {
               </h2>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                 No high-pressure sales. No runaround. Just honest people who
-                build great fences. Fill out the form or give us a call — we'll
+                build great fences. Fill out the form or give us a call - we'll
                 take it from there.
               </p>
               <ul className="mt-6 space-y-3">
                 {[
                   "Free on-site estimates",
                   "Owners on every job",
-                  "Written quotes — no surprises",
-                  "Serving DE & PA — 18+ years experience",
+                  "Written quotes - no surprises",
+                  "Serving DE & PA - 18+ years experience",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-foreground">
                     <CheckCircle size={18} className="text-trust shrink-0" />

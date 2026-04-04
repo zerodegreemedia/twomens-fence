@@ -98,7 +98,7 @@ export default function ServiceArea() {
       />
 
       {/* ═══════════════════════════════════════
-          HERO — Dark
+          HERO - Dark
           ═══════════════════════════════════════ */}
       <section className="relative bg-authority overflow-hidden">
         <div className="absolute inset-0">
@@ -161,7 +161,7 @@ export default function ServiceArea() {
       </section>
 
       {/* ═══════════════════════════════════════
-          SERVICES AVAILABLE — Light
+          SERVICES AVAILABLE - Light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="max-w-7xl mx-auto px-6">
@@ -205,7 +205,7 @@ export default function ServiceArea() {
       </section>
 
       {/* ═══════════════════════════════════════
-          WHY CHOOSE US — bg-section-light
+          WHY CHOOSE US - bg-section-light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-section-light">
         <div className="max-w-7xl mx-auto px-6">
@@ -223,7 +223,7 @@ export default function ServiceArea() {
                   `Experience with ${area.refs.join(", ")} neighborhoods`,
                   `Licensed for ${area.state} work`,
                   isHQ
-                    ? "Based right here in New Castle — your neighbors"
+                    ? "Based right here in New Castle - your neighbors"
                     : `${area.driveTime} from our New Castle HQ`,
                   "Free on-site estimates with written quotes",
                   `${COMPANY.reviewCount}+ five-star reviews from real homeowners`,
@@ -246,7 +246,7 @@ export default function ServiceArea() {
       </section>
 
       {/* ═══════════════════════════════════════
-          OTHER SERVICE AREAS — Dark
+          OTHER SERVICE AREAS - Dark
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-authority relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-authority via-authority-light/30 to-authority" />
@@ -254,7 +254,7 @@ export default function ServiceArea() {
           <SectionHeading
             badge={{ icon: MapPin, label: "Service Areas" }}
             title="Other Areas We Serve"
-            subtitle="We serve a 2-hour radius from New Castle, DE — across Delaware and southeastern Pennsylvania."
+            subtitle="We serve a 2-hour radius from New Castle, DE - across Delaware and southeastern Pennsylvania."
             light
           />
 
@@ -282,7 +282,7 @@ export default function ServiceArea() {
       </section>
 
       {/* ═══════════════════════════════════════
-          BOTTOM CTA — Light with form
+          BOTTOM CTA - Light with form
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-section-light">
         <div className="max-w-7xl mx-auto px-6">
@@ -300,7 +300,7 @@ export default function ServiceArea() {
               <ul className="mt-6 space-y-3">
                 {[
                   "Free on-site estimates",
-                  "Written quotes — no surprises",
+                  "Written quotes - no surprises",
                   "Owners on every job",
                   `Serving ${area.city} since ${COMPANY.yearFounded}`,
                 ].map((item) => (

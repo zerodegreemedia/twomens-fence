@@ -86,7 +86,7 @@ export default function Contact() {
       />
 
       {/* ═══════════════════════════════════════
-          HERO — Dark
+          HERO - Dark
           ═══════════════════════════════════════ */}
       <section className="relative bg-authority overflow-hidden">
         <div className="absolute inset-0">
@@ -119,13 +119,13 @@ export default function Contact() {
             className="mt-6 text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed"
           >
             Ready for a free, no-obligation estimate? Fill out the form below or give us a
-            call. We respond within 24 hours — usually same day.
+            call. We respond within 24 hours - usually same day.
           </motion.p>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════
-          CONTACT INFO + FORM — Light
+          CONTACT INFO + FORM - Light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="max-w-7xl mx-auto px-6">
@@ -225,7 +225,7 @@ export default function Contact() {
       </section>
 
       {/* ═══════════════════════════════════════
-          MAP PLACEHOLDER — Section light
+          MAP PLACEHOLDER - Section light
           ═══════════════════════════════════════ */}
       <section className="py-16 md:py-20 bg-section-sage">
         <div className="max-w-7xl mx-auto px-6">
@@ -238,7 +238,7 @@ export default function Contact() {
           >
             <MapPin size={48} className="text-muted-foreground/40" />
             <p className="text-muted-foreground font-medium">
-              Map — New Castle, DE 19720
+              Map - New Castle, DE 19720
             </p>
             <p className="text-sm text-muted-foreground/60">
               Serving a 2-hour radius across Delaware & Pennsylvania
@@ -248,14 +248,14 @@ export default function Contact() {
       </section>
 
       {/* ═══════════════════════════════════════
-          SERVICE AREAS — Dark
+          SERVICE AREAS - Dark
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-authority">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: MapPin, label: "Areas We Serve" }}
             title="Fence Installation Near You"
-            subtitle="Based in New Castle, DE — proudly serving Delaware and southeastern Pennsylvania within a 2-hour radius."
+            subtitle="Based in New Castle, DE - proudly serving Delaware and southeastern Pennsylvania within a 2-hour radius."
             light
           />
 

@@ -36,7 +36,7 @@ const BENEFITS = [
   {
     icon: Ruler,
     title: "Custom Sizing",
-    desc: "Every property is different. We build and install gates sized exactly for your driveway, walkway, or side yard — no awkward gaps or tight squeezes.",
+    desc: "Every property is different. We build and install gates sized exactly for your driveway, walkway, or side yard - no awkward gaps or tight squeezes.",
   },
   {
     icon: ShieldCheck,
@@ -52,8 +52,8 @@ const BENEFITS = [
 
 const GATE_TYPES = [
   { name: "Single Swing Gate", desc: "Standard walk-through or driveway gate that swings open on one side" },
-  { name: "Double Swing Gate", desc: "Two-panel driveway gate for wider openings — opens from the center" },
-  { name: "Sliding Gate", desc: "Rolls along a track parallel to the fence line — ideal for sloped or tight driveways" },
+  { name: "Double Swing Gate", desc: "Two-panel driveway gate for wider openings - opens from the center" },
+  { name: "Sliding Gate", desc: "Rolls along a track parallel to the fence line - ideal for sloped or tight driveways" },
   { name: "Walk-Through Gate", desc: "Pedestrian-sized gate for side yards, backyards, and pool enclosures" },
   { name: "Pool Code Gate", desc: "Self-closing, self-latching gate that meets Delaware pool safety requirements" },
   { name: "Commercial Gate", desc: "Heavy-duty gates for business properties, dumpster enclosures, and parking areas" },
@@ -69,7 +69,7 @@ const RELATED_SERVICES = [
 const FAQS = [
   {
     q: "Can you add a gate to my existing fence?",
-    a: "Yes — this is one of our most common requests. We can cut into an existing fence line and install a new gate with proper posts and hardware. We'll match the material and style of your current fence so it looks like it was always there.",
+    a: "Yes - this is one of our most common requests. We can cut into an existing fence line and install a new gate with proper posts and hardware. We'll match the material and style of your current fence so it looks like it was always there.",
   },
   {
     q: "What type of gate is best for a driveway?",
@@ -77,11 +77,11 @@ const FAQS = [
   },
   {
     q: "Do you install automatic gate openers?",
-    a: "We focus on the gate structure, posts, and hardware. For automatic openers and keypads, we can recommend trusted local electricians who specialize in gate automation. The gate itself needs to be properly built first — that's our part.",
+    a: "We focus on the gate structure, posts, and hardware. For automatic openers and keypads, we can recommend trusted local electricians who specialize in gate automation. The gate itself needs to be properly built first - that's our part.",
   },
   {
     q: "How much does a gate installation cost?",
-    a: "Gate pricing varies based on size, material, and style. A standard walk-through gate starts around $300-500 installed. Driveway gates range from $800-2,500+ depending on width and material. We give free on-site estimates with exact pricing — no surprises.",
+    a: "Gate pricing varies based on size, material, and style. A standard walk-through gate starts around $300-500 installed. Driveway gates range from $800-2,500+ depending on width and material. We give free on-site estimates with exact pricing - no surprises.",
   },
 ];
 
@@ -130,7 +130,7 @@ export default function GateInstallation() {
   return (
     <Layout>
       <SEO
-        title="Gate Installation Delaware — Driveway & Walk-Through"
+        title="Gate Installation Delaware - Driveway & Walk-Through"
         description="Professional gate installation in Delaware. Driveway, walk-through, pool code & commercial gates. Wood, vinyl, aluminum, chain link. Free estimates from TWOMENS."
         canonicalUrl="https://twomensfence.com/services/gate-installation"
         schema={[SERVICE_SCHEMA, {
@@ -190,7 +190,7 @@ export default function GateInstallation() {
               custom={2}
               className="mt-6 text-lg md:text-xl text-white/60 max-w-xl leading-relaxed"
             >
-              Driveway gates, walk-throughs, pool code gates — we build and
+              Driveway gates, walk-throughs, pool code gates - we build and
               install gates that match your fence and secure your property.
               Custom-sized for a perfect fit.
             </motion.p>
@@ -218,7 +218,7 @@ export default function GateInstallation() {
           <SectionHeading
             badge={{ icon: CheckCircle, label: "Benefits" }}
             title="Why Add a Gate?"
-            subtitle="A gate completes your fence — adding security, convenience, and curb appeal to your property."
+            subtitle="A gate completes your fence - adding security, convenience, and curb appeal to your property."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -253,7 +253,7 @@ export default function GateInstallation() {
           <SectionHeading
             badge={{ icon: DoorOpen, label: "Options" }}
             title="Gate Types We Install"
-            subtitle="From pedestrian walk-throughs to wide driveway gates — we install every type, in every material."
+            subtitle="From pedestrian walk-throughs to wide driveway gates - we install every type, in every material."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -337,7 +337,7 @@ export default function GateInstallation() {
                 Ready for a New <span className="text-trust">Gate</span>?
               </h2>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                Tell us about your project — driveway gate, walk-through, pool
+                Tell us about your project - driveway gate, walk-through, pool
                 code, or something custom. We&apos;ll come out, measure, and
                 give you an honest quote.
               </p>

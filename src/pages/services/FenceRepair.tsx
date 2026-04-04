@@ -31,7 +31,7 @@ const BENEFITS = [
   {
     icon: Clock,
     title: "Fast Turnaround",
-    desc: "Most fence repairs are completed in a single day. We show up on time and get it done right — no dragging the job out.",
+    desc: "Most fence repairs are completed in a single day. We show up on time and get it done right - no dragging the job out.",
   },
   {
     icon: DollarSign,
@@ -54,7 +54,7 @@ const REPAIR_TYPES = [
   { name: "Leaning or Falling Posts", desc: "Re-set rotted or damaged posts with new concrete footings" },
   { name: "Broken or Missing Boards", desc: "Replace individual boards to match your existing fence style" },
   { name: "Storm & Wind Damage", desc: "Emergency repair for sections knocked down by weather or fallen trees" },
-  { name: "Gate Repair & Realignment", desc: "Fix sagging, sticking, or broken gates — hardware and frame repairs" },
+  { name: "Gate Repair & Realignment", desc: "Fix sagging, sticking, or broken gates - hardware and frame repairs" },
   { name: "Rotted Bottom Rails", desc: "Replace ground-contact rails that have deteriorated from moisture" },
   { name: "Chain Link Patching", desc: "Repair holes, replace top rails, and re-tension sagging chain link fabric" },
 ];
@@ -73,11 +73,11 @@ const FAQS = [
   },
   {
     q: "Do you repair fences you didn't install?",
-    a: "Absolutely. We repair all types of fences regardless of who installed them. Wood, vinyl, aluminum, chain link — if it's broken, we can fix it.",
+    a: "Absolutely. We repair all types of fences regardless of who installed them. Wood, vinyl, aluminum, chain link - if it's broken, we can fix it.",
   },
   {
     q: "How quickly can you get to a storm damage repair?",
-    a: "For storm damage and emergencies, we prioritize getting to your property as fast as possible — often within 24-48 hours. We'll secure the area first, then schedule the full repair.",
+    a: "For storm damage and emergencies, we prioritize getting to your property as fast as possible - often within 24-48 hours. We'll secure the area first, then schedule the full repair.",
   },
   {
     q: "Will the repaired section match my existing fence?",
@@ -130,8 +130,8 @@ export default function FenceRepair() {
   return (
     <Layout>
       <SEO
-        title="Fence Repair Delaware — Fast, Affordable Fixes"
-        description="Professional fence repair in Delaware. Storm damage, leaning posts, broken boards, gate fixes. All materials — wood, vinyl, aluminum, chain link. Free estimates."
+        title="Fence Repair Delaware - Fast, Affordable Fixes"
+        description="Professional fence repair in Delaware. Storm damage, leaning posts, broken boards, gate fixes. All materials - wood, vinyl, aluminum, chain link. Free estimates."
         canonicalUrl="https://twomensfence.com/services/fence-repair"
         schema={[SERVICE_SCHEMA, {
           "@context": "https://schema.org",
@@ -190,7 +190,7 @@ export default function FenceRepair() {
               custom={2}
               className="mt-6 text-lg md:text-xl text-white/60 max-w-xl leading-relaxed"
             >
-              Storm damage, leaning posts, broken boards — whatever happened,
+              Storm damage, leaning posts, broken boards - whatever happened,
               we&apos;ll get your fence back in shape. Most repairs done in one
               day by our local Delaware crew.
             </motion.p>
@@ -253,7 +253,7 @@ export default function FenceRepair() {
           <SectionHeading
             badge={{ icon: AlertTriangle, label: "Common Repairs" }}
             title="What We Fix"
-            subtitle="From a single broken board to an entire section knocked down by a storm — no job is too small or too urgent."
+            subtitle="From a single broken board to an entire section knocked down by a storm - no job is too small or too urgent."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -338,7 +338,7 @@ export default function FenceRepair() {
               </h2>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                 Send us a few details and we&apos;ll come out to assess the damage
-                for free. No pressure — just an honest recommendation from a
+                for free. No pressure - just an honest recommendation from a
                 local crew that does this every day.
               </p>
               <ul className="mt-6 space-y-3">

@@ -85,7 +85,7 @@ export function ExitIntentModal() {
                   Get Your Free Estimate
                 </h3>
                 <p className="text-white/60 text-sm leading-relaxed mb-6">
-                  No pressure, no gimmicks — just an honest quote from a local
+                  No pressure, no gimmicks - just an honest quote from a local
                   Delaware crew. Takes 30 seconds to request.
                 </p>
 

@@ -55,6 +55,36 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://twomensfence.com/services/deck-building</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://twomensfence.com/services/tree-trimming</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://twomensfence.com/blog</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://twomensfence.com/blog/how-much-does-a-fence-cost-in-delaware</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://twomensfence.com/blog/wood-vs-vinyl-fence-which-is-right-for-you</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://twomensfence.com/gallery</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>

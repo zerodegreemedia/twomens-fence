@@ -35,7 +35,7 @@ const BENEFITS = [
   {
     icon: PaintBucket,
     title: "No Painting or Staining",
-    desc: "Vinyl never needs to be painted, stained, or sealed. The color is baked in during manufacturing — it looks new for decades.",
+    desc: "Vinyl never needs to be painted, stained, or sealed. The color is baked in during manufacturing - it looks new for decades.",
   },
   {
     icon: ShieldCheck,
@@ -45,19 +45,19 @@ const BENEFITS = [
   {
     icon: Sun,
     title: "Lifetime Color",
-    desc: "Modern vinyl fencing is UV-stabilized to resist fading. The white stays white, the tan stays tan — year after year.",
+    desc: "Modern vinyl fencing is UV-stabilized to resist fading. The white stays white, the tan stays tan - year after year.",
   },
   {
     icon: Droplets,
     title: "Easy to Clean",
-    desc: "A garden hose or pressure washer is all you need. No scrubbing, no chemicals — vinyl practically cleans itself.",
+    desc: "A garden hose or pressure washer is all you need. No scrubbing, no chemicals - vinyl practically cleans itself.",
   },
 ];
 
 const STYLES = [
   { name: "Privacy (6ft)", desc: "Solid tongue-and-groove panels for complete backyard privacy" },
   { name: "Semi-Privacy", desc: "Spaced boards or lattice tops that let light in while maintaining boundaries" },
-  { name: "Picket", desc: "Classic picket style in vinyl — all the charm with zero maintenance" },
+  { name: "Picket", desc: "Classic picket style in vinyl - all the charm with zero maintenance" },
   { name: "Ranch Rail", desc: "2, 3, or 4-rail options for large properties and equestrian fencing" },
   { name: "Pool Code Compliant", desc: "Self-closing gate hardware and proper spacing to meet Delaware pool codes" },
   { name: "Color Options", desc: "Available in white, tan, gray, and woodgrain textures to match any home" },
@@ -73,15 +73,15 @@ const RELATED_SERVICES = [
 const FAQS = [
   {
     q: "How long does a vinyl fence last?",
-    a: "Vinyl fences are built to last 20 to 30 years or more. Most manufacturers offer lifetime warranties on their vinyl fencing products. Unlike wood, vinyl doesn't rot, warp, or splinter — so it maintains its appearance with virtually no upkeep.",
+    a: "Vinyl fences are built to last 20 to 30 years or more. Most manufacturers offer lifetime warranties on their vinyl fencing products. Unlike wood, vinyl doesn't rot, warp, or splinter - so it maintains its appearance with virtually no upkeep.",
   },
   {
     q: "Does vinyl fencing yellow over time?",
-    a: "Modern vinyl fencing is manufactured with UV inhibitors that prevent yellowing and fading. The technology has come a long way — today's vinyl holds its color for decades. We only install high-quality, UV-resistant vinyl products.",
+    a: "Modern vinyl fencing is manufactured with UV inhibitors that prevent yellowing and fading. The technology has come a long way - today's vinyl holds its color for decades. We only install high-quality, UV-resistant vinyl products.",
   },
   {
     q: "Can vinyl fencing handle Delaware wind and weather?",
-    a: "Absolutely. The vinyl fencing we install is engineered for Mid-Atlantic conditions — high winds, heavy rain, snow, and summer heat. Posts are set in concrete and panels are designed to flex without cracking under wind pressure.",
+    a: "Absolutely. The vinyl fencing we install is engineered for Mid-Atlantic conditions - high winds, heavy rain, snow, and summer heat. Posts are set in concrete and panels are designed to flex without cracking under wind pressure.",
   },
   {
     q: "How does vinyl compare to wood on cost?",
@@ -166,7 +166,7 @@ export default function VinylFencing() {
       />
 
       {/* ═══════════════════════════════════════
-          HERO — Dark
+          HERO - Dark
           ═══════════════════════════════════════ */}
       <section className="relative bg-authority overflow-hidden">
         <div className="absolute inset-0">
@@ -196,7 +196,7 @@ export default function VinylFencing() {
               className="mt-6 text-lg md:text-xl text-white/60 max-w-xl leading-relaxed"
             >
               No painting. No staining. No rotting. Vinyl fencing looks
-              beautiful for decades with virtually zero upkeep — installed by a
+              beautiful for decades with virtually zero upkeep - installed by a
               Delaware crew that knows how to do it right.
             </motion.p>
 
@@ -218,14 +218,14 @@ export default function VinylFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          WHY CHOOSE VINYL — Light
+          WHY CHOOSE VINYL - Light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: CheckCircle, label: "Benefits" }}
             title="Why Choose Vinyl Fencing?"
-            subtitle="Vinyl is the lowest-maintenance fencing option on the market — and it looks great doing it."
+            subtitle="Vinyl is the lowest-maintenance fencing option on the market - and it looks great doing it."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -255,14 +255,14 @@ export default function VinylFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          STYLES & OPTIONS — Section Light
+          STYLES & OPTIONS - Section Light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-section-light">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: Fence, label: "Options" }}
             title="Styles & Options"
-            subtitle="Vinyl fencing comes in more styles than most people expect — from full privacy panels to classic picket and ranch rail."
+            subtitle="Vinyl fencing comes in more styles than most people expect - from full privacy panels to classic picket and ranch rail."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -288,7 +288,7 @@ export default function VinylFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          PHOTO GALLERY — Light
+          PHOTO GALLERY - Light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="max-w-7xl mx-auto px-6">
@@ -324,7 +324,7 @@ export default function VinylFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          RELATED SERVICES — Sage
+          RELATED SERVICES - Sage
           ═══════════════════════════════════════ */}
       <section className="py-16 md:py-20 bg-section-sage">
         <div className="max-w-7xl mx-auto px-6">
@@ -374,7 +374,7 @@ export default function VinylFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          FAQ — Dark
+          FAQ - Dark
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-authority relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-authority via-authority-light/30 to-authority" />
@@ -404,7 +404,7 @@ export default function VinylFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          BOTTOM CTA — Warm with form
+          BOTTOM CTA - Warm with form
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-section-warm">
         <div className="max-w-7xl mx-auto px-6">
@@ -416,7 +416,7 @@ export default function VinylFencing() {
               </h2>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                 Tell us about your project and we&apos;ll come out for a free
-                on-site estimate. No pressure, no gimmicks — just an honest
+                on-site estimate. No pressure, no gimmicks - just an honest
                 quote from a local crew.
               </p>
               <ul className="mt-6 space-y-3">

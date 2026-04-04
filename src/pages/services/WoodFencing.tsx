@@ -38,7 +38,7 @@ const BENEFITS = [
   {
     icon: Eye,
     title: "Complete Privacy",
-    desc: "6-foot solid board and board-on-board designs block sightlines completely — enjoy your backyard without an audience.",
+    desc: "6-foot solid board and board-on-board designs block sightlines completely - enjoy your backyard without an audience.",
   },
   {
     icon: Paintbrush,
@@ -48,14 +48,14 @@ const BENEFITS = [
   {
     icon: DollarSign,
     title: "Affordable",
-    desc: "Wood fencing offers the best value per linear foot — especially for larger properties where every dollar counts.",
+    desc: "Wood fencing offers the best value per linear foot - especially for larger properties where every dollar counts.",
   },
 ];
 
 const STYLES = [
   { name: "Cedar Privacy (6ft)", desc: "Premium cedar boards for full privacy and natural rot resistance" },
   { name: "Pressure-Treated Pine", desc: "Budget-friendly and chemically treated to resist decay and insects" },
-  { name: "Board-on-Board", desc: "Overlapping boards for privacy from every angle — no gaps" },
+  { name: "Board-on-Board", desc: "Overlapping boards for privacy from every angle - no gaps" },
   { name: "Shadow Box", desc: "Alternating boards on each side for airflow with partial privacy" },
   { name: "Picket Fence", desc: "Classic American look for front yards and decorative boundaries" },
   { name: "Split Rail", desc: "Rustic open-style fencing perfect for large lots and rural properties" },
@@ -76,11 +76,11 @@ const FAQS = [
   },
   {
     q: "What's the difference between cedar and pressure-treated pine?",
-    a: "Cedar is naturally rot-resistant, has a beautiful grain, and doesn't require chemical treatment — but it costs more. Pressure-treated pine is more affordable and chemically treated to resist decay and insects. Both are excellent choices; it comes down to budget and aesthetic preference.",
+    a: "Cedar is naturally rot-resistant, has a beautiful grain, and doesn't require chemical treatment - but it costs more. Pressure-treated pine is more affordable and chemically treated to resist decay and insects. Both are excellent choices; it comes down to budget and aesthetic preference.",
   },
   {
     q: "Do you stain or seal the fence after installation?",
-    a: "We focus on expert installation. Staining and sealing is the homeowner's choice — we recommend letting the wood dry for 3-6 months before applying a stain or sealant. We're happy to recommend trusted products and local contractors who specialize in staining.",
+    a: "We focus on expert installation. Staining and sealing is the homeowner's choice - we recommend letting the wood dry for 3-6 months before applying a stain or sealant. We're happy to recommend trusted products and local contractors who specialize in staining.",
   },
   {
     q: "How long does installation take?",
@@ -165,7 +165,7 @@ export default function WoodFencing() {
       />
 
       {/* ═══════════════════════════════════════
-          HERO — Dark
+          HERO - Dark
           ═══════════════════════════════════════ */}
       <section className="relative bg-authority overflow-hidden">
         <div className="absolute inset-0">
@@ -194,7 +194,7 @@ export default function WoodFencing() {
               custom={2}
               className="mt-6 text-lg md:text-xl text-white/60 max-w-xl leading-relaxed"
             >
-              From cedar privacy fences to rustic split rail — we build wood
+              From cedar privacy fences to rustic split rail - we build wood
               fences that look great and hold up to Delaware weather. Installed
               by a local crew that does it right.
             </motion.p>
@@ -217,14 +217,14 @@ export default function WoodFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          WHY CHOOSE WOOD — Light
+          WHY CHOOSE WOOD - Light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: CheckCircle, label: "Benefits" }}
             title="Why Choose Wood Fencing?"
-            subtitle="Wood is the most popular fencing material in America for a reason — it's beautiful, versatile, and fits any budget."
+            subtitle="Wood is the most popular fencing material in America for a reason - it's beautiful, versatile, and fits any budget."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -254,14 +254,14 @@ export default function WoodFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          STYLES & OPTIONS — Section Light
+          STYLES & OPTIONS - Section Light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-section-light">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: Fence, label: "Options" }}
             title="Styles & Options"
-            subtitle="We install every major wood fence style — choose the one that fits your property, privacy needs, and budget."
+            subtitle="We install every major wood fence style - choose the one that fits your property, privacy needs, and budget."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -287,7 +287,7 @@ export default function WoodFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          PHOTO GALLERY — White
+          PHOTO GALLERY - White
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="max-w-7xl mx-auto px-6">
@@ -323,7 +323,7 @@ export default function WoodFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          RELATED SERVICES — Sage
+          RELATED SERVICES - Sage
           ═══════════════════════════════════════ */}
       <section className="py-16 md:py-20 bg-section-sage">
         <div className="max-w-7xl mx-auto px-6">
@@ -370,7 +370,7 @@ export default function WoodFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          FAQ — Dark
+          FAQ - Dark
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-authority relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-authority via-authority-light/30 to-authority" />
@@ -400,7 +400,7 @@ export default function WoodFencing() {
       </section>
 
       {/* ═══════════════════════════════════════
-          BOTTOM CTA — Light with form
+          BOTTOM CTA - Light with form
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-section-warm">
         <div className="max-w-7xl mx-auto px-6">
@@ -412,7 +412,7 @@ export default function WoodFencing() {
               </h2>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                 Tell us about your project and we&apos;ll come out for a free
-                on-site estimate. No pressure, no gimmicks — just an honest
+                on-site estimate. No pressure, no gimmicks - just an honest
                 quote from a local crew.
               </p>
               <ul className="mt-6 space-y-3">

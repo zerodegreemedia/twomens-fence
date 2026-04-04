@@ -44,7 +44,7 @@ const EXTRA_SERVICES = [
     icon: Wrench,
     title: "Fence Repair",
     description:
-      "Storm damage, leaning posts, broken boards — we fix it all. Our repair crew can restore your existing fence to like-new condition, saving you the cost of a full replacement.",
+      "Storm damage, leaning posts, broken boards - we fix it all. Our repair crew can restore your existing fence to like-new condition, saving you the cost of a full replacement.",
     features: [
       "Storm & wind damage repair",
       "Leaning post correction",
@@ -94,7 +94,7 @@ export default function Services() {
       />
 
       {/* ═══════════════════════════════════════
-          HERO — Dark
+          HERO - Dark
           ═══════════════════════════════════════ */}
       <section className="relative bg-authority overflow-hidden">
         <div className="absolute inset-0">
@@ -128,8 +128,7 @@ export default function Services() {
               custom={2}
               className="mt-6 text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed"
             >
-              Oscar and Anna bring 18+ years of experience to every project —
-              from classic wood privacy fences and custom decks to professional
+              Oscar and Anna bring 18+ years of experience to every project -               from classic wood privacy fences and custom decks to professional
               tree trimming. Licensed, insured, and every job warranted.
             </motion.p>
 
@@ -152,14 +151,14 @@ export default function Services() {
       </section>
 
       {/* ═══════════════════════════════════════
-          MAIN SERVICES GRID — Light
+          MAIN SERVICES GRID - Light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: Fence, label: "Fence Types" }}
             title="Professional Work for Every Property"
-            subtitle="Each project is handled by Oscar and Anna's experienced crew using premium materials. Pick what fits your property — we handle the rest."
+            subtitle="Each project is handled by Oscar and Anna's experienced crew using premium materials. Pick what fits your property - we handle the rest."
           />
 
           <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -222,7 +221,7 @@ export default function Services() {
       </section>
 
       {/* ═══════════════════════════════════════
-          EXTRA SERVICES — bg-section-light
+          EXTRA SERVICES - bg-section-light
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-section-warm">
         <div className="max-w-7xl mx-auto px-6">
@@ -273,7 +272,7 @@ export default function Services() {
       </section>
 
       {/* ═══════════════════════════════════════
-          BOTTOM CTA — Dark
+          BOTTOM CTA - Dark
           ═══════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-authority relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-authority via-authority-light/30 to-authority" />
@@ -302,7 +301,7 @@ export default function Services() {
               className="mt-4 text-lg text-white/60 max-w-xl mx-auto leading-relaxed"
             >
               No problem. We'll visit your property, talk through your goals and
-              budget, and recommend the best option — no pressure, no obligation.
+              budget, and recommend the best option - no pressure, no obligation.
             </motion.p>
 
             <motion.div
