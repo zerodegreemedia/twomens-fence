@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Calendar } from "lucide-react";
 
-export function SetmoreBooking() {
+export function FloatingBookButton() {
   const location = useLocation();
   const hidden = ["/thank-you", "/book"].includes(location.pathname);
 
