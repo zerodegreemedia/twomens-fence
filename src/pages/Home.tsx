@@ -256,7 +256,10 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <StatCounter value={COMPANY.yearsExperience} suffix="+" label="Years of Experience" light={false} />
             <StatCounter value={2500} suffix="+" label="Projects Completed" light={false} />
-            <StatCounter value="✓" label="Satisfaction Guaranteed" light={false} />
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-extrabold text-trust">✓</div>
+              <div className="mt-2 text-sm font-medium text-muted-foreground">Satisfaction Guaranteed</div>
+            </div>
             <StatCounter value={15} label="Cities Served" light={false} />
           </div>
         </div>
