@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   ChevronLeft,
@@ -10,8 +10,15 @@ import {
   Loader2,
   Calendar,
   Clock,
+  AlertCircle,
 } from "lucide-react";
-import { COMPANY, FORM_ENDPOINT } from "@/lib/constants";
+import { COMPANY } from "@/lib/constants";
+import {
+  fetchAvailability,
+  submitBooking,
+  generateFallbackSlots,
+  type TimeSlot,
+} from "@/lib/calendar-api";
 
 /* ──────────────────────────────────────────────
    Types & Constants
@@ -42,23 +49,9 @@ const MONTHS = [
   "July", "August", "September", "October", "November", "December",
 ];
 
-function getTimeSlots(date: Date, service: ServiceType): string[] {
-  const day = date.getDay();
-  if (day === 0) return [];
-  const startHour = day === 6 ? 8 : 7;
-  const endHour = day === 6 ? 16 : 18;
-  const interval = service === "phone" ? 30 : 60;
-  const slots: string[] = [];
-  for (let h = startHour; h < endHour; h++) {
-    for (let m = 0; m < 60; m += interval) {
-      if (h === endHour - 1 && m + interval > 60) break;
-      const hour12 = h > 12 ? h - 12 : h === 0 ? 12 : h;
-      const ampm = h >= 12 ? "PM" : "AM";
-      const min = m.toString().padStart(2, "0");
-      slots.push(`${hour12}:${min} ${ampm}`);
-    }
-  }
-  return slots;
+/** Format Date to YYYY-MM-DD */
+function toDateStr(date: Date): string {
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
 }
 
 function isDisabled(date: Date): boolean {
@@ -79,6 +72,10 @@ export function InlineBookingWidget() {
   const [calYear, setCalYear] = useState(new Date().getFullYear());
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [info, setInfo] = useState({ name: "", phone: "", email: "", address: "", notes: "" });
+  const [slotsLoading, setSlotsLoading] = useState(false);
+  const [availableSlots, setAvailableSlots] = useState<TimeSlot[]>([]);
+  const [slotsSource, setSlotsSource] = useState<"google-calendar" | "fallback" | null>(null);
+  const [calendarSynced, setCalendarSynced] = useState(false);
 
   const calendarDays = useMemo(() => {
     const firstDay = new Date(calYear, calMonth, 1).getDay();
@@ -89,12 +86,27 @@ export function InlineBookingWidget() {
     return grid;
   }, [calMonth, calYear]);
 
-  const timeSlots = useMemo(
-    () => (selectedDate && service ? getTimeSlots(selectedDate, service) : []),
-    [selectedDate, service],
-  );
-
   const selectedServiceData = SERVICES.find((s) => s.id === service);
+
+  /** Fetch available slots from API (with fallback) when a date is selected. */
+  const loadSlots = useCallback(async (date: Date, svc: ServiceType) => {
+    const dateStr = toDateStr(date);
+    setSlotsLoading(true);
+    setAvailableSlots([]);
+    setSlotsSource(null);
+    try {
+      const res = await fetchAvailability(dateStr, svc);
+      setAvailableSlots(res.slots);
+      setSlotsSource(res.source);
+    } catch {
+      // API unreachable — use local fallback
+      const fallback = generateFallbackSlots(dateStr, svc);
+      setAvailableSlots(fallback);
+      setSlotsSource("fallback");
+    } finally {
+      setSlotsLoading(false);
+    }
+  }, []);
 
   function prevMonth() {
     if (calMonth === 0) { setCalMonth(11); setCalYear(calYear - 1); }
@@ -114,26 +126,19 @@ export function InlineBookingWidget() {
   async function handleSubmit() {
     if (!service || !selectedDate || !selectedTime) return;
     setStatus("loading");
-    const serviceLabel = selectedServiceData?.title ?? service;
-    const dateStr = selectedDate.toLocaleDateString("en-US", {
-      weekday: "long", month: "long", day: "numeric", year: "numeric",
-    });
     try {
-      await fetch(FORM_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          name: info.name,
-          phone: info.phone,
-          email: info.email,
-          address: info.address,
-          serviceType: serviceLabel,
-          description: `Booking: ${serviceLabel} on ${dateStr} at ${selectedTime}.\n\nAddress: ${info.address}\nNotes: ${info.notes || "None"}`,
-          preferredContact: "phone",
-          sourcePage: "home-inline-booking",
-          _gotcha: "",
-        }),
+      const res = await submitBooking({
+        name: info.name,
+        phone: info.phone,
+        email: info.email || undefined,
+        address: info.address || undefined,
+        notes: info.notes || undefined,
+        service,
+        date: toDateStr(selectedDate),
+        time: selectedTime,
+        sourcePage: "home-inline-booking",
       });
+      setCalendarSynced(res.calendar.synced);
       setStatus("success");
       setStep("confirm");
     } catch {
@@ -244,7 +249,7 @@ export function InlineBookingWidget() {
                       <button
                         key={date.toISOString()}
                         disabled={disabled}
-                        onClick={() => { setSelectedDate(date); setSelectedTime(null); setStep("time"); }}
+                        onClick={() => { setSelectedDate(date); setSelectedTime(null); setStep("time"); loadSlots(date, service!); }}
                         className={`py-1.5 rounded-md text-xs font-medium transition-all ${
                           disabled
                             ? "text-white/10 cursor-not-allowed"
@@ -275,25 +280,41 @@ export function InlineBookingWidget() {
                 {selectedDate.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" })}
                 {" "}· {selectedServiceData?.title}
               </p>
-              <div className="grid grid-cols-3 gap-2 max-h-[240px] overflow-y-auto pr-1">
-                {timeSlots.map((slot) => (
-                  <button
-                    key={slot}
-                    onClick={() => { setSelectedTime(slot); setStep("info"); }}
-                    className={`py-2 rounded-lg border text-xs font-semibold transition-all ${
-                      selectedTime === slot
-                        ? "border-action bg-action/20 text-action"
-                        : "border-white/10 bg-white/5 text-white/50 hover:bg-white/10 hover:text-white/70"
-                    }`}
-                  >
-                    {slot}
-                  </button>
-                ))}
-              </div>
-              {timeSlots.length === 0 && (
-                <p className="text-center text-white/30 py-6 text-sm">
-                  No slots this day. Pick another date.
-                </p>
+
+              {slotsLoading ? (
+                <div className="flex items-center justify-center py-8 gap-2 text-white/40">
+                  <Loader2 size={18} className="animate-spin" />
+                  <span className="text-sm">Checking availability…</span>
+                </div>
+              ) : (
+                <>
+                  {slotsSource === "fallback" && (
+                    <div className="flex items-center gap-2 text-[10px] text-amber-400/70 bg-amber-400/10 rounded-lg px-3 py-2 mb-3">
+                      <AlertCircle size={12} className="shrink-0" />
+                      <span>Live availability unavailable. Showing all business-hours slots — we'll confirm within the hour.</span>
+                    </div>
+                  )}
+                  <div className="grid grid-cols-3 gap-2 max-h-[240px] overflow-y-auto pr-1">
+                    {availableSlots.map((slot) => (
+                      <button
+                        key={slot.label}
+                        onClick={() => { setSelectedTime(slot.label); setStep("info"); }}
+                        className={`py-2 rounded-lg border text-xs font-semibold transition-all ${
+                          selectedTime === slot.label
+                            ? "border-action bg-action/20 text-action"
+                            : "border-white/10 bg-white/5 text-white/50 hover:bg-white/10 hover:text-white/70"
+                        }`}
+                      >
+                        {slot.label}
+                      </button>
+                    ))}
+                  </div>
+                  {availableSlots.length === 0 && (
+                    <p className="text-center text-white/30 py-6 text-sm">
+                      No slots this day. Pick another date.
+                    </p>
+                  )}
+                </>
               )}
             </motion.div>
           )}
@@ -372,7 +393,10 @@ export function InlineBookingWidget() {
                 </div>
                 <h3 className="text-white font-bold text-lg mb-2">You&apos;re All Set!</h3>
                 <p className="text-xs text-white/40 mb-5">
-                  We&apos;ll confirm your {selectedServiceData?.title?.toLowerCase()} within the hour.
+                  {calendarSynced
+                    ? <>Your {selectedServiceData?.title?.toLowerCase()} has been added to our calendar.</>
+                    : <>We&apos;ll confirm your {selectedServiceData?.title?.toLowerCase()} within the hour.</>
+                  }
                 </p>
                 <div className="rounded-lg border border-white/10 bg-white/5 p-4 text-left space-y-2">
                   <div className="flex items-center gap-2">

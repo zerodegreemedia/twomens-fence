@@ -1,11 +1,11 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/shared/SEO";
 import { SectionBadge } from "@/components/shared/SectionBadge";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { COMPANY, FORM_ENDPOINT } from "@/lib/constants";
+import { COMPANY } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -22,7 +22,14 @@ import {
   User,
   Mail,
   MapPin,
+  AlertCircle,
 } from "lucide-react";
+import {
+  fetchAvailability,
+  submitBooking,
+  generateFallbackSlots,
+  type TimeSlot,
+} from "@/lib/calendar-api";
 
 /* ──────────────────────────────────────────────
    Types & Constants
@@ -54,26 +61,9 @@ const MONTHS = [
   "July", "August", "September", "October", "November", "December",
 ];
 
-/** Build time slots based on business hours. */
-function getTimeSlots(date: Date, service: ServiceType): string[] {
-  const day = date.getDay(); // 0=Sun, 6=Sat
-  if (day === 0) return []; // Sunday — closed
-
-  const startHour = day === 6 ? 8 : 7; // Sat starts at 8, weekdays at 7
-  const endHour = day === 6 ? 16 : 18; // Sat ends at 4pm, weekdays at 6pm
-  const interval = service === "phone" ? 30 : 60; // 30-min blocks for calls, 60 for estimates
-
-  const slots: string[] = [];
-  for (let h = startHour; h < endHour; h++) {
-    for (let m = 0; m < 60; m += interval) {
-      if (h === endHour - 1 && m + interval > 60) break;
-      const hour12 = h > 12 ? h - 12 : h === 0 ? 12 : h;
-      const ampm = h >= 12 ? "PM" : "AM";
-      const min = m.toString().padStart(2, "0");
-      slots.push(`${hour12}:${min} ${ampm}`);
-    }
-  }
-  return slots;
+/** Format Date to YYYY-MM-DD */
+function toDateStr(date: Date): string {
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
 }
 
 /** Check if a date is in the past or is a Sunday. */
@@ -96,6 +86,10 @@ export default function Book() {
   const [calYear, setCalYear] = useState(new Date().getFullYear());
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [info, setInfo] = useState({ name: "", phone: "", email: "", address: "", notes: "" });
+  const [slotsLoading, setSlotsLoading] = useState(false);
+  const [availableSlots, setAvailableSlots] = useState<TimeSlot[]>([]);
+  const [slotsSource, setSlotsSource] = useState<"google-calendar" | "fallback" | null>(null);
+  const [calendarSynced, setCalendarSynced] = useState(false);
 
   /* Calendar grid for the current month view */
   const calendarDays = useMemo(() => {
@@ -107,10 +101,24 @@ export default function Book() {
     return grid;
   }, [calMonth, calYear]);
 
-  const timeSlots = useMemo(
-    () => (selectedDate && service ? getTimeSlots(selectedDate, service) : []),
-    [selectedDate, service]
-  );
+  /** Fetch available slots from API (with fallback) when a date is selected. */
+  const loadSlots = useCallback(async (date: Date, svc: ServiceType) => {
+    const dateStr = toDateStr(date);
+    setSlotsLoading(true);
+    setAvailableSlots([]);
+    setSlotsSource(null);
+    try {
+      const res = await fetchAvailability(dateStr, svc);
+      setAvailableSlots(res.slots);
+      setSlotsSource(res.source);
+    } catch {
+      const fallback = generateFallbackSlots(dateStr, svc);
+      setAvailableSlots(fallback);
+      setSlotsSource("fallback");
+    } finally {
+      setSlotsLoading(false);
+    }
+  }, []);
 
   const canGoBack = step !== "service";
 
@@ -133,33 +141,26 @@ export default function Book() {
     setSelectedDate(date);
     setSelectedTime(null);
     setStep("time");
+    loadSlots(date, service!);
   }
 
   async function handleSubmit() {
     if (!service || !selectedDate || !selectedTime) return;
     setStatus("loading");
 
-    const serviceLabel = SERVICES.find((s) => s.id === service)?.title ?? service;
-    const dateStr = selectedDate.toLocaleDateString("en-US", {
-      weekday: "long", month: "long", day: "numeric", year: "numeric",
-    });
-
     try {
-      await fetch(FORM_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          name: info.name,
-          phone: info.phone,
-          email: info.email,
-          address: info.address,
-          serviceType: serviceLabel,
-          description: `Booking: ${serviceLabel} on ${dateStr} at ${selectedTime}.\n\nAddress: ${info.address}\nNotes: ${info.notes || "None"}`,
-          preferredContact: "phone",
-          sourcePage: "/book",
-          _gotcha: "",
-        }),
+      const res = await submitBooking({
+        name: info.name,
+        phone: info.phone,
+        email: info.email || undefined,
+        address: info.address || undefined,
+        notes: info.notes || undefined,
+        service,
+        date: toDateStr(selectedDate),
+        time: selectedTime,
+        sourcePage: "/book",
       });
+      setCalendarSynced(res.calendar.synced);
       setStatus("success");
       setStep("confirm");
     } catch {
@@ -347,26 +348,40 @@ export default function Book() {
                   {" "}&middot; {selectedServiceData?.title}
                 </p>
 
-                <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
-                  {timeSlots.map((slot) => (
-                    <button
-                      key={slot}
-                      onClick={() => { setSelectedTime(slot); setStep("info"); }}
-                      className={`py-3 px-2 rounded-lg border-2 text-sm font-semibold transition-all duration-200 ${
-                        selectedTime === slot
-                          ? "border-action bg-action/10 text-foreground shadow-md"
-                          : "border-border bg-white hover:border-trust/40 text-foreground hover:shadow-sm"
-                      }`}
-                    >
-                      {slot}
-                    </button>
-                  ))}
-                </div>
-
-                {timeSlots.length === 0 && (
-                  <p className="text-center text-muted-foreground py-8">
-                    No available slots for this day. Please pick another date.
-                  </p>
+                {slotsLoading ? (
+                  <div className="flex items-center justify-center py-12 gap-2 text-muted-foreground">
+                    <Loader2 size={20} className="animate-spin" />
+                    <span className="text-sm">Checking availability…</span>
+                  </div>
+                ) : (
+                  <>
+                    {slotsSource === "fallback" && (
+                      <div className="flex items-center gap-2 text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-4 py-2.5 mb-4">
+                        <AlertCircle size={14} className="shrink-0" />
+                        <span>Live availability unavailable. Showing all business-hours slots — we'll confirm your time within the hour.</span>
+                      </div>
+                    )}
+                    <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
+                      {availableSlots.map((slot) => (
+                        <button
+                          key={slot.label}
+                          onClick={() => { setSelectedTime(slot.label); setStep("info"); }}
+                          className={`py-3 px-2 rounded-lg border-2 text-sm font-semibold transition-all duration-200 ${
+                            selectedTime === slot.label
+                              ? "border-action bg-action/10 text-foreground shadow-md"
+                              : "border-border bg-white hover:border-trust/40 text-foreground hover:shadow-sm"
+                          }`}
+                        >
+                          {slot.label}
+                        </button>
+                      ))}
+                    </div>
+                    {availableSlots.length === 0 && (
+                      <p className="text-center text-muted-foreground py-8">
+                        No available slots for this day. Please pick another date.
+                      </p>
+                    )}
+                  </>
                 )}
               </motion.div>
             )}
@@ -483,8 +498,12 @@ export default function Book() {
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">You&apos;re All Set!</h2>
                   <p className="text-muted-foreground max-w-md mx-auto mb-8">
-                    We&apos;ve received your booking request. We&apos;ll confirm your{" "}
-                    <strong>{selectedServiceData?.title?.toLowerCase()}</strong> within the hour.
+                    {calendarSynced ? (
+                      <>Your <strong>{selectedServiceData?.title?.toLowerCase()}</strong> has been added to our calendar. You&apos;re confirmed!</>
+                    ) : (
+                      <>We&apos;ve received your booking request. We&apos;ll confirm your{" "}
+                      <strong>{selectedServiceData?.title?.toLowerCase()}</strong> within the hour.</>
+                    )}
                   </p>
 
                   <div className="rounded-xl border border-border bg-white p-6 text-left max-w-sm mx-auto space-y-3">
