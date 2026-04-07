@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Google Calendar credentials (never commit)
+.env.google-calendar
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
