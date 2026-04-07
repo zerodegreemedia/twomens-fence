@@ -31,6 +31,7 @@ import {
   Calendar,
   type LucideIcon,
 } from "lucide-react";
+import { InlineBookingWidget } from "@/components/shared/InlineBookingWidget";
 import { COMPANY, SERVICES, SERVICE_AREAS, LOCAL_BUSINESS_SCHEMA } from "@/lib/constants";
 import { HERO_IMAGES, OG_IMAGE, GALLERY_IMAGES } from "@/lib/images";
 import { fadeUp, stagger, VIEWPORT } from "@/lib/animations";
@@ -656,7 +657,7 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Right — Visual calendar preview */}
+            {/* Right — Working booking widget */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -664,57 +665,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="hidden lg:block"
             >
-              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 shadow-2xl">
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-white font-bold text-lg">Pick a Date</h3>
-                  <span className="text-sm text-white/40">April 2026</span>
-                </div>
-                <div className="grid grid-cols-7 gap-2 text-center text-xs font-semibold text-white/30 mb-3">
-                  {["Su","Mo","Tu","We","Th","Fr","Sa"].map((d) => <div key={d}>{d}</div>)}
-                </div>
-                <div className="grid grid-cols-7 gap-2 text-center">
-                  {Array.from({ length: 2 }, (_, i) => (
-                    <div key={`e${i}`} />
-                  ))}
-                  {Array.from({ length: 30 }, (_, i) => {
-                    const day = i + 1;
-                    const col = (i + 2) % 7; // 0=Sun
-                    const isSunday = col === 0;
-                    const isHighlighted = day === 9 || day === 15 || day === 22;
-                    return (
-                      <div
-                        key={day}
-                        className={`py-2 rounded-lg text-sm font-medium transition-colors ${
-                          isSunday
-                            ? "text-white/15"
-                            : isHighlighted
-                            ? "bg-action text-foreground font-bold"
-                            : "text-white/60 hover:bg-white/10"
-                        }`}
-                      >
-                        {day}
-                      </div>
-                    );
-                  })}
-                </div>
-                <div className="mt-6 pt-6 border-t border-white/10">
-                  <p className="text-xs text-white/30 mb-3">Available times — Wed, Apr 9</p>
-                  <div className="flex flex-wrap gap-2">
-                    {["8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "1:00 PM", "2:00 PM"].map((t, i) => (
-                      <span
-                        key={t}
-                        className={`px-3 py-1.5 rounded-md text-xs font-semibold ${
-                          i === 1
-                            ? "bg-action text-foreground"
-                            : "bg-white/10 text-white/50"
-                        }`}
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <InlineBookingWidget />
             </motion.div>
           </div>
         </div>
