@@ -215,7 +215,7 @@ export default function ServiceArea() {
                     ? "Based right here in New Castle - your neighbors"
                     : `${area.driveTime} from our New Castle HQ`,
                   "Free on-site estimates with written quotes",
-                  `${COMPANY.reviewCount}+ five-star reviews from real homeowners`,
+                  "Satisfaction guaranteed on every project",
                 ].map((item) => (
                   <li
                     key={item}

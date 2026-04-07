@@ -168,7 +168,7 @@ export default function About() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <StatCounter value={COMPANY.yearsExperience} suffix="+" label="Years of Experience" light={false} />
             <StatCounter value={2500} suffix="+" label="Projects Completed" light={false} />
-            <StatCounter value={COMPANY.reviewCount} suffix="+" label="5-Star Reviews" light={false} />
+            <StatCounter value="✓" label="Satisfaction Guaranteed" light={false} />
             <StatCounter value={15} label="Cities Served" light={false} />
           </div>
         </div>
@@ -235,9 +235,9 @@ export default function About() {
                   answer their own phone. They still measure twice, cut once, and
                   clean up before they leave. Every job is licensed, insured, and
                   comes with a warranty. That's not a marketing promise - it's
-                  how they've done business for 18+ years, and it's why they have
-                  over {COMPANY.reviewCount} five-star reviews from real
-                  homeowners across Delaware and Pennsylvania.
+                  how they've done business for 18+ years, and it's why every
+                  job comes with a satisfaction guarantee for homeowners
+                  across Delaware and Pennsylvania.
                 </motion.p>
               </motion.div>
             </div>

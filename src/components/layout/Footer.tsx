@@ -64,13 +64,8 @@ export function Footer() {
                 and Pennsylvania. Licensed, insured, and every job warranted.
               </p>
               <div className="flex items-center gap-2 text-sm">
-                <span className="text-action font-semibold">{COMPANY.rating}</span>
-                <div className="flex gap-0.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <span key={i} className="text-action">★</span>
-                  ))}
-                </div>
-                <span>· {COMPANY.reviewCount}+ Reviews</span>
+                <span className="text-action">★</span>
+                <span className="text-action font-semibold">Satisfaction Guaranteed</span>
               </div>
             </div>
 

@@ -332,7 +332,7 @@ export const AREA_INTROS: Record<string, string> = {
   "middletown-de":
     "Middletown is growing fast \u2014 new developments in Westown and across the MOT area need fencing from day one. We work with builders and homeowners throughout Middletown, installing fences that meet HOA requirements and stand up to Delaware\u2019s coastal weather.",
   "smyrna-de":
-    "From Smyrna\u2019s historic downtown to the neighborhoods along Duck Creek and Route 13, we bring the same quality craftsmanship that\u2019s earned us 120+ five-star reviews. Smyrna homeowners appreciate our honest pricing and reliable timelines \u2014 no runaround.",
+    "From Smyrna\u2019s historic downtown to the neighborhoods along Duck Creek and Route 13, we bring the same quality craftsmanship with a satisfaction guarantee on every project. Smyrna homeowners appreciate our honest pricing and reliable timelines \u2014 no runaround.",
   "dover-de":
     "As the state capital, Dover has a mix of historic neighborhoods, military housing near Dover Air Force Base, and growing suburbs across Kent County. We\u2019ve installed fences throughout the area and understand the local permitting requirements that come with each zone.",
   "west-chester-pa":

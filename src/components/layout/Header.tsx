@@ -35,7 +35,7 @@ export function Header() {
             <span>Serving {SERVICE_AREAS.length} Areas in DE & PA</span>
             <span className="text-white/30">·</span>
             <span className="text-action font-medium">
-              {COMPANY.rating} ★ · {COMPANY.reviewCount}+ Reviews
+              ★ Satisfaction Guaranteed
             </span>
           </div>
           <a

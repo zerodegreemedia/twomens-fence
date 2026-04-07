@@ -52,7 +52,7 @@ const SERVICE_ICON_MAP: Record<string, LucideIcon> = {
 
 const TRUST_BADGES = [
   { icon: Shield, label: "Licensed & Insured" },
-  { icon: Award, label: "5-Star Rated" },
+  { icon: Award, label: "Satisfaction Guaranteed" },
   { icon: Clock, label: "Free Estimates" },
   { icon: TreePine, label: "Locally Owned" },
 ];
@@ -255,7 +255,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <StatCounter value={COMPANY.yearsExperience} suffix="+" label="Years of Experience" light={false} />
             <StatCounter value={2500} suffix="+" label="Projects Completed" light={false} />
-            <StatCounter value={COMPANY.reviewCount} suffix="+" label="5-Star Reviews" light={false} />
+            <StatCounter value="✓" label="Satisfaction Guaranteed" light={false} />
             <StatCounter value={15} label="Cities Served" light={false} />
           </div>
         </div>
@@ -476,7 +476,7 @@ export default function Home() {
             className="mt-10 text-center"
           >
             <p className="text-white/40 text-sm">
-              {COMPANY.rating} stars from {COMPANY.reviewCount}+ reviews on Google
+              Satisfaction Guaranteed on Every Project
             </p>
           </motion.div>
         </div>
