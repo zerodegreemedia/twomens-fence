@@ -52,8 +52,10 @@ export async function getBusySlots(
   date: string, // YYYY-MM-DD
 ): Promise<BusySlot[]> {
   const token = await getAccessToken(env);
-  const timeMin = `${date}T00:00:00-04:00`; // Eastern time
-  const timeMax = `${date}T23:59:59-04:00`;
+  // Use naive datetimes — the timeZone field in the request body tells Google
+  // to interpret these as America/New_York, handling EDT/EST automatically.
+  const timeMin = `${date}T00:00:00`;
+  const timeMax = `${date}T23:59:59`;
 
   const res = await fetch(
     "https://www.googleapis.com/calendar/v3/freeBusy",

@@ -66,6 +66,20 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     );
   }
 
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+    return new Response(
+      JSON.stringify({ error: "Invalid date format. Use YYYY-MM-DD." }),
+      { status: 400, headers: { "Content-Type": "application/json", ...CORS_HEADERS } },
+    );
+  }
+
+  if (!["phone", "estimate"].includes(service)) {
+    return new Response(
+      JSON.stringify({ error: "Invalid service. Use 'phone' or 'estimate'." }),
+      { status: 400, headers: { "Content-Type": "application/json", ...CORS_HEADERS } },
+    );
+  }
+
   // Build ISO date-times
   const { hour, minute } = parseTime(time);
   const durationMin = service === "phone" ? 30 : 60;
