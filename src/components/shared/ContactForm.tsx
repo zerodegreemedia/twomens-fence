@@ -16,6 +16,7 @@ interface FormData {
   description: string;
   preferredContact: string;
   address: string;
+  _gotcha: string;
 }
 
 const SERVICE_OPTIONS = [
@@ -42,6 +43,7 @@ export function ContactForm({ dark = false, redirectOnSuccess = true }: { dark?:
     description: "",
     preferredContact: "Phone",
     address: "",
+    _gotcha: "",
   });
 
   const update = (field: keyof FormData, value: string) =>
@@ -72,6 +74,7 @@ export function ContactForm({ dark = false, redirectOnSuccess = true }: { dark?:
           description: data.description,
           preferredContact: data.preferredContact,
           address: data.address,
+          _gotcha: data._gotcha,
           _subject: `New estimate request — ${data.serviceType || "General"}`,
           sourcePage: window.location.pathname,
         }),
@@ -97,7 +100,7 @@ export function ContactForm({ dark = false, redirectOnSuccess = true }: { dark?:
     : "bg-white border-border shadow-xl";
   const labelColor = dark ? "text-white/80" : "text-foreground";
   const inputBg = dark
-    ? "bg-white/10 border-white/20 text-white placeholder:text-white/40"
+    ? "bg-white/10 border-white/20 text-white placeholder:text-white/50"
     : "";
 
   if (status === "success") {
@@ -129,7 +132,7 @@ export function ContactForm({ dark = false, redirectOnSuccess = true }: { dark?:
             }`}
           />
         </div>
-        <span className={`text-xs font-medium ${dark ? "text-white/50" : "text-muted-foreground"}`}>
+        <span className={`text-xs font-medium ${dark ? "text-white/70" : "text-muted-foreground"}`}>
           Step {step} of 2
         </span>
       </div>
@@ -193,7 +196,7 @@ export function ContactForm({ dark = false, redirectOnSuccess = true }: { dark?:
             className="space-y-4"
           >
             <div>
-              <Label className={labelColor}>Service Type *</Label>
+              <Label className={labelColor}>Service Type</Label>
               <select
                 value={data.serviceType}
                 onChange={(e) => update("serviceType", e.target.value)}
@@ -249,7 +252,7 @@ export function ContactForm({ dark = false, redirectOnSuccess = true }: { dark?:
               />
             </div>
             {/* Honeypot */}
-            <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
+            <input type="text" name="_gotcha" value={data._gotcha} onChange={(e) => update("_gotcha", e.target.value)} className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
             <div className="flex gap-3">
               <Button
                 variant="outline"
@@ -260,7 +263,7 @@ export function ContactForm({ dark = false, redirectOnSuccess = true }: { dark?:
               </Button>
               <Button
                 onClick={handleSubmit}
-                disabled={!data.serviceType || status === "loading"}
+                disabled={status === "loading"}
                 className="flex-1 bg-action hover:bg-action-glow text-foreground font-semibold transition-all duration-300"
               >
                 {status === "loading" ? (

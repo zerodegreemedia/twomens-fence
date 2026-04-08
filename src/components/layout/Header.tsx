@@ -185,7 +185,7 @@ export function Header() {
                       </Link>
                     ))}
                     <div className="py-2">
-                      <p className="px-4 py-2 text-xs font-semibold text-white/40 uppercase tracking-wider">
+                      <p className="px-4 py-2 text-xs font-semibold text-white/50 uppercase tracking-wider">
                         Delaware
                       </p>
                       {SERVICE_AREAS.filter((a) => a.state === "Delaware").map((area) => (
@@ -197,7 +197,7 @@ export function Header() {
                           {area.city}
                         </Link>
                       ))}
-                      <p className="px-4 py-2 text-xs font-semibold text-white/40 uppercase tracking-wider mt-1">
+                      <p className="px-4 py-2 text-xs font-semibold text-white/50 uppercase tracking-wider mt-1">
                         Pennsylvania
                       </p>
                       {SERVICE_AREAS.filter((a) => a.state === "Pennsylvania").map((area) => (

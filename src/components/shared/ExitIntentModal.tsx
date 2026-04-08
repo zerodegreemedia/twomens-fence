@@ -21,20 +21,38 @@ export function ExitIntentModal() {
 
     let triggered = false;
 
-    const onScroll = () => {
+    // Desktop: real exit intent — mouse leaves toward top of viewport (browser chrome)
+    const onMouseLeave = (e: MouseEvent) => {
       if (triggered) return;
-      const scrollPercent =
-        window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-      if (scrollPercent >= 0.6) {
+      if (e.clientY <= 5) {
         triggered = true;
-        // Small delay so it doesn't feel jarring
-        setTimeout(() => setShow(true), 800);
+        setTimeout(() => setShow(true), 200);
+        document.removeEventListener("mouseleave", onMouseLeave);
         window.removeEventListener("scroll", onScroll);
       }
     };
 
+    // Mobile fallback: trigger after 60% scroll (no mouse exit intent on touch)
+    const onScroll = () => {
+      if (triggered) return;
+      // Only use scroll trigger on touch devices (no fine pointer)
+      if (window.matchMedia("(pointer: fine)").matches) return;
+      const scrollPercent =
+        window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      if (scrollPercent >= 0.7) {
+        triggered = true;
+        setTimeout(() => setShow(true), 800);
+        document.removeEventListener("mouseleave", onMouseLeave);
+        window.removeEventListener("scroll", onScroll);
+      }
+    };
+
+    document.addEventListener("mouseleave", onMouseLeave);
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      document.removeEventListener("mouseleave", onMouseLeave);
+      window.removeEventListener("scroll", onScroll);
+    };
   }, [excluded, location.pathname]);
 
   const dismiss = () => {
