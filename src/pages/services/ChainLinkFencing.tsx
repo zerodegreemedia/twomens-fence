@@ -140,7 +140,7 @@ export default function ChainLinkFencing() {
     <Layout>
       <SEO
         title="Chain Link Fence Installation Delaware"
-        description="Affordable chain link fence installation in Delaware. Galvanized, vinyl-coated, privacy slats. Residential & commercial. Free estimates from TWOMENS."
+        description="Affordable chain link fence installation in Delaware. Galvanized, vinyl-coated, privacy slats. Residential & commercial. Free estimates from TWO MEN."
         canonicalUrl="https://twomensfence.com/services/chain-link-fencing"
         schema={[SERVICE_SCHEMA, {
           "@context": "https://schema.org",

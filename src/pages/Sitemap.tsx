@@ -38,7 +38,7 @@ export default function SitemapPage() {
     <Layout>
       <SEO
         title="Sitemap"
-        description="TWOMENS Fence & Construction sitemap. Browse all pages, services, and service areas."
+        description="TWO MEN Fence & Construction sitemap. Browse all pages, services, and service areas."
         canonicalUrl="https://twomensfence.com/sitemap"
       />
 

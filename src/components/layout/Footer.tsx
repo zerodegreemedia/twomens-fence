@@ -52,7 +52,7 @@ export function Footer() {
               <Link to="/" className="inline-block mb-4">
                 <img
                   src="/img/logo/logo-white.svg"
-                  alt="TWOMENS Fence & Construction"
+                  alt="TWO MEN Fence & Construction"
                   width={192}
                   height={48}
                   className="h-12 w-auto"

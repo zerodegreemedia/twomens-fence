@@ -63,7 +63,7 @@ export function Header() {
           <Link to="/" className="flex items-center gap-2 group">
             <img
               src="/img/logo/logo-white.svg"
-              alt="TWOMENS Fence & Construction"
+              alt="TWO MEN Fence & Construction"
               width={192}
               height={48}
               className="h-10 md:h-12 w-auto"

@@ -199,7 +199,7 @@ export default function ServiceArea() {
       <section className="py-20 md:py-28 bg-section-light">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
-            badge={{ icon: Shield, label: "Why TWOMENS" }}
+            badge={{ icon: Shield, label: "Why TWO MEN" }}
             title={`Why Choose ${COMPANY.shortName} for ${area.city}`}
             subtitle={`We know ${area.city} and the ${area.stateAbbr} area. Here's why homeowners trust us with their fence projects.`}
           />

@@ -20,7 +20,7 @@ export default function Blog() {
           {
             "@context": "https://schema.org",
             "@type": "Blog",
-            name: "TWOMENS Fence Blog",
+            name: "TWO MEN Fence Blog",
             description:
               "Expert fence installation tips, cost guides, and buying advice for Delaware homeowners.",
             url: "https://twomensfence.com/blog",

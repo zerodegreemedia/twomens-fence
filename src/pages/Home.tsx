@@ -91,7 +91,7 @@ const TESTIMONIALS = [
   {
     name: "James R.",
     location: "Bear, DE",
-    text: "We got quotes from four companies and TWOMENS was the most honest and transparent. The vinyl fence looks incredible and the price was fair. Plus everything comes with a warranty.",
+    text: "We got quotes from four companies and TWO MEN was the most honest and transparent. The vinyl fence looks incredible and the price was fair. Plus everything comes with a warranty.",
     rating: 5,
   },
   {
@@ -117,7 +117,7 @@ export default function Home() {
   return (
     <Layout>
       <SEO
-        title="Fences, Decks & Tree Trimming in Delaware | TWOMENS"
+        title="Fences, Decks & Tree Trimming in Delaware | TWO MEN"
         description="Oscar & Anna - 18+ years building fences, decks, and trimming trees in Delaware & PA. Licensed, insured, every job warranted. Free estimates."
         canonicalUrl="https://twomensfence.com"
         schema={[{
@@ -343,7 +343,7 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-6">
           <SectionHeading
             badge={{ icon: Star, label: "Why Choose Us" }}
-            title="The TWOMENS Difference"
+            title="The TWO MEN Difference"
             subtitle="We're not a franchise. We're not a call center. We're Oscar and Anna - a husband-and-wife team with 18 years of experience and a reputation built on doing things right."
             light
           />

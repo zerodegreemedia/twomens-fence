@@ -11,7 +11,7 @@ export interface SiteImage {
 export const HERO_IMAGES: SiteImage[] = [
   {
     "path": "/img/hero/hero-cedar-privacy-fence-twomens-crew.webp",
-    "alt": "TWOMENS crew member inspecting tall cedar privacy fence installation in Delaware",
+    "alt": "TWO MEN crew member inspecting tall cedar privacy fence installation in Delaware",
     "name": "hero-cedar-privacy-fence-twomens-crew"
   },
   {
@@ -21,7 +21,7 @@ export const HERO_IMAGES: SiteImage[] = [
   },
   {
     "path": "/img/hero/hero-chain-link-fence-installation-field.webp",
-    "alt": "TWOMENS crew installing galvanized chain link fence on large commercial property",
+    "alt": "TWO MEN crew installing galvanized chain link fence on large commercial property",
     "name": "hero-chain-link-fence-installation-field"
   },
   {
@@ -36,7 +36,7 @@ export const OG_IMAGE = "/img/hero/hero-cedar-privacy-fence-twomens-crew.webp";
 export const GALLERY_IMAGES: (SiteImage & { type: string })[] = [
   {
     "path": "/img/gallery/gallery-01-cedar-privacy-fence.webp",
-    "alt": "Cedar privacy fence installation by TWOMENS Fence in Delaware",
+    "alt": "Cedar privacy fence installation by TWO MEN Fence in Delaware",
     "name": "gallery-01-cedar-privacy-fence",
     "type": "Wood"
   },
@@ -138,7 +138,7 @@ export const GALLERY_IMAGES: (SiteImage & { type: string })[] = [
   },
   {
     "path": "/img/gallery/gallery-19-crew-building-railing.webp",
-    "alt": "TWOMENS crew building custom porch railing",
+    "alt": "TWO MEN crew building custom porch railing",
     "name": "gallery-19-crew-building-railing",
     "type": "Wood"
   },
@@ -149,7 +149,7 @@ export const GALLERY_IMAGES: (SiteImage & { type: string })[] = [
     "type": "Wood"
   },
   { "path": "/img/gallery/gallery-21-fence-project.webp", "alt": "Wood deck railing demolition and replacement project", "name": "gallery-21-fence-project", "type": "Wood" },
-  { "path": "/img/gallery/gallery-22-fence-project.webp", "alt": "TWOMENS crew installing chain link fence on commercial property", "name": "gallery-22-fence-project", "type": "Chain Link" },
+  { "path": "/img/gallery/gallery-22-fence-project.webp", "alt": "TWO MEN crew installing chain link fence on commercial property", "name": "gallery-22-fence-project", "type": "Chain Link" },
   { "path": "/img/gallery/gallery-23-fence-project.webp", "alt": "Chain link dumpster enclosure at commercial building", "name": "gallery-23-fence-project", "type": "Chain Link" },
   { "path": "/img/gallery/gallery-24-fence-project.webp", "alt": "Pressure-treated wood deck stairs and railing installation", "name": "gallery-24-fence-project", "type": "Wood" },
   { "path": "/img/gallery/gallery-25-fence-project.webp", "alt": "Chain link dumpster enclosure in commercial parking lot", "name": "gallery-25-fence-project", "type": "Chain Link" },
@@ -157,7 +157,7 @@ export const GALLERY_IMAGES: (SiteImage & { type: string })[] = [
   { "path": "/img/gallery/gallery-27-fence-project.webp", "alt": "Galvanized chain link fence along large property in Delaware", "name": "gallery-27-fence-project", "type": "Chain Link" },
   { "path": "/img/gallery/gallery-28-fence-project.webp", "alt": "Vinyl fence posts being set in snowy winter conditions", "name": "gallery-28-fence-project", "type": "Vinyl" },
   { "path": "/img/gallery/gallery-29-fence-project.webp", "alt": "Vinyl dumpster enclosure at commercial property", "name": "gallery-29-fence-project", "type": "Vinyl" },
-  { "path": "/img/gallery/gallery-30-fence-project.webp", "alt": "TWOMENS crew installing chain link fence in parking lot", "name": "gallery-30-fence-project", "type": "Chain Link" },
+  { "path": "/img/gallery/gallery-30-fence-project.webp", "alt": "TWO MEN crew installing chain link fence in parking lot", "name": "gallery-30-fence-project", "type": "Chain Link" },
   { "path": "/img/gallery/gallery-31-fence-project.webp", "alt": "Composite deck build with railing in progress", "name": "gallery-31-fence-project", "type": "Wood" },
   { "path": "/img/gallery/gallery-32-fence-project.webp", "alt": "Chain link gate near commercial bus depot", "name": "gallery-32-fence-project", "type": "Chain Link" },
   { "path": "/img/gallery/gallery-33-fence-project.webp", "alt": "Chain link dumpster enclosure installation", "name": "gallery-33-fence-project", "type": "Chain Link" },
@@ -167,7 +167,7 @@ export const GALLERY_IMAGES: (SiteImage & { type: string })[] = [
   { "path": "/img/gallery/gallery-37-fence-project.webp", "alt": "White vinyl privacy fence installed in backyard", "name": "gallery-37-fence-project", "type": "Vinyl" },
   { "path": "/img/gallery/gallery-38-fence-project.webp", "alt": "Deck footings and foundation preparation", "name": "gallery-38-fence-project", "type": "Wood" },
   { "path": "/img/gallery/gallery-39-fence-project.webp", "alt": "Old wood deck before renovation and removal", "name": "gallery-39-fence-project", "type": "Wood" },
-  { "path": "/img/gallery/gallery-40-fence-project.webp", "alt": "Wood deck demolition in progress by TWOMENS crew", "name": "gallery-40-fence-project", "type": "Wood" },
+  { "path": "/img/gallery/gallery-40-fence-project.webp", "alt": "Wood deck demolition in progress by TWO MEN crew", "name": "gallery-40-fence-project", "type": "Wood" },
   { "path": "/img/gallery/gallery-41-fence-project.webp", "alt": "Galvanized chain link dumpster enclosure with privacy slats", "name": "gallery-41-fence-project", "type": "Chain Link" },
   { "path": "/img/gallery/gallery-42-fence-project.webp", "alt": "Black aluminum ornamental fence along sloped residential yard", "name": "gallery-42-fence-project", "type": "Aluminum" },
   { "path": "/img/gallery/gallery-43-fence-project.webp", "alt": "Galvanized chain link enclosure panel in commercial parking lot", "name": "gallery-43-fence-project", "type": "Chain Link" },
@@ -201,7 +201,7 @@ export const GALLERY_IMAGES: (SiteImage & { type: string })[] = [
   { "path": "/img/gallery/gallery-71-fence-project.webp", "alt": "White vinyl privacy fence with gate along side of house", "name": "gallery-71-fence-project", "type": "Vinyl" },
   { "path": "/img/gallery/gallery-72-fence-project.webp", "alt": "Galvanized chain link dumpster enclosure with privacy slats in urban lot", "name": "gallery-72-fence-project", "type": "Chain Link" },
   { "path": "/img/gallery/gallery-73-fence-project.webp", "alt": "Chain link fence materials staged along commercial building", "name": "gallery-73-fence-project", "type": "Chain Link" },
-  { "path": "/img/gallery/gallery-74-fence-project.webp", "alt": "Elevated deck with railing under construction by TWOMENS crew", "name": "gallery-74-fence-project", "type": "Wood" },
+  { "path": "/img/gallery/gallery-74-fence-project.webp", "alt": "Elevated deck with railing under construction by TWO MEN crew", "name": "gallery-74-fence-project", "type": "Wood" },
   { "path": "/img/gallery/gallery-75-fence-project.webp", "alt": "Black aluminum ornamental fence on retaining wall at commercial property", "name": "gallery-75-fence-project", "type": "Aluminum" },
   { "path": "/img/gallery/gallery-76-fence-project.webp", "alt": "White vinyl privacy fence with gate installed in winter", "name": "gallery-76-fence-project", "type": "Vinyl" },
   { "path": "/img/gallery/gallery-77-fence-project.webp", "alt": "Chain link fence installation near wind turbine on rural property", "name": "gallery-77-fence-project", "type": "Chain Link" },
@@ -215,7 +215,7 @@ export const GALLERY_IMAGES: (SiteImage & { type: string })[] = [
   { "path": "/img/gallery/gallery-85-fence-project.webp", "alt": "Long white vinyl privacy fence along residential property in winter", "name": "gallery-85-fence-project", "type": "Vinyl" },
   { "path": "/img/gallery/gallery-86-fence-project.webp", "alt": "Galvanized chain link dumpster enclosure with privacy slats in urban alley", "name": "gallery-86-fence-project", "type": "Chain Link" },
   { "path": "/img/gallery/gallery-87-fence-project.webp", "alt": "White vinyl privacy fence with gate between houses with landscaping", "name": "gallery-87-fence-project", "type": "Vinyl" },
-  { "path": "/img/gallery/gallery-88-fence-project.webp", "alt": "TWOMENS crew demolishing old wooden deck and stairs", "name": "gallery-88-fence-project", "type": "Wood" },
+  { "path": "/img/gallery/gallery-88-fence-project.webp", "alt": "TWO MEN crew demolishing old wooden deck and stairs", "name": "gallery-88-fence-project", "type": "Wood" },
   { "path": "/img/gallery/gallery-89-fence-project.webp", "alt": "Black vinyl-coated chain link fence around sports court in new development", "name": "gallery-89-fence-project", "type": "Chain Link" },
   { "path": "/img/gallery/gallery-90-fence-project.webp", "alt": "Galvanized chain link dumpster enclosure being installed in winter", "name": "gallery-90-fence-project", "type": "Chain Link" },
   { "path": "/img/gallery/gallery-91-fence-project.webp", "alt": "White vinyl privacy fence enclosing large backyard with shed", "name": "gallery-91-fence-project", "type": "Vinyl" },
@@ -248,7 +248,7 @@ export const SERVICE_IMAGES = {
   wood: [
   {
     "path": "/img/gallery/gallery-01-cedar-privacy-fence.webp",
-    "alt": "Tall cedar privacy fence installation by TWOMENS Fence in Delaware",
+    "alt": "Tall cedar privacy fence installation by TWO MEN Fence in Delaware",
     "name": "wood-cedar-privacy-fence-tall"
   },
   {
@@ -268,7 +268,7 @@ export const SERVICE_IMAGES = {
   },
   {
     "path": "/img/gallery/gallery-19-crew-building-railing.webp",
-    "alt": "TWOMENS crew installing custom wood porch railing on Delaware home",
+    "alt": "TWO MEN crew installing custom wood porch railing on Delaware home",
     "name": "wood-porch-railing-crew-working"
   },
   {
@@ -366,7 +366,7 @@ export const SERVICE_IMAGES = {
   deck: [
   {
     "path": "/img/gallery/gallery-54-fence-project.webp",
-    "alt": "Elevated pressure-treated wood deck with stairs and railing built by TWOMENS",
+    "alt": "Elevated pressure-treated wood deck with stairs and railing built by TWO MEN",
     "name": "deck-elevated-stairs"
   },
   {
@@ -376,7 +376,7 @@ export const SERVICE_IMAGES = {
   },
   {
     "path": "/img/gallery/gallery-31-fence-project.webp",
-    "alt": "Composite deck build with railing in progress by TWOMENS crew",
+    "alt": "Composite deck build with railing in progress by TWO MEN crew",
     "name": "deck-build-progress"
   },
   {
@@ -388,12 +388,12 @@ export const SERVICE_IMAGES = {
   tree: [
   {
     "path": "/img/gallery/gallery-20-crew-digging-posts.webp",
-    "alt": "TWOMENS crew working on outdoor property project in Delaware",
+    "alt": "TWO MEN crew working on outdoor property project in Delaware",
     "name": "tree-crew-working"
   },
   {
     "path": "/img/crew/crew-deck-demolition.webp",
-    "alt": "TWOMENS crew performing outdoor demolition and removal work",
+    "alt": "TWO MEN crew performing outdoor demolition and removal work",
     "name": "tree-crew-removal"
   }
 ],
@@ -445,12 +445,12 @@ export const COMMERCIAL_IMAGES: SiteImage[] = [
 export const CREW_IMAGES: SiteImage[] = [
   {
     "path": "/img/gallery/gallery-20-crew-digging-posts.webp",
-    "alt": "TWOMENS fence crew digging post holes for new fence installation",
+    "alt": "TWO MEN fence crew digging post holes for new fence installation",
     "name": "crew-digging-post-holes"
   },
   {
     "path": "/img/gallery/gallery-19-crew-building-railing.webp",
-    "alt": "TWOMENS construction crew building custom porch railing",
+    "alt": "TWO MEN construction crew building custom porch railing",
     "name": "crew-building-porch-railing"
   },
   {
@@ -460,7 +460,7 @@ export const CREW_IMAGES: SiteImage[] = [
   },
   {
     "path": "/img/crew/crew-deck-demolition.webp",
-    "alt": "TWOMENS crew performing deck demolition and removal",
+    "alt": "TWO MEN crew performing deck demolition and removal",
     "name": "crew-deck-demolition"
   }
 ];

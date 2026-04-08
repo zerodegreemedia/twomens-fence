@@ -81,7 +81,7 @@ export default function Contact() {
     <Layout>
       <SEO
         title="Get a Free Fence Estimate"
-        description="Contact TWOMENS Fence for a free, no-obligation fence estimate. Call (610) 212-7123 or fill out our online form."
+        description="Contact TWO MEN Fence for a free, no-obligation fence estimate. Call (610) 212-7123 or fill out our online form."
         canonicalUrl="https://twomensfence.com/contact"
         schema={{
           "@context": "https://schema.org",

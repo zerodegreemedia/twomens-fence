@@ -174,7 +174,7 @@ export default function Book() {
     <Layout>
       <SEO
         title="Book an Appointment"
-        description="Schedule a free phone consultation or in-home fence estimate with TWOMENS Fence. Pick your date and time online."
+        description="Schedule a free phone consultation or in-home fence estimate with TWO MEN Fence. Pick your date and time online."
         canonicalUrl="https://twomensfence.com/book"
       />
 

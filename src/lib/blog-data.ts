@@ -17,11 +17,11 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "A breakdown of fence installation costs in Delaware — wood, vinyl, aluminum, and chain link — plus what factors affect your final price.",
     date: "2026-04-04",
-    author: "TWOMENS Fence & Construction",
+    author: "TWO MEN Fence & Construction",
     category: "Cost Guides",
     featuredImage: "/img/gallery/gallery-01-cedar-privacy-fence.webp",
     featuredImageAlt:
-      "Cedar privacy fence installation by TWOMENS Fence in Delaware",
+      "Cedar privacy fence installation by TWO MEN Fence in Delaware",
     content: `
       <p>If you're planning a fence project in Delaware, the first question on your mind is probably: <strong>how much is this going to cost?</strong> The honest answer is — it depends. But we can give you a realistic breakdown based on the hundreds of fences we've installed across New Castle County, Wilmington, Newark, Bear, and surrounding areas.</p>
 
@@ -80,7 +80,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Comparing wood and vinyl fencing — cost, durability, maintenance, and appearance — to help Delaware homeowners choose the right fence.",
     date: "2026-04-04",
-    author: "TWOMENS Fence & Construction",
+    author: "TWO MEN Fence & Construction",
     category: "Buying Guides",
     featuredImage: "/img/gallery/gallery-06-vinyl-privacy-long.webp",
     featuredImageAlt: "White vinyl privacy fence long installation run",
@@ -138,7 +138,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "A county-by-county guide to fence permit requirements in Delaware — New Castle County, Kent County, Sussex County, Wilmington, Newark, Dover, and more.",
     date: "2026-04-04",
-    author: "TWOMENS Fence & Construction",
+    author: "TWO MEN Fence & Construction",
     category: "Permits & Regulations",
     featuredImage: "/img/gallery/gallery-03-wood-privacy-backyard.webp",
     featuredImageAlt:
@@ -247,7 +247,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>Check your community's CC&Rs (Covenants, Conditions, and Restrictions) before you start planning your fence. Getting HOA approval first can save you from costly changes later.</p>
 
       <h2>We Handle the Paperwork</h2>
-      <p>Navigating fence permits doesn't have to be stressful. <strong>TWOMENS Fence & Construction</strong> helps guide you through the entire permit process. We know the requirements in every area we serve — from New Castle County to Kent County and everywhere in between.</p>
+      <p>Navigating fence permits doesn't have to be stressful. <strong>TWO MEN Fence & Construction</strong> helps guide you through the entire permit process. We know the requirements in every area we serve — from New Castle County to Kent County and everywhere in between.</p>
 
       <p>We'll help you understand what's required, prepare the right documents, and make sure your fence is installed to code.</p>
 
@@ -262,7 +262,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Choosing the right fence to keep your dog safe — comparing wood, vinyl, chain link, and aluminum fences for pet owners in Delaware.",
     date: "2026-04-04",
-    author: "TWOMENS Fence & Construction",
+    author: "TWO MEN Fence & Construction",
     category: "Buying Guides",
     featuredImage: "/img/gallery/gallery-11-chainlink-black-commercial.webp",
     featuredImageAlt:
@@ -384,7 +384,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Delaware pool fence safety codes, height requirements, gate specifications, and material options — everything homeowners need to know before installing a pool fence.",
     date: "2026-04-04",
-    author: "TWOMENS Fence & Construction",
+    author: "TWO MEN Fence & Construction",
     category: "Permits & Regulations",
     featuredImage: "/img/gallery/gallery-15-aluminum-landscape.webp",
     featuredImageAlt:
@@ -495,7 +495,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>Every one of these violations is preventable with proper installation from the start.</p>
 
       <h2>We Install Code-Compliant Pool Fences</h2>
-      <p><strong>TWOMENS Fence & Construction</strong> installs pool fences that pass inspection the first time. We know Delaware's codes inside and out — from gate hardware specifications to picket spacing requirements.</p>
+      <p><strong>TWO MEN Fence & Construction</strong> installs pool fences that pass inspection the first time. We know Delaware's codes inside and out — from gate hardware specifications to picket spacing requirements.</p>
 
       <p>We'll help you choose the right material, handle the permit process, and install a fence that keeps your family safe and your property compliant.</p>
 

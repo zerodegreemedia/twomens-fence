@@ -132,7 +132,7 @@ export default function GateInstallation() {
     <Layout>
       <SEO
         title="Gate Installation Delaware - Driveway & Walk-Through"
-        description="Professional gate installation in Delaware. Driveway, walk-through, pool code & commercial gates. Wood, vinyl, aluminum, chain link. Free estimates from TWOMENS."
+        description="Professional gate installation in Delaware. Driveway, walk-through, pool code & commercial gates. Wood, vinyl, aluminum, chain link. Free estimates from TWO MEN."
         canonicalUrl="https://twomensfence.com/services/gate-installation"
         schema={[SERVICE_SCHEMA, {
           "@context": "https://schema.org",

@@ -141,8 +141,8 @@ export default function DeckBuilding() {
   return (
     <Layout>
       <SEO
-        title="Custom Deck Building Delaware | TWOMENS"
-        description="Custom wood & composite deck building in Delaware. Pressure-treated, cedar, and Trex decks. Free estimates from Oscar & Anna at TWOMENS."
+        title="Custom Deck Building Delaware | TWO MEN"
+        description="Custom wood & composite deck building in Delaware. Pressure-treated, cedar, and Trex decks. Free estimates from Oscar & Anna at TWO MEN."
         canonicalUrl="https://twomensfence.com/services/deck-building"
         schema={[SERVICE_SCHEMA, {
           "@context": "https://schema.org",

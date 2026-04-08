@@ -1,6 +1,6 @@
 export const COMPANY = {
-  name: "TWOMENS Fence & Construction",
-  shortName: "TWOMENS",
+  name: "TWO MEN Fence & Construction",
+  shortName: "TWO MEN",
   owners: "Oscar & Anna",
   phone: "(610) 212-7123",
   phoneTel: "tel:+16102127123",
@@ -320,11 +320,11 @@ export const LOCAL_BUSINESS_SCHEMA = {
 
 export const AREA_INTROS: Record<string, string> = {
   "new-castle-de":
-    "Based right here in New Castle near Battery Park and the Delaware River waterfront, TWOMENS is your neighbor. We know the historic homes, the tight lots near downtown, and the new builds off Route 9. When you need a fence that fits New Castle\u2019s character, we\u2019re minutes away.",
+    "Based right here in New Castle near Battery Park and the Delaware River waterfront, TWO MEN is your neighbor. We know the historic homes, the tight lots near downtown, and the new builds off Route 9. When you need a fence that fits New Castle\u2019s character, we\u2019re minutes away.",
   "wilmington-de":
     "From Brandywine to Trolley Square to the Riverfront, we\u2019ve been building fences across Wilmington for over 18 years. Whether you need privacy fencing for a Rockford Park row home or a vinyl fence for a Westover Hills backyard, we know the terrain and the permitting process.",
   "newark-de":
-    "Serving the University of Delaware area, Main Street corridor, and neighborhoods along Elkton Road, we handle everything from student rental properties to family homes. Newark homeowners trust TWOMENS for fences that hold up to Delaware weather and look great year-round.",
+    "Serving the University of Delaware area, Main Street corridor, and neighborhoods along Elkton Road, we handle everything from student rental properties to family homes. Newark homeowners trust TWO MEN for fences that hold up to Delaware weather and look great year-round.",
   "bear-de":
     "From the communities around Lums Pond to the developments along Route 40 and Governor\u2019s Square, Bear is one of our busiest service areas. We build fences for new construction, replace aging chain-link, and install privacy fencing for growing families throughout Bear.",
   "hockessin-de":
@@ -342,11 +342,11 @@ export const AREA_INTROS: Record<string, string> = {
   "media-pa":
     "Media \u2014 the Delaware County seat \u2014 is known for its vibrant State Street and the trails along Ridley Creek. We fence homes throughout Media\u2019s tight borough lots and larger properties in the surrounding townships, with designs that fit each neighborhood\u2019s character.",
   "chester-pa":
-    "Serving Chester and the surrounding Delaware County waterfront communities along the I-95 corridor, we install durable fences built for high-traffic areas. Whether you need security fencing or a backyard upgrade, TWOMENS delivers quality work at a fair price.",
+    "Serving Chester and the surrounding Delaware County waterfront communities along the I-95 corridor, we install durable fences built for high-traffic areas. Whether you need security fencing or a backyard upgrade, TWO MEN delivers quality work at a fair price.",
   "downingtown-pa":
     "Downingtown\u2019s Chester County location along Brandywine Creek and Route 30 offers a mix of historic homes and newer developments. We install wood, vinyl, and aluminum fences that handle the rolling terrain and meet local requirements \u2014 all backed by our warranty.",
   "milford-de":
     "Sitting at the Kent/Sussex border along the Mispillion River, Milford is experiencing a downtown revitalization that brings new homeowners and new fencing needs. We serve the entire Milford area with the same quality and warranty that\u2019s made us a trusted name across Delaware.",
   "seaford-de":
-    "In western Sussex County along the Nanticoke River, Seaford homeowners count on TWOMENS for reliable fence installation without the long wait. We make the drive so you get the same licensed, insured, and warranted service that our New Castle neighbors receive.",
+    "In western Sussex County along the Nanticoke River, Seaford homeowners count on TWO MEN for reliable fence installation without the long wait. We make the drive so you get the same licensed, insured, and warranted service that our New Castle neighbors receive.",
 };

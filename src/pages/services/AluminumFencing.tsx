@@ -141,7 +141,7 @@ export default function AluminumFencing() {
     <Layout>
       <SEO
         title="Aluminum Fence Installation Delaware"
-        description="Professional ornamental and pool-code-compliant aluminum fence installation in Delaware. Flat top, spear top, and puppy picket styles. Free estimates from TWOMENS Fence."
+        description="Professional ornamental and pool-code-compliant aluminum fence installation in Delaware. Flat top, spear top, and puppy picket styles. Free estimates from TWO MEN Fence."
         canonicalUrl="https://twomensfence.com/services/aluminum-fencing"
         schema={[SERVICE_SCHEMA, {
           "@context": "https://schema.org",

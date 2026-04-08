@@ -27,7 +27,7 @@ export function SEO({
   geoPlacename,
   geoPosition,
 }: SEOProps) {
-  const fullTitle = `${title} | TWOMENS Fence & Construction`;
+  const fullTitle = `${title} | TWO MEN Fence & Construction`;
   const absoluteOgImage = ogImage.startsWith("http")
     ? ogImage
     : `${SITE_URL}${ogImage}`;

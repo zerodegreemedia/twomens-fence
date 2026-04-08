@@ -40,7 +40,7 @@ const FAQ_CATEGORIES: FAQCategory[] = [
       {
         question: "How long have you been in business?",
         answer:
-          "TWOMENS Fence & Construction is owned by Oscar and Anna - a husband-and-wife team with over 18 years of experience. They've completed over 2,500 projects including fences, decks, and tree trimming, and built their reputation on quality work and honest service.",
+          "TWO MEN Fence & Construction is owned by Oscar and Anna - a husband-and-wife team with over 18 years of experience. They've completed over 2,500 projects including fences, decks, and tree trimming, and built their reputation on quality work and honest service.",
       },
       {
         question: "Are you licensed and insured?",

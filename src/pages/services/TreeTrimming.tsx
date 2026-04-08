@@ -141,8 +141,8 @@ export default function TreeTrimming() {
   return (
     <Layout>
       <SEO
-        title="Tree Trimming & Removal Delaware | TWOMENS"
-        description="Professional tree trimming, removal, and stump grinding in Delaware. 18+ years experience. Free estimates from Oscar & Anna at TWOMENS."
+        title="Tree Trimming & Removal Delaware | TWO MEN"
+        description="Professional tree trimming, removal, and stump grinding in Delaware. 18+ years experience. Free estimates from Oscar & Anna at TWO MEN."
         canonicalUrl="https://twomensfence.com/services/tree-trimming"
         schema={[SERVICE_SCHEMA, {
           "@context": "https://schema.org",

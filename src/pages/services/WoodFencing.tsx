@@ -141,7 +141,7 @@ export default function WoodFencing() {
     <Layout>
       <SEO
         title="Wood Fence Installation Delaware"
-        description="Cedar, pine & pressure-treated wood fence installation in Delaware. Privacy, picket, board-on-board styles. Free estimates from TWOMENS."
+        description="Cedar, pine & pressure-treated wood fence installation in Delaware. Privacy, picket, board-on-board styles. Free estimates from TWO MEN."
         canonicalUrl="https://twomensfence.com/services/wood-fencing"
         schema={[SERVICE_SCHEMA, {
           "@context": "https://schema.org",
@@ -337,7 +337,7 @@ export default function WoodFencing() {
           "gallery-03-wood-privacy-backyard": "Board-on-board privacy fence along property line — Bear, DE",
           "gallery-04-porch-railing-complete": "Custom wood porch railing with matching privacy fence — Wilmington",
           "gallery-05-wood-deck-framing": "Cedar deck framing and railing project — Hockessin, DE",
-          "gallery-19-crew-building-railing": "TWOMENS crew building custom porch railing — residential project",
+          "gallery-19-crew-building-railing": "TWO MEN crew building custom porch railing — residential project",
         }}
       />
 

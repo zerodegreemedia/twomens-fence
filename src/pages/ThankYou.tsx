@@ -37,7 +37,7 @@ export default function ThankYou() {
     <Layout>
       <SEO
         title="Thank You - Request Received"
-        description="Your free fence estimate request has been received. TWOMENS Fence will contact you within 24 hours."
+        description="Your free fence estimate request has been received. TWO MEN Fence will contact you within 24 hours."
         canonicalUrl="https://twomensfence.com/thank-you"
         noIndex
       />

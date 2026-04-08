@@ -73,7 +73,7 @@ export default function About() {
   return (
     <Layout>
       <SEO
-        title="About TWOMENS Fence - Oscar & Anna"
+        title="About TWO MEN Fence - Oscar & Anna"
         description="Husband-and-wife team with 18+ years building fences, decks, and trimming trees across Delaware & PA. Licensed, insured, and every job warranted."
         canonicalUrl="https://twomensfence.com/about"
         schema={[{
@@ -120,7 +120,7 @@ export default function About() {
         <div className="relative max-w-7xl mx-auto px-6 py-14 md:py-20 text-center">
           <motion.div initial="hidden" animate="visible" variants={stagger}>
             <motion.div variants={fadeUp} custom={0}>
-              <SectionBadge icon={Users} label="About TWOMENS" />
+              <SectionBadge icon={Users} label="About TWO MEN" />
             </motion.div>
 
             <motion.h1
@@ -208,7 +208,7 @@ export default function About() {
                   custom={2}
                   className="mt-6 text-muted-foreground leading-relaxed"
                 >
-                  TWOMENS Fence &amp; Construction was built by Oscar and Anna - a
+                  TWO MEN Fence &amp; Construction was built by Oscar and Anna - a
                   husband-and-wife team with a simple belief: customers deserve
                   honest work at fair prices. Over 18 years ago they picked up
                   their tools, loaded the truck, and started building fences in
@@ -255,7 +255,7 @@ export default function About() {
             >
               <img
                 src={CREW_IMAGES[1]?.path || ""}
-                alt={CREW_IMAGES[1]?.alt || "TWOMENS Fence crew"}
+                alt={CREW_IMAGES[1]?.alt || "TWO MEN Fence crew"}
                 width={800}
                 height={600}
                 className="w-full h-full object-cover"

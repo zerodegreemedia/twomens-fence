@@ -142,7 +142,7 @@ export default function VinylFencing() {
     <Layout>
       <SEO
         title="Vinyl Fence Installation Delaware"
-        description="Low-maintenance vinyl fence installation in Delaware. Privacy, semi-privacy, picket & ranch rail in multiple colors. Free estimates from TWOMENS."
+        description="Low-maintenance vinyl fence installation in Delaware. Privacy, semi-privacy, picket & ranch rail in multiple colors. Free estimates from TWO MEN."
         canonicalUrl="https://twomensfence.com/services/vinyl-fencing"
         schema={[SERVICE_SCHEMA, {
           "@context": "https://schema.org",
