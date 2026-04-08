@@ -5,7 +5,8 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { SectionBadge } from "@/components/shared/SectionBadge";
 import { CTAButton } from "@/components/shared/CTAButton";
 import { ContactForm } from "@/components/shared/ContactForm";
-import { COMPANY, SERVICES, SERVICE_AREAS, AREA_INTROS } from "@/lib/constants";
+import { COMPANY, SERVICES, SERVICE_AREAS, AREA_INTROS, AREA_CONTENT } from "@/lib/constants";
+import { BLOG_POSTS } from "@/lib/blog-data";
 import { fadeUp, stagger, VIEWPORT } from "@/lib/animations";
 import { motion } from "framer-motion";
 import {
@@ -16,6 +17,8 @@ import {
   ArrowRight,
   Shield,
   Wrench,
+  BookOpen,
+  Lightbulb,
 } from "lucide-react";
 
 export default function ServiceArea() {
@@ -233,6 +236,116 @@ export default function ServiceArea() {
           </div>
         </div>
       </section>
+
+      {/* ═══════════════════════════════════════
+          PER-CITY CONTENT - Light
+          ═══════════════════════════════════════ */}
+      {AREA_CONTENT[area.slug] && (
+        <section className="py-20 md:py-28 bg-background">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Popular Fence Types */}
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={VIEWPORT}
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-trust/10 flex items-center justify-center">
+                    <Fence size={20} className="text-trust" />
+                  </div>
+                  <h2 className="text-2xl font-bold text-foreground">
+                    Popular Fence Types in {area.city}
+                  </h2>
+                </div>
+                <ul className="space-y-3">
+                  {AREA_CONTENT[area.slug].popularFenceTypes.map((type) => (
+                    <li
+                      key={type}
+                      className="flex items-start gap-3 text-foreground"
+                    >
+                      <CheckCircle
+                        size={18}
+                        className="text-trust shrink-0 mt-0.5"
+                      />
+                      <span className="text-sm leading-relaxed">{type}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              {/* Local Tip */}
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={VIEWPORT}
+                custom={1}
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-action/10 flex items-center justify-center">
+                    <Lightbulb size={20} className="text-action" />
+                  </div>
+                  <h2 className="text-2xl font-bold text-foreground">
+                    Local Tip: Permits & Rules
+                  </h2>
+                </div>
+                <div className="rounded-2xl border border-border bg-section-light p-6">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {AREA_CONTENT[area.slug].localTip}
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Related Blog Posts */}
+            {AREA_CONTENT[area.slug].relatedBlogSlugs.length > 0 && (
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={VIEWPORT}
+                className="mt-16"
+              >
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-10 h-10 rounded-xl bg-trust/10 flex items-center justify-center">
+                    <BookOpen size={20} className="text-trust" />
+                  </div>
+                  <h2 className="text-2xl font-bold text-foreground">
+                    Helpful Guides for {area.city} Homeowners
+                  </h2>
+                </div>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {AREA_CONTENT[area.slug].relatedBlogSlugs
+                    .map((slug) => BLOG_POSTS.find((p) => p.slug === slug))
+                    .filter(Boolean)
+                    .map((post) => (
+                      <Link
+                        key={post!.slug}
+                        to={`/blog/${post!.slug}`}
+                        className="block rounded-2xl border border-border bg-white p-6 hover:shadow-xl hover:border-trust/30 transition-all duration-300"
+                      >
+                        <span className="text-xs font-semibold text-trust uppercase tracking-wider">
+                          {post!.category}
+                        </span>
+                        <h3 className="text-base font-bold text-foreground mt-2 mb-2 leading-snug">
+                          {post!.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                          {post!.description}
+                        </p>
+                        <span className="inline-flex items-center gap-1 text-sm font-semibold text-trust mt-3">
+                          Read More <ArrowRight size={14} />
+                        </span>
+                      </Link>
+                    ))}
+                </div>
+              </motion.div>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* ═══════════════════════════════════════
           OTHER SERVICE AREAS - Dark

@@ -135,7 +135,7 @@ export function Footer() {
                     className="flex items-center gap-3 text-sm hover:text-white transition-colors"
                   >
                     <Phone size={16} className="text-trust shrink-0" />
-                    {COMPANY.phone} <span className="text-white/40 ml-1">({COMPANY.phoneLabel})</span>
+                    {COMPANY.phone} <span className="text-white/50 ml-1">({COMPANY.phoneLabel})</span>
                   </a>
                 </li>
                 <li>
@@ -144,7 +144,7 @@ export function Footer() {
                     className="flex items-center gap-3 text-sm hover:text-white transition-colors"
                   >
                     <Phone size={16} className="text-trust shrink-0" />
-                    {COMPANY.phoneSecondary} <span className="text-white/40 ml-1">({COMPANY.phoneSecondaryLabel})</span>
+                    {COMPANY.phoneSecondary} <span className="text-white/50 ml-1">({COMPANY.phoneSecondaryLabel})</span>
                   </a>
                 </li>
                 <li>
@@ -171,7 +171,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/40">
+          <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/50">
             <p>© {new Date().getFullYear()} {COMPANY.name}. All rights reserved.</p>
             <div className="flex gap-4">
               <Link to="/privacy" className="hover:text-white/60 transition-colors">
@@ -184,6 +184,19 @@ export function Footer() {
                 Sitemap
               </Link>
             </div>
+          </div>
+          <div className="max-w-7xl mx-auto px-6 pb-5 text-center text-xs text-white/40">
+            <p>
+              Proudly Built and Managed by{" "}
+              <a
+                href="https://www.zerodegreemedia.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/50 hover:text-white/70 underline underline-offset-2 transition-colors"
+              >
+                ZeroDegree Media
+              </a>
+            </p>
           </div>
         </div>
       </footer>

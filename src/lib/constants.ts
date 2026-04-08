@@ -310,12 +310,245 @@ export const LOCAL_BUSINESS_SCHEMA = {
     "@type": "City",
     name: `${area.city}, ${area.stateAbbr}`,
   })),
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: COMPANY.rating,
-    reviewCount: COMPANY.reviewCount,
-  },
+  // NOTE: aggregateRating removed — Google requires ratings to come from
+  // a verifiable review source (GBP, Yelp, etc). Re-add once Oscar's Google
+  // Business Profile review count is confirmed and linked via sameAs.
   foundingDate: `${COMPANY.yearFounded}`,
+};
+
+/** Per-city unique content for service area pages — SEO differentiation */
+export interface AreaContent {
+  popularFenceTypes: string[];
+  localTip: string;
+  relatedBlogSlugs: string[];
+}
+
+export const AREA_CONTENT: Record<string, AreaContent> = {
+  "new-castle-de": {
+    popularFenceTypes: [
+      "Cedar privacy fencing for historic-area homes",
+      "Vinyl privacy fencing for newer subdivisions along Route 9",
+      "Chain link for commercial properties near the waterfront",
+      "Aluminum ornamental fencing for Battery Park-area properties",
+    ],
+    localTip:
+      "New Castle County requires a fence permit for most residential installations. Permit fees run $50–$100 and take 1–2 weeks to process through the Land Use Department. If your property is in a historic district near downtown New Castle, expect additional review requirements for materials and style.",
+    relatedBlogSlugs: [
+      "do-i-need-a-permit-for-a-fence-in-delaware",
+      "how-much-does-a-fence-cost-in-delaware",
+      "how-to-choose-a-fence-contractor-checklist",
+    ],
+  },
+  "wilmington-de": {
+    popularFenceTypes: [
+      "Wood privacy fencing for Rockford Park row homes",
+      "Vinyl fencing for Westover Hills and Brandywine neighborhoods",
+      "Aluminum ornamental fencing for Trolley Square properties",
+      "Chain link with privacy slats for Riverside rentals",
+    ],
+    localTip:
+      "Wilmington has its own fence permit process separate from New Castle County — permits go through the Licenses & Inspections Department. Historic districts (including parts of Trolley Square and the Riverfront) require Historic Preservation Commission review, which adds time. Submit early and expect stricter enforcement on materials and style.",
+    relatedBlogSlugs: [
+      "do-i-need-a-permit-for-a-fence-in-delaware",
+      "best-fence-for-dogs-delaware-homeowners-guide",
+      "fence-installation-timeline-what-to-expect",
+    ],
+  },
+  "newark-de": {
+    popularFenceTypes: [
+      "Wood privacy fencing for family homes along Elkton Road",
+      "Chain link for rental properties near the University of Delaware",
+      "Vinyl fencing for newer developments off Main Street",
+      "Aluminum fencing for front yards in established neighborhoods",
+    ],
+    localTip:
+      "Newark requires a fence permit and site plan showing exact fence location. Corner lot owners: Newark has specific sight-triangle rules near intersections — fences in corner lots must maintain clear visibility for drivers. The Building Department typically processes permits in 1–2 weeks.",
+    relatedBlogSlugs: [
+      "do-i-need-a-permit-for-a-fence-in-delaware",
+      "hoa-fence-rules-new-castle-county-delaware",
+      "how-much-does-a-fence-cost-in-delaware",
+    ],
+  },
+  "bear-de": {
+    popularFenceTypes: [
+      "Vinyl privacy fencing — the #1 choice in Bear's HOA communities",
+      "Wood privacy fencing for larger lots near Lums Pond",
+      "Aluminum ornamental fencing for front yards in Governor's Square",
+      "Chain link for properties along Route 40",
+    ],
+    localTip:
+      "Bear has a high concentration of HOA communities, especially near Governor's Square and Fox Run. Most HOAs require Architectural Review Board (ARB) approval before you can apply for a county permit. Submit your HOA application first — ARB reviews can take 2–6 weeks. White and tan vinyl are the most commonly approved materials.",
+    relatedBlogSlugs: [
+      "hoa-fence-rules-new-castle-county-delaware",
+      "best-fence-for-dogs-delaware-homeowners-guide",
+      "fence-installation-timeline-what-to-expect",
+    ],
+  },
+  "hockessin-de": {
+    popularFenceTypes: [
+      "Cedar privacy fencing for large-lot estate properties",
+      "Split rail fencing for equestrian properties and acreage",
+      "Aluminum ornamental fencing for front boundaries",
+      "Vinyl fencing for newer Hockessin Corner developments",
+    ],
+    localTip:
+      "Hockessin's larger lots and rolling terrain often mean longer fence runs and more complex installations. Many properties here are 1+ acres, so wood and split rail fencing are popular cost-effective options. If you're in an HOA community along Lancaster Pike, check your CC&Rs — some Hockessin HOAs have stricter-than-average material and height restrictions.",
+    relatedBlogSlugs: [
+      "hoa-fence-rules-new-castle-county-delaware",
+      "how-much-does-a-fence-cost-in-delaware",
+      "cedar-vs-composite-deck-which-is-better-for-delaware",
+    ],
+  },
+  "middletown-de": {
+    popularFenceTypes: [
+      "Vinyl privacy fencing — required by most Middletown HOAs",
+      "Aluminum ornamental fencing for front yard boundaries in Westown",
+      "Wood privacy fencing for non-HOA properties",
+      "Chain link for rural properties outside the MOT corridor",
+    ],
+    localTip:
+      "Middletown is one of Delaware's fastest-growing areas, and almost every new development has an HOA with fence rules. Westown, Parkside, and Village of Bayberry all require ARB approval. White vinyl privacy fencing is the most universally approved material in Middletown communities. Non-HOA properties still need a New Castle County permit.",
+    relatedBlogSlugs: [
+      "hoa-fence-rules-new-castle-county-delaware",
+      "fence-installation-timeline-what-to-expect",
+      "how-to-choose-a-fence-contractor-checklist",
+    ],
+  },
+  "smyrna-de": {
+    popularFenceTypes: [
+      "Wood privacy fencing for homes near Duck Creek and historic downtown",
+      "Vinyl fencing for newer developments along Route 13",
+      "Chain link for larger rural properties",
+      "Aluminum pool fencing for backyard pools",
+    ],
+    localTip:
+      "Smyrna sits at the New Castle County / Kent County border. Make sure you know which county your property is in — permit requirements differ. Kent County has slightly more relaxed rules for standard residential fences under 6 feet in some unincorporated areas, but always verify before building.",
+    relatedBlogSlugs: [
+      "do-i-need-a-permit-for-a-fence-in-delaware",
+      "pool-fence-requirements-delaware",
+      "how-much-does-a-fence-cost-in-delaware",
+    ],
+  },
+  "dover-de": {
+    popularFenceTypes: [
+      "Wood privacy fencing for Kent County residential properties",
+      "Chain link for properties near Dover Air Force Base",
+      "Vinyl fencing for newer Dover suburbs",
+      "Aluminum ornamental fencing for historic downtown properties",
+    ],
+    localTip:
+      "As the state capital, Dover has its own permit process through the Planning & Inspections Department — separate from Kent County. Properties near Dover Air Force Base may have additional easement requirements. Dover's mix of historic neighborhoods and newer suburbs means fence rules can vary block to block — always check before building.",
+    relatedBlogSlugs: [
+      "do-i-need-a-permit-for-a-fence-in-delaware",
+      "best-fence-for-dogs-delaware-homeowners-guide",
+      "how-to-choose-a-fence-contractor-checklist",
+    ],
+  },
+  "west-chester-pa": {
+    popularFenceTypes: [
+      "Cedar and wood privacy fencing for historic Chester County homes",
+      "Vinyl privacy fencing for Brandywine Valley neighborhoods",
+      "Aluminum ornamental fencing for front yards downtown",
+      "Split rail fencing for larger lots and horse properties",
+    ],
+    localTip:
+      "West Chester Borough has its own zoning and fence permit requirements separate from Chester County. Historic district properties may face additional design review. In Pennsylvania, make sure your contractor has a valid PA Home Improvement Contractor (HIC) registration — it's required by state law.",
+    relatedBlogSlugs: [
+      "how-to-choose-a-fence-contractor-checklist",
+      "how-much-does-a-fence-cost-in-delaware",
+      "fence-installation-timeline-what-to-expect",
+    ],
+  },
+  "kennett-square-pa": {
+    popularFenceTypes: [
+      "Split rail and post-and-rail fencing for rural estates",
+      "Cedar privacy fencing for in-town properties",
+      "Vinyl fencing for newer developments",
+      "Aluminum ornamental fencing for front boundary definition",
+    ],
+    localTip:
+      "Kennett Square's mix of farmland and upscale homes means fence needs vary widely. Rural properties often use split rail or post-and-rail for aesthetics and livestock. In-town properties may need borough permits. For larger estate properties near Longwood Gardens, plan for longer fence runs — wood and split rail are the most cost-effective options per linear foot.",
+    relatedBlogSlugs: [
+      "how-much-does-a-fence-cost-in-delaware",
+      "cedar-vs-composite-deck-which-is-better-for-delaware",
+      "how-to-choose-a-fence-contractor-checklist",
+    ],
+  },
+  "media-pa": {
+    popularFenceTypes: [
+      "Wood privacy fencing for borough lots and township properties",
+      "Vinyl fencing for low-maintenance suburban backyards",
+      "Aluminum ornamental fencing for front yards on State Street-area homes",
+      "Chain link for larger Delaware County properties",
+    ],
+    localTip:
+      "Media Borough has tight lot lines, so fence placement and setback rules matter more here than in suburban areas. Check with the borough about exact setback requirements before installation. Township properties outside the borough follow Delaware County rules. Verify your contractor's PA HIC registration.",
+    relatedBlogSlugs: [
+      "fence-installation-timeline-what-to-expect",
+      "how-to-choose-a-fence-contractor-checklist",
+      "best-fence-for-dogs-delaware-homeowners-guide",
+    ],
+  },
+  "chester-pa": {
+    popularFenceTypes: [
+      "Chain link fencing for security and property definition",
+      "Wood privacy fencing for residential backyards",
+      "Vinyl fencing for waterfront-area homes",
+      "Aluminum ornamental fencing for commercial properties along I-95",
+    ],
+    localTip:
+      "Chester's waterfront development and I-95 corridor mean a mix of residential and commercial fencing needs. Commercial fence projects may require additional engineering or permits. For residential properties, check with the city about permit requirements — Chester has its own process separate from Delaware County.",
+    relatedBlogSlugs: [
+      "how-much-does-a-fence-cost-in-delaware",
+      "how-to-choose-a-fence-contractor-checklist",
+      "fence-installation-timeline-what-to-expect",
+    ],
+  },
+  "downingtown-pa": {
+    popularFenceTypes: [
+      "Wood privacy fencing for homes along Brandywine Creek",
+      "Vinyl fencing for newer Route 30 corridor developments",
+      "Split rail fencing for Chester County acreage",
+      "Aluminum ornamental fencing for front yard aesthetics",
+    ],
+    localTip:
+      "Downingtown Borough and East/West Brandywine Townships each have their own fence regulations. The rolling terrain along Brandywine Creek can make fence installation more complex — stepped or racked panels may be needed on slopes. Get a property survey if you're near the creek or on uneven ground.",
+    relatedBlogSlugs: [
+      "fence-installation-timeline-what-to-expect",
+      "how-much-does-a-fence-cost-in-delaware",
+      "cedar-vs-composite-deck-which-is-better-for-delaware",
+    ],
+  },
+  "milford-de": {
+    popularFenceTypes: [
+      "Wood privacy fencing for residential properties",
+      "Vinyl fencing for newer downtown revitalization homes",
+      "Chain link for larger rural lots along the Mispillion River",
+      "Aluminum pool fencing for backyard pools",
+    ],
+    localTip:
+      "Milford straddles the Kent/Sussex County border — your permit requirements depend on which county your property is in. Kent County generally requires permits; Sussex County is more relaxed for standard residential fences in unincorporated areas. Milford's downtown revitalization means more new-build fencing projects — check with the city for any additional requirements.",
+    relatedBlogSlugs: [
+      "do-i-need-a-permit-for-a-fence-in-delaware",
+      "pool-fence-requirements-delaware",
+      "how-to-choose-a-fence-contractor-checklist",
+    ],
+  },
+  "seaford-de": {
+    popularFenceTypes: [
+      "Wood privacy fencing for residential properties",
+      "Chain link for larger Sussex County lots",
+      "Vinyl fencing for newer subdivisions",
+      "Aluminum fencing for pool enclosures",
+    ],
+    localTip:
+      "Seaford is in western Sussex County, where fence permit requirements are generally more relaxed than in northern Delaware. Many standard residential fences in unincorporated Sussex County areas don't require a permit — but always confirm with the county Building Code Department before building. Coastal wind-load requirements don't typically apply this far inland.",
+    relatedBlogSlugs: [
+      "do-i-need-a-permit-for-a-fence-in-delaware",
+      "how-much-does-a-fence-cost-in-delaware",
+      "best-fence-for-dogs-delaware-homeowners-guide",
+    ],
+  },
 };
 
 export const AREA_INTROS: Record<string, string> = {

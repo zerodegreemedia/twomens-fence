@@ -504,6 +504,457 @@ export const BLOG_POSTS: BlogPost[] = [
       <p><strong>Call Oscar at (610) 212-7123 or Anna at (302) 803-0790</strong> to schedule your free pool fence estimate today.</p>
     `,
   },
+  {
+    slug: "hoa-fence-rules-new-castle-county-delaware",
+    title: "HOA Fence Rules in New Castle County, DE",
+    description:
+      "A homeowner's guide to HOA fence rules in New Castle County, Delaware — approved materials, height limits, color restrictions, and the ARB approval process.",
+    date: "2026-04-08",
+    author: "TWO MEN Fence & Construction",
+    category: "Permits & Regulations",
+    featuredImage: "/img/gallery/gallery-06-vinyl-privacy-long.webp",
+    featuredImageAlt:
+      "White vinyl privacy fence in a Delaware HOA community",
+    content: `
+      <p>If you live in a planned community in New Castle County, your homeowners association probably has rules about fencing. <strong>HOA fence rules are separate from county permit requirements</strong> — you may need approval from both before you can start building.</p>
+
+      <p>We've installed fences in dozens of HOA communities across Bear, Middletown, Hockessin, Newark, and the greater New Castle County area. Here's what you need to know before you submit your application.</p>
+
+      <h2>Common HOA Fence Restrictions in New Castle County</h2>
+      <p>Every HOA is different, but most communities in New Castle County share these common rules:</p>
+
+      <h3>Approved Materials</h3>
+      <p>Many HOAs restrict which fence materials you can use. The most commonly approved materials in New Castle County communities are:</p>
+      <ul>
+        <li><strong><a href="/services/vinyl-fencing">Vinyl (PVC)</a>:</strong> The most universally accepted material — nearly every HOA allows white or tan vinyl</li>
+        <li><strong><a href="/services/aluminum-fencing">Aluminum ornamental</a>:</strong> Widely accepted, especially in communities that want an open, decorative look</li>
+        <li><strong><a href="/services/wood-fencing">Wood</a>:</strong> Allowed in some communities but often with restrictions on stain color, board style, or species</li>
+        <li><strong><a href="/services/chain-link-fencing">Chain link</a>:</strong> Frequently prohibited in HOA communities — if allowed, it's usually limited to backyards with vinyl coating required</li>
+      </ul>
+
+      <p>Before you fall in love with a fence style, check your community's CC&Rs (Covenants, Conditions & Restrictions) to see what's actually allowed.</p>
+
+      <h3>Height Limits</h3>
+      <p>HOA height limits are often more restrictive than New Castle County's 6-foot maximum:</p>
+      <ul>
+        <li><strong>Backyard fences:</strong> Usually 4–6 feet, depending on the community</li>
+        <li><strong>Side yard fences:</strong> Often limited to 4 feet, especially in the front half of the lot</li>
+        <li><strong>Front yard fences:</strong> Most HOAs prohibit front yard fencing entirely. Some allow 3–4 foot decorative or picket-style fences</li>
+        <li><strong>Corner lots:</strong> May have additional restrictions to maintain visibility for traffic</li>
+      </ul>
+
+      <h3>Color Requirements</h3>
+      <p>Expect your HOA to have strong opinions about color:</p>
+      <ul>
+        <li><strong>White</strong> is the most universally accepted vinyl fence color</li>
+        <li><strong>Tan / almond / khaki</strong> are accepted in most communities</li>
+        <li><strong>Gray and wood-grain textures</strong> are gaining acceptance but check first</li>
+        <li><strong>Black aluminum</strong> is standard for ornamental styles</li>
+        <li><strong>Natural wood</strong> may require a specific stain color — some HOAs mandate a uniform tone across all homes</li>
+      </ul>
+
+      <h3>Placement and Setback Rules</h3>
+      <ul>
+        <li>Fences typically cannot extend past the front plane of the house</li>
+        <li>Some communities require fences to be set back 1–3 feet from the property line</li>
+        <li>Corner lots often have stricter setback requirements on the street-facing side</li>
+        <li>Fences near common areas, open spaces, or community paths may have special rules</li>
+      </ul>
+
+      <h2>The ARB Approval Process</h2>
+      <p>Most HOAs require you to submit a request to the <strong>Architectural Review Board (ARB)</strong> before installing a fence. Here's how the process typically works:</p>
+
+      <ol>
+        <li><strong>Get your property survey.</strong> Most ARBs require a recent survey showing property boundaries. If you don't have one, expect to pay $300–$800 for a new survey</li>
+        <li><strong>Complete the ARB application.</strong> Include fence material, color, height, style, and a site plan showing exactly where the fence will go on your property</li>
+        <li><strong>Submit and wait.</strong> Most ARBs meet monthly. Processing times range from 2–6 weeks depending on the community. Plan ahead — don't wait until spring to submit if you want a fence installed before summer</li>
+        <li><strong>Get written approval.</strong> Keep the approval letter — you'll need it when applying for your New Castle County fence permit</li>
+      </ol>
+
+      <p>Some communities have an expedited review process for standard fence requests. Ask your property management company if this is an option.</p>
+
+      <h2>HOA vs. County: Which Rules Apply?</h2>
+      <p>Both. You need to comply with <strong>both your HOA rules and New Castle County code</strong>. If there's a conflict, the more restrictive rule applies.</p>
+
+      <p>For example: if New Castle County allows a 6-foot fence but your HOA only allows 4 feet in the backyard, you're limited to 4 feet. If your HOA allows a fence on the property line but the county requires a 1-foot setback, you need the setback.</p>
+
+      <p>Always get HOA approval first, then apply for your county permit. The county may ask to see your HOA approval letter as part of the permit application.</p>
+
+      <p>For a full breakdown of county permit requirements, read our guide: <a href="/blog/do-i-need-a-permit-for-a-fence-in-delaware">Do I Need a Permit for a Fence in Delaware?</a></p>
+
+      <h2>Popular HOA Communities We've Worked In</h2>
+      <p>We've installed fences in HOA communities throughout New Castle County, including neighborhoods in:</p>
+      <ul>
+        <li><a href="/service-areas/bear-de">Bear</a> — Governor's Square, Fox Run, Brennan Estates</li>
+        <li><a href="/service-areas/middletown-de">Middletown</a> — Westown, Parkside, Village of Bayberry</li>
+        <li><a href="/service-areas/hockessin-de">Hockessin</a> — Lancaster Pike communities</li>
+        <li><a href="/service-areas/newark-de">Newark</a> — Elkton Road developments, University area</li>
+        <li><a href="/service-areas/new-castle-de">New Castle</a> — Route 9 corridor communities</li>
+      </ul>
+
+      <p>We know which materials and styles get approved in these communities because we've been through the process many times.</p>
+
+      <h2>Tips for Getting Your HOA Application Approved</h2>
+      <ul>
+        <li><strong>Read the CC&Rs before choosing your fence.</strong> Don't pick a style and then hope it's allowed</li>
+        <li><strong>Match what's already in the neighborhood.</strong> If every fence in your community is white vinyl, that's what the ARB expects</li>
+        <li><strong>Get a survey.</strong> A property survey eliminates disputes about fence placement</li>
+        <li><strong>Submit a complete application.</strong> Incomplete applications get delayed. Include material samples or product spec sheets if possible</li>
+        <li><strong>Ask us for help.</strong> We provide product specifications, site plans, and material details that make your ARB application stronger</li>
+      </ul>
+
+      <h2>We Handle HOA Fence Projects Every Week</h2>
+      <p><strong>TWO MEN Fence & Construction</strong> installs fences in HOA communities across New Castle County. We know the common rules, the materials that get approved, and the paperwork that speeds up the process.</p>
+
+      <p>Need help choosing an HOA-approved fence? <a href="/contact">Contact us</a> for a free estimate and we'll walk you through the process from application to installation.</p>
+
+      <p><strong>Call Oscar at (610) 212-7123 or Anna at (302) 803-0790</strong> to get started.</p>
+    `,
+  },
+  {
+    slug: "how-to-choose-a-fence-contractor-checklist",
+    title: "How to Choose a Fence Contractor — Checklist",
+    description:
+      "A step-by-step checklist for hiring a fence contractor in Delaware — licensing, insurance, references, red flags, and what to look for in a written estimate.",
+    date: "2026-04-08",
+    author: "TWO MEN Fence & Construction",
+    category: "Buying Guides",
+    featuredImage: "/img/gallery/gallery-03-wood-privacy-backyard.webp",
+    featuredImageAlt:
+      "Professional fence installation by licensed contractor in Delaware",
+    content: `
+      <p>Hiring the wrong fence contractor is one of the most expensive mistakes a homeowner can make. You end up with a fence that leans, gaps that grow, posts that rot early — and a company that won't return your calls when something goes wrong.</p>
+
+      <p>We've seen it all. Homeowners call us every month to fix fences installed by unlicensed contractors, Craigslist handymen, and out-of-state crews passing through. The money they "saved" upfront ends up costing double.</p>
+
+      <p>Use this checklist before you hire anyone to install your fence.</p>
+
+      <h2>The Fence Contractor Checklist</h2>
+
+      <h3>1. Verify Licensing</h3>
+      <p>Delaware requires contractors to be licensed through the <strong>Division of Revenue</strong>. Any legitimate fence contractor should be able to provide their license number on request.</p>
+      <ul>
+        <li>Ask for their Delaware business license number</li>
+        <li>If they work in Pennsylvania too, verify their PA Home Improvement Contractor (HIC) registration</li>
+        <li>Don't accept "we're working on it" or "it's being renewed" — if they're not licensed today, don't hire them today</li>
+      </ul>
+
+      <h3>2. Confirm Insurance</h3>
+      <p>This is non-negotiable. Your fence contractor must carry:</p>
+      <ul>
+        <li><strong>General liability insurance:</strong> Protects you if the crew damages your property, your neighbor's property, or underground utilities during installation</li>
+        <li><strong>Workers' compensation:</strong> Covers the crew if someone gets injured on your property. Without it, <em>you</em> could be liable for medical bills</li>
+      </ul>
+      <p>Ask for a <strong>Certificate of Insurance (COI)</strong> — a one-page document from their insurance company. If they can't produce it, walk away.</p>
+
+      <h3>3. Check Reviews and References</h3>
+      <ul>
+        <li>Look at Google reviews — focus on the <em>negative</em> reviews and how the company responded</li>
+        <li>Check Facebook reviews if they have a business page</li>
+        <li>Ask for 2–3 references from recent jobs in your area</li>
+        <li>Actually call the references. Ask: Was the crew on time? Did they clean up? Would you hire them again?</li>
+      </ul>
+
+      <h3>4. Get a Written Estimate (Not a Verbal Quote)</h3>
+      <p>A professional contractor provides a written estimate that includes:</p>
+      <ul>
+        <li><strong>Total linear footage</strong> being installed</li>
+        <li><strong>Materials:</strong> Specific type (cedar, pressure-treated pine, vinyl brand/color, aluminum style)</li>
+        <li><strong>Fence height and style</strong></li>
+        <li><strong>Number and type of gates</strong></li>
+        <li><strong>Old fence removal</strong> (if applicable) — as a separate line item</li>
+        <li><strong>Post depth and spacing</strong></li>
+        <li><strong>Total price</strong> — including labor, materials, and any extras</li>
+        <li><strong>Payment terms</strong> — when payment is due, deposit amount, accepted methods</li>
+        <li><strong>Timeline</strong> — estimated start date and completion date</li>
+        <li><strong>Warranty</strong> — what's covered, for how long</li>
+      </ul>
+      <p>If someone gives you a price on a napkin or over the phone without measuring, that's not an estimate — that's a guess.</p>
+
+      <h3>5. Ask About Permits</h3>
+      <p>A good contractor knows the local permit requirements and can guide you through the process. Ask:</p>
+      <ul>
+        <li>Does my area require a fence permit?</li>
+        <li>Who pulls the permit — me or you?</li>
+        <li>Is the permit fee included in the estimate?</li>
+      </ul>
+      <p>If the contractor says "you don't need a permit" without asking where you live, that's a red flag. Permit requirements vary by municipality — anyone who gives a blanket answer isn't doing their homework. Read our <a href="/blog/do-i-need-a-permit-for-a-fence-in-delaware">Delaware fence permit guide</a> so you know what's required in your area.</p>
+
+      <h3>6. Understand the Warranty</h3>
+      <ul>
+        <li>What does the warranty cover? Labor only? Materials only? Both?</li>
+        <li>How long does it last?</li>
+        <li>What voids the warranty?</li>
+        <li>Is it in writing? (Verbal warranties are worthless)</li>
+      </ul>
+
+      <h3>7. Watch for Red Flags</h3>
+      <p>Walk away if you see any of these:</p>
+      <ul>
+        <li><strong>Cash-only, no receipt:</strong> Legitimate businesses accept multiple payment methods and provide receipts</li>
+        <li><strong>No physical address or website:</strong> They should have an established business presence</li>
+        <li><strong>Pressure to sign immediately:</strong> "This price is only good today" is a sales tactic, not a business practice</li>
+        <li><strong>Huge deposit upfront:</strong> A reasonable deposit is 10–30%. Asking for 50%+ before starting is risky</li>
+        <li><strong>No contract or agreement:</strong> Everything should be in writing before work begins</li>
+        <li><strong>Can't show previous work:</strong> Any established contractor has a portfolio of completed projects</li>
+        <li><strong>Won't discuss the timeline:</strong> You deserve a clear start date and estimated completion date</li>
+      </ul>
+
+      <h2>What to Expect From a Professional Fence Company</h2>
+      <p>Here's what a professional fence installation looks like from start to finish:</p>
+      <ol>
+        <li><strong>Free on-site estimate</strong> — not a phone quote, but an in-person visit where the contractor measures your property and discusses options</li>
+        <li><strong>Written proposal</strong> — a detailed, itemized estimate you can review at home</li>
+        <li><strong>Permit guidance</strong> — help navigating local permit requirements</li>
+        <li><strong>Scheduled start date</strong> — a commitment, not "we'll get to you when we can"</li>
+        <li><strong>Professional installation</strong> — a crew that shows up on time, treats your property with respect, and builds to code</li>
+        <li><strong>Cleanup</strong> — all debris, old materials, and packaging removed from your property</li>
+        <li><strong>Final walkthrough</strong> — a review of the finished fence with the homeowner before final payment</li>
+        <li><strong>Written warranty</strong> — your protection after the crew leaves</li>
+      </ol>
+
+      <p>For more on what the installation process looks like, read our guide: <a href="/blog/fence-installation-timeline-what-to-expect">Fence Installation Timeline — What to Expect</a>.</p>
+
+      <h2>Why Delaware Homeowners Choose TWO MEN</h2>
+      <p><strong>TWO MEN Fence & Construction</strong> checks every box on this list — and has for over 18 years. We're licensed, insured, and the owners (Oscar and Anna) are involved in every project.</p>
+
+      <ul>
+        <li>Licensed in Delaware and Pennsylvania</li>
+        <li>Fully insured — liability and workers' comp</li>
+        <li>5-star Google reviews from real customers</li>
+        <li>Written estimates with itemized pricing</li>
+        <li>Satisfaction guaranteed on every job</li>
+      </ul>
+
+      <p>Browse our <a href="/services/wood-fencing">wood</a>, <a href="/services/vinyl-fencing">vinyl</a>, <a href="/services/aluminum-fencing">aluminum</a>, and <a href="/services/chain-link-fencing">chain link</a> fencing options, or <a href="/contact">contact us</a> for a free estimate.</p>
+
+      <p><strong>Call Oscar at (610) 212-7123 or Anna at (302) 803-0790</strong> to schedule your free consultation.</p>
+    `,
+  },
+  {
+    slug: "fence-installation-timeline-what-to-expect",
+    title: "Fence Installation Timeline — What to Expect",
+    description:
+      "A week-by-week timeline of fence installation in Delaware — from the first estimate through permit, materials, build day, and final walkthrough.",
+    date: "2026-04-08",
+    author: "TWO MEN Fence & Construction",
+    category: "How It Works",
+    featuredImage: "/img/gallery/gallery-01-cedar-privacy-fence.webp",
+    featuredImageAlt:
+      "Cedar privacy fence installation in progress in Delaware",
+    content: `
+      <p>One of the most common questions we hear is: <strong>"How long does it take to get a fence installed?"</strong> The honest answer depends on your specific situation — but most residential fence projects in Delaware take <strong>2 to 4 weeks from first call to finished fence.</strong></p>
+
+      <p>Here's what the timeline actually looks like, step by step.</p>
+
+      <h2>Week 1: Estimate and Planning</h2>
+
+      <h3>Day 1–3: Schedule Your Free Estimate</h3>
+      <p>Call us or <a href="/contact">fill out our contact form</a> and we'll schedule a time to visit your property. In most cases, we can come out within a few days. During the visit, we'll:</p>
+      <ul>
+        <li>Measure your property and discuss fence placement</li>
+        <li>Talk through material options — <a href="/services/wood-fencing">wood</a>, <a href="/services/vinyl-fencing">vinyl</a>, <a href="/services/aluminum-fencing">aluminum</a>, or <a href="/services/chain-link-fencing">chain link</a></li>
+        <li>Identify any challenges (slopes, tree roots, rocky soil, tight access)</li>
+        <li>Discuss <a href="/services/gate-installation">gate options</a> — walk-through, driveway, double gates</li>
+        <li>Answer your questions about permits, HOA rules, and timelines</li>
+      </ul>
+
+      <h3>Day 3–5: Receive Your Written Estimate</h3>
+      <p>After the site visit, we'll provide a written estimate with itemized pricing — materials, labor, gates, old fence removal (if needed), and any extras. No hidden fees. You review it at home on your own time — no pressure.</p>
+
+      <h2>Week 1–2: Permits and Preparation</h2>
+
+      <h3>Permit Application</h3>
+      <p>If your municipality requires a fence permit (most areas in New Castle County do), we'll guide you through the application process. Typical permit timelines:</p>
+      <ul>
+        <li><strong>New Castle County:</strong> 1–2 weeks for approval</li>
+        <li><strong>City of Wilmington:</strong> 1–2 weeks (longer for historic districts)</li>
+        <li><strong>City of Newark:</strong> 1–2 weeks</li>
+        <li><strong>Kent County / Dover:</strong> 1–2 weeks</li>
+        <li><strong>Sussex County:</strong> Often faster — some unincorporated areas may not require a permit</li>
+      </ul>
+      <p>For a full breakdown, read our <a href="/blog/do-i-need-a-permit-for-a-fence-in-delaware">Delaware fence permit guide</a>.</p>
+
+      <p>If you live in an HOA community, you'll also need Architectural Review Board approval. That adds 2–6 weeks depending on the community — so <strong>submit your HOA application as early as possible.</strong> See our <a href="/blog/hoa-fence-rules-new-castle-county-delaware">HOA fence rules guide</a> for details.</p>
+
+      <h3>Property Survey</h3>
+      <p>If you don't have a recent survey showing your property boundaries, we strongly recommend getting one before the fence goes in. A boundary survey costs $300–$800 and prevents expensive disputes later. If you have an existing survey, we'll use it to confirm fence placement.</p>
+
+      <h3>Utility Marking (Miss Utility / PA One Call)</h3>
+      <p>Before we dig post holes, underground utilities must be marked. We call <strong>Miss Utility (Delaware)</strong> or <strong>PA One Call (Pennsylvania)</strong> to schedule a marking. This is required by law and typically takes 2–3 business days.</p>
+
+      <h2>Week 2–3: Materials and Scheduling</h2>
+
+      <h3>Material Ordering</h3>
+      <p>Once you approve the estimate and the permit is in process, we order materials. Standard materials (pressure-treated pine, common vinyl colors, standard chain link) are usually in stock. Custom orders (specific cedar grades, specialty vinyl colors, tall aluminum panels) may add a few days.</p>
+
+      <h3>Installation Scheduling</h3>
+      <p>We'll schedule your installation date based on material availability, permit status, and weather. During busy season (spring and summer), our schedule books out faster — <strong>early booking gets you an earlier installation date.</strong></p>
+
+      <h2>Week 3–4: Installation Day(s)</h2>
+      <p>This is the part most people are curious about. Here's what happens on build day:</p>
+
+      <h3>How Long Does Installation Take?</h3>
+      <ul>
+        <li><strong>Small yard (under 150 linear feet):</strong> Usually 1 day</li>
+        <li><strong>Average yard (150–300 linear feet):</strong> 1–2 days</li>
+        <li><strong>Large property (300+ linear feet):</strong> 2–3 days</li>
+        <li><strong>Old fence removal:</strong> Adds half a day to a full day depending on the size and material</li>
+      </ul>
+
+      <h3>What to Expect on Build Day</h3>
+      <ol>
+        <li><strong>Crew arrives early.</strong> Our crews typically arrive between 7:00–8:00 AM. We'll confirm the schedule with you in advance</li>
+        <li><strong>Layout and marking.</strong> We mark the fence line and post locations with spray paint or stakes so you can see exactly where everything goes before we dig</li>
+        <li><strong>Post holes.</strong> We dig post holes using a power auger. Posts are set in concrete for maximum stability. In Delaware's clay-heavy soil, this step can take a bit longer</li>
+        <li><strong>Concrete cure time.</strong> Posts need time to set. Depending on the method, we may continue framing the same day or return the next morning</li>
+        <li><strong>Rail and panel installation.</strong> Rails, boards, or panels go up once the posts are secure. This is the fastest part of the job</li>
+        <li><strong>Gates.</strong> <a href="/services/gate-installation">Gates are installed</a> last — hung, leveled, and adjusted for smooth operation</li>
+        <li><strong>Cleanup.</strong> We remove all debris, packaging, old fence materials (if we did removal), and leave your yard clean</li>
+        <li><strong>Final walkthrough.</strong> We walk the fence with you to make sure everything looks right and you're satisfied</li>
+      </ol>
+
+      <h2>After Installation</h2>
+
+      <h3>Wood Fence Care</h3>
+      <p>If you chose a <a href="/services/wood-fencing">wood fence</a>, wait 2–4 weeks before applying stain or sealant. The wood needs time to dry and acclimate to the environment. After that, stain or seal every 2–3 years to maximize the fence's lifespan.</p>
+
+      <h3>Vinyl and Aluminum</h3>
+      <p><a href="/services/vinyl-fencing">Vinyl</a> and <a href="/services/aluminum-fencing">aluminum</a> fences require virtually no maintenance. An occasional rinse with a garden hose keeps them looking new.</p>
+
+      <h3>Warranty</h3>
+      <p>Your fence is backed by our satisfaction guarantee and warranty. If something isn't right, call us and we'll make it right.</p>
+
+      <h2>What Can Delay Your Timeline?</h2>
+      <p>Some things are outside anyone's control:</p>
+      <ul>
+        <li><strong>Weather:</strong> Heavy rain, frozen ground, or extreme heat can delay installation by a day or two</li>
+        <li><strong>Permit delays:</strong> Some municipalities take longer than expected, especially during busy building season</li>
+        <li><strong>HOA approval:</strong> ARB reviews can take 2–6 weeks. Submit early</li>
+        <li><strong>Material availability:</strong> Custom orders or supply chain issues can add time. We'll communicate any delays immediately</li>
+        <li><strong>Utility conflicts:</strong> If Miss Utility marks underground lines in your fence path, we may need to adjust the layout</li>
+      </ul>
+
+      <h2>Ready to Start Your Timeline?</h2>
+      <p>The sooner you call, the sooner your fence goes up. Spring and summer are our busiest seasons — homeowners who book early get the best scheduling options.</p>
+
+      <p><a href="/contact">Request your free estimate</a> or <a href="/book">book online</a> and we'll get the process started.</p>
+
+      <p><strong>Call Oscar at (610) 212-7123 or Anna at (302) 803-0790</strong> to schedule your free on-site estimate today.</p>
+    `,
+  },
+  {
+    slug: "cedar-vs-composite-deck-which-is-better-for-delaware",
+    title: "Cedar vs Composite Deck — Which Is Better for Delaware?",
+    description:
+      "Comparing cedar and composite decking for Delaware homeowners — cost, maintenance, lifespan, appearance, and which material makes the most sense for your property.",
+    date: "2026-04-08",
+    author: "TWO MEN Fence & Construction",
+    category: "Buying Guides",
+    featuredImage: "/img/gallery/gallery-03-wood-privacy-backyard.webp",
+    featuredImageAlt:
+      "Custom deck and fence project in Delaware by TWO MEN",
+    content: `
+      <p>If you're planning a <a href="/services/deck-building">new deck</a> in Delaware, the biggest decision you'll face is the material: <strong>natural cedar or composite decking?</strong> Both are popular choices, and both have real advantages — but they're very different in terms of cost, maintenance, longevity, and the experience of using them day to day.</p>
+
+      <p>Here's an honest comparison based on what we see from building decks across New Castle County and the surrounding area.</p>
+
+      <h2>Cost Comparison</h2>
+      <p>Cost is usually the first question — and it's where cedar has a clear advantage upfront.</p>
+
+      <table>
+        <thead>
+          <tr><th>Material</th><th>Cost Per Sq Ft (Installed)</th><th>200 Sq Ft Deck Estimate</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Cedar</td><td>$25 – $40</td><td>$5,000 – $8,000</td></tr>
+          <tr><td>Composite (mid-range)</td><td>$35 – $55</td><td>$7,000 – $11,000</td></tr>
+          <tr><td>Composite (premium)</td><td>$50 – $75</td><td>$10,000 – $15,000</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Cedar costs 30–50% less upfront.</strong> But like the <a href="/blog/wood-vs-vinyl-fence-which-is-right-for-you">wood vs. vinyl fence comparison</a>, the lifetime cost is a different story. Cedar needs regular maintenance that adds up over the years.</p>
+
+      <h2>Maintenance</h2>
+      <p>This is where the two materials diverge the most — and it's often the deciding factor for Delaware homeowners.</p>
+
+      <h3>Cedar Maintenance</h3>
+      <ul>
+        <li><strong>Staining/sealing:</strong> Every 1–2 years to maintain color and protect against moisture</li>
+        <li><strong>Power washing:</strong> Annually to prevent mildew and algae (Delaware's humidity accelerates this)</li>
+        <li><strong>Board inspection:</strong> Check for warping, splitting, or soft spots annually</li>
+        <li><strong>Board replacement:</strong> Individual boards can be replaced as needed</li>
+        <li><strong>Cost:</strong> Expect to spend $1–$3 per square foot every 1–2 years on stain/seal — that's $200–$600 per treatment for a 200 sq ft deck</li>
+      </ul>
+
+      <h3>Composite Maintenance</h3>
+      <ul>
+        <li><strong>Cleaning:</strong> Rinse with a hose or light power wash once or twice a year</li>
+        <li><strong>Staining:</strong> Never. Composite doesn't need staining or sealing</li>
+        <li><strong>Mildew:</strong> Modern composite boards resist mold and mildew, though shaded areas may need occasional cleaning</li>
+        <li><strong>Cost:</strong> Essentially $0 beyond a garden hose</li>
+      </ul>
+
+      <p>Over 20 years, maintenance costs for cedar can add $4,000–$12,000 to the original build cost. That often closes or reverses the upfront price gap with composite.</p>
+
+      <h2>Durability and Lifespan</h2>
+      <p>Delaware's climate — hot summers, wet springs, occasional nor'easters — tests every outdoor material.</p>
+
+      <h3>Cedar</h3>
+      <ul>
+        <li>Naturally resistant to rot, insects, and decay</li>
+        <li>Lifespan: <strong>15–25 years</strong> with consistent maintenance</li>
+        <li>Without maintenance, cedar deteriorates faster — warping, graying, and soft spots develop within 3–5 years</li>
+        <li>Delaware's humidity is harder on wood than drier climates</li>
+      </ul>
+
+      <h3>Composite</h3>
+      <ul>
+        <li>Made from a blend of wood fibers and recycled plastic — won't rot, warp, split, or attract insects</li>
+        <li>Lifespan: <strong>25–50 years</strong> depending on the brand and quality</li>
+        <li>Most premium brands include a 25-year structural warranty</li>
+        <li>Handles Delaware's moisture and freeze-thaw cycles without degradation</li>
+      </ul>
+
+      <h2>Appearance and Feel</h2>
+      <p>This is where personal preference matters most.</p>
+
+      <p><strong>Cedar</strong> has a warm, natural look that many homeowners love. The grain patterns, the scent of fresh cedar, and the feel of real wood underfoot are hard to replicate. You can stain it any color, and it ages gracefully into a silver-gray if left natural. The downside: maintaining that fresh-cedar look requires regular work.</p>
+
+      <p><strong>Composite</strong> has improved dramatically in recent years. Modern composite boards come in realistic wood-grain textures and a range of earth-tone colors. High-end brands like Trex, TimberTech, and Fiberon are nearly indistinguishable from real wood at a glance. The downside: composite gets hotter underfoot in direct sun than natural wood.</p>
+
+      <h2>Environmental Impact</h2>
+      <ul>
+        <li><strong>Cedar</strong> is a natural, renewable resource — but it requires harvesting mature trees and needs chemical stains/sealants over its life</li>
+        <li><strong>Composite</strong> is made from recycled materials (wood scraps and plastic) — keeping waste out of landfills. It requires no chemical treatments after installation</li>
+      </ul>
+
+      <h2>Resale Value</h2>
+      <p>Both materials add value to your home. According to national remodeling data:</p>
+      <ul>
+        <li>A composite deck recoups roughly <strong>60–70%</strong> of its cost at resale</li>
+        <li>A wood deck recoups roughly <strong>55–65%</strong> of its cost — but only if it's been well maintained</li>
+      </ul>
+      <p>A neglected wood deck actually <em>hurts</em> resale value. If you're not committed to ongoing maintenance, composite is the safer investment.</p>
+
+      <h2>Our Recommendation</h2>
+      <p><strong>Choose cedar if:</strong> You love the look and feel of natural wood, you're on a tighter budget, and you're willing to invest time in annual maintenance. Cedar is also a great choice for smaller decks where maintenance is quick and easy.</p>
+
+      <p><strong>Choose composite if:</strong> You want a low-maintenance outdoor living space, you're planning to stay in your home long-term, or you want a deck that looks the same in 15 years as it does today. Composite is the better long-term investment for most Delaware homeowners.</p>
+
+      <h2>Pair Your Deck With a New Fence</h2>
+      <p>Building a deck? Many of our customers add a <a href="/services/wood-fencing">wood fence</a> or <a href="/services/vinyl-fencing">vinyl fence</a> at the same time to create a complete backyard living space. Bundling projects saves on mobilization costs and gets everything done in one visit.</p>
+
+      <p>Need <a href="/services/tree-trimming">tree trimming</a> to clear space for your new deck? We handle that too.</p>
+
+      <h2>Get a Free Deck Estimate</h2>
+      <p>Not sure which material is right for your property? We'll give you quotes for both cedar and composite so you can compare real numbers for your specific deck size and layout.</p>
+
+      <p><a href="/contact">Request your free estimate</a> or <a href="/book">book your consultation online</a>.</p>
+
+      <p><strong>Call Oscar at (610) 212-7123 or Anna at (302) 803-0790</strong> to schedule your free deck consultation today.</p>
+    `,
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

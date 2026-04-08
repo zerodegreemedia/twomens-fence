@@ -227,7 +227,7 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Right — Embedded Lead Form */}
+            {/* Right — Embedded Lead Form (desktop) */}
             <motion.div
               initial={{ opacity: 0, y: 40, scale: 0.97 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -235,6 +235,24 @@ export default function Home() {
               className="hidden lg:block"
             >
               <div className="mb-4">
+                <h2 className="text-white font-bold text-lg">
+                  Get Your Free Estimate
+                </h2>
+                <p className="text-white/50 text-sm">
+                  We respond within 24 hours - usually same day.
+                </p>
+              </div>
+              <ContactForm dark />
+            </motion.div>
+
+            {/* Mobile — Compact lead form below hero copy */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="lg:hidden mt-4"
+            >
+              <div className="mb-3">
                 <h2 className="text-white font-bold text-lg">
                   Get Your Free Estimate
                 </h2>
@@ -365,7 +383,7 @@ export default function Home() {
                 <h3 className="text-lg font-bold text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-white/55 leading-relaxed">
+                <p className="text-sm text-white/70 leading-relaxed">
                   {item.desc}
                 </p>
               </motion.div>
@@ -466,7 +484,7 @@ export default function Home() {
                 </p>
                 <div>
                   <p className="text-white font-semibold text-sm">{t.name}</p>
-                  <p className="text-white/40 text-xs">{t.location}</p>
+                  <p className="text-white/50 text-xs">{t.location}</p>
                 </div>
               </motion.div>
             ))}
@@ -516,8 +534,10 @@ export default function Home() {
                     alt={img.alt}
                     width={800}
                     height={600}
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 33vw"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
+                    decoding="async"
                   />
                 </Link>
               </motion.div>
@@ -621,7 +641,7 @@ export default function Home() {
               <motion.p
                 variants={fadeUp}
                 custom={2}
-                className="mt-5 text-lg text-white/55 leading-relaxed max-w-lg"
+                className="mt-5 text-lg text-white/70 leading-relaxed max-w-lg"
               >
                 Skip the phone tag. Pick a date and time that works for you, and
                 we&apos;ll confirm within the hour. No obligation, no pressure.
@@ -666,7 +686,6 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={VIEWPORT}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="hidden lg:block"
             >
               <InlineBookingWidget />
             </motion.div>

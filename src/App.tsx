@@ -6,14 +6,7 @@ import { ErrorBoundary } from "@/components/shared/ErrorBoundary";
 const Home = lazy(() => import("@/pages/Home"));
 const About = lazy(() => import("@/pages/About"));
 const Services = lazy(() => import("@/pages/services/Services"));
-const WoodFencing = lazy(() => import("@/pages/services/WoodFencing"));
-const VinylFencing = lazy(() => import("@/pages/services/VinylFencing"));
-const AluminumFencing = lazy(() => import("@/pages/services/AluminumFencing"));
-const ChainLinkFencing = lazy(() => import("@/pages/services/ChainLinkFencing"));
-const FenceRepair = lazy(() => import("@/pages/services/FenceRepair"));
-const GateInstallation = lazy(() => import("@/pages/services/GateInstallation"));
-const DeckBuilding = lazy(() => import("@/pages/services/DeckBuilding"));
-const TreeTrimming = lazy(() => import("@/pages/services/TreeTrimming"));
+const ServiceDetail = lazy(() => import("@/pages/services/ServiceDetail"));
 const ThankYou = lazy(() => import("@/pages/ThankYou"));
 const Gallery = lazy(() => import("@/pages/Gallery"));
 const FAQ = lazy(() => import("@/pages/FAQ"));
@@ -54,14 +47,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/services/wood-fencing" element={<WoodFencing />} />
-            <Route path="/services/vinyl-fencing" element={<VinylFencing />} />
-            <Route path="/services/aluminum-fencing" element={<AluminumFencing />} />
-            <Route path="/services/chain-link-fencing" element={<ChainLinkFencing />} />
-            <Route path="/services/fence-repair" element={<FenceRepair />} />
-            <Route path="/services/gate-installation" element={<GateInstallation />} />
-            <Route path="/services/deck-building" element={<DeckBuilding />} />
-            <Route path="/services/tree-trimming" element={<TreeTrimming />} />
+            <Route path="/services/:slug" element={<ServiceDetail />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
