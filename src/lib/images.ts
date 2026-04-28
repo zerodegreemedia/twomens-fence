@@ -397,6 +397,20 @@ export const SERVICE_IMAGES = {
     "name": "tree-crew-removal"
   }
 ],
+  repair: [
+  {
+    "path": "/img/services/fence-repair-stock.webp",
+    "alt": "Wooden fence in need of repair with weathered boards",
+    "name": "fence-repair-stock"
+  }
+],
+  gate: [
+  {
+    "path": "/img/gallery/gallery-02-wood-fence-with-gate.webp",
+    "alt": "Wood privacy fence with custom gate installation by TWO MEN Fence",
+    "name": "gate-wood-privacy-fence"
+  }
+],
 } as const;
 
 export const COMMERCIAL_IMAGES: SiteImage[] = [

@@ -87,7 +87,7 @@ export default function About() {
             "@type": "PostalAddress",
             "addressLocality": "New Castle",
             "addressRegion": "DE",
-            "postalCode": "19808",
+            "postalCode": "19720",
             "addressCountry": "US",
           },
           "foundingDate": `${COMPANY.yearFounded}`,

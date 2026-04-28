@@ -4,8 +4,13 @@
  * Creates a Google Calendar event for the booking AND forwards
  * the form data to Formspree (so email notifications still work).
  */
-import type { Env } from "./_google-auth";
+import type { Env as GoogleEnv } from "./_google-auth";
 import { createCalendarEvent } from "./_google-auth";
+import { sendConfirmationEmail } from "./_send-email";
+
+interface Env extends GoogleEnv {
+  RESEND_API_KEY: string;
+}
 
 interface BookingPayload {
   name: string;
@@ -149,6 +154,31 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     console.error("Formspree submission failed:", err);
   }
 
+  // 3) Send confirmation email to customer (if email provided)
+  let emailSent = false;
+  if (email && context.env.RESEND_API_KEY) {
+    try {
+      const durationLabel = service === "phone" ? "15 min" : "45 min";
+      const result = await sendConfirmationEmail(context.env.RESEND_API_KEY, {
+        to: email,
+        customerName: name,
+        serviceLabel,
+        dateFormatted: dateStr,
+        time,
+        duration: durationLabel,
+        address: address || undefined,
+        startISO: startDT,
+        endISO: endDT,
+      });
+      emailSent = result.success;
+      if (!result.success) {
+        console.error("Confirmation email failed:", result.error);
+      }
+    } catch (err) {
+      console.error("Confirmation email error:", err);
+    }
+  }
+
   return new Response(
     JSON.stringify({
       success: true,
@@ -156,6 +186,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         ? { eventId: calendarResult.eventId, synced: true }
         : { synced: false, error: calendarError },
       formNotification: formspreeOk,
+      confirmationEmail: emailSent,
     }),
     { status: 200, headers: { "Content-Type": "application/json", ...CORS_HEADERS } },
   );

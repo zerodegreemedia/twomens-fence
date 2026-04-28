@@ -74,6 +74,10 @@ const serviceImageMap: Record<string, string> = {
   "vinyl-fencing": SERVICE_IMAGES.vinyl[0]?.path || "",
   "aluminum-fencing": SERVICE_IMAGES.aluminum[0]?.path || "",
   "chain-link-fencing": SERVICE_IMAGES.chainlink[0]?.path || "",
+  "deck-building": SERVICE_IMAGES.deck[0]?.path || "",
+  "tree-trimming": SERVICE_IMAGES.tree[0]?.path || "",
+  "fence-repair": SERVICE_IMAGES.repair[0]?.path || "",
+  "gate-installation": SERVICE_IMAGES.gate[0]?.path || "",
 };
 
 export default function Services() {

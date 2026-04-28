@@ -112,6 +112,9 @@ export default function BlogPost() {
                   year: "numeric",
                 })}
               </span>
+              <span className="text-sm text-white/50">
+                By {post.author}
+              </span>
             </div>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] tracking-tight">
