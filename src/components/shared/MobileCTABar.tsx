@@ -31,8 +31,8 @@ export function MobileCTABar() {
             }
           }}
           className={cn(
-            buttonVariants({ size: "lg", variant: "outline" }),
-            "flex-1 border-white/20 text-white hover:bg-white/10 font-semibold"
+            buttonVariants({ size: "lg" }),
+            "flex-1 bg-transparent border border-white/30 text-white hover:bg-white/10 hover:text-white font-semibold"
           )}
         >
           <Phone size={18} className="mr-2" />
